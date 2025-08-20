@@ -13,9 +13,10 @@ export default function Page() {
         </div>
       </div>
       {/* Decorative paper plane and lines */}
-      <img src="/assets/intersect.png" alt="Paper plane" className="absolute left-0ottom-0 w-[500px] max-w-[60vw] opacity-80 pointer-events-none select-none" />
+      <img src="/assets/intersect.png" alt="Paper plane" className="absolute left-0 bottom-0 w-[500px] max-w-[60vw] opacity-80 pointer-events-none select-none" />
       <div className="absolute left-1/4 bottom-10 w-24 h-24 bg-blue-200 rounded-full opacity-40 blur-2xl"></div>
-      <div className="absolute left-0 right-0 bottom-0 h-2 bg-gradient-to-r from-blue-200 via-blue-100 to-blue-200 opacity-60" style={{height:'8px'}}></div>
+      <div className="absolute left-0 right-0 bottom-0 h-2 bg-gradient-to-r from-blue-200 via-blue-100 to-blue-200 opacity-60"
+       style={{height:'8px'}}></div>
     </main>
   )
 }
