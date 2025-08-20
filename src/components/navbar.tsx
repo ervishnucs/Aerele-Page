@@ -5,50 +5,45 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Our Team", href: "/team" },
-  { label: "Service", href: "/services" },
-  { label: "ERP Next", href: "/erpnext" },
-  { label: "Blogs", href: "/blogs" },
+  { label: "Our Team", href: "#team" },
+  { label: "Service", href: "#service" },
+  { label: "ERP Next", href: "#erp" },
+  { label: "Blogs", href: "#blogs" },
 ];
 
 export default function Navbar() {
   return (
-    <nav className="w-full flex items-center justify-between px-8 py-4 shadow bg-white fixed top-0 z-50">
-      {/* Logo */}
-      <Link href="/">
-        <Image
-          src="/assets/logo.png"
-          alt="Logo"
-          width={120}
-          height={40}
-        />
-      </Link>
-
-      {/* Navigation Items rendered using loop */}
-      <ul className="flex gap-6">
+    <nav className="w-full flex items-center justify-between px-8 py-4 bg-transparent fixed top-0 left-0 z-50 backdrop-blur-md">
+      <div className="flex items-center gap-2">
+        <Link href="/">
+          <Image
+            src="/assets/logo.png"
+            alt="Aerele Logo"
+            width={48}
+            height={48}
+            className="h-10 w-auto"
+          />
+        </Link>
+        <span className="font-bold text-lg text-gray-700 hidden md:inline-block">Aerele Technologies</span>
+      </div>
+      <ul className="flex gap-8 items-center text-gray-700 font-medium">
         {navItems.map((item) => (
           <li key={item.href}>
-            <Link href={item.href} className="text-gray-700 hover:text-blue-600">
+            <Link href={item.href} className="hover:text-blue-600 transition-colors">
               {item.label}
             </Link>
           </li>
         ))}
+        <li>
+          <Link href="#contact">
+            <button className="ml-4 px-6 py-2 rounded-full bg-blue-500 text-white shadow-md hover:bg-blue-600 transition-all">Contact us</button>
+          </Link>
+        </li>
       </ul>
-
-      {/* Call Button */}
-      <Link href="tel:+91-XXXXXXXXXX">
-        <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-          <Image
-            src="/assets/call-icon.png"
-            alt="Call"
-            width={18}
-            height={18}
-          />
-        </div>
-      </Link>
     </nav>
   );
 }
