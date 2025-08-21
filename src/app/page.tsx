@@ -1,20 +1,198 @@
+"use client";
+
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import HeroSection from '@/components/HeroSection';
+
 export default function Page() {
   return (
-    <main className="relative flex flex-col items-center justify-center px-8 py-16 min-h-[80vh] overflow-hidden">
-      <div className="relative flex flex-col items-center justify-center w-full max-w-4xl mx-auto z-10">
-        <div className="absolute top-0 left-0 mt-8 ml-8 z-20">
-            <h1 className="text-3xl font-semibold text-gray-800">
-            Your Dream,<br />Our Commitment!
-            </h1>
-        </div>
-      </div>
+    <main className="bg-white w-full text-gray-800 overflow-hidden">
+      <HeroSection />
 
-      {/* Decorative paper plane and lines */}
-      <img
-        src="/assets/intersect.png"
-        alt="Paper plane"
-        className="absolute left-0 bottom-0 w-[600px] max-w-[60vw] opacity-100 pointer-events-none select-none animate-[mymove_4s_ease-in-out_infinite]"
-      />
+
+
+
+      {/* Intro Section */}
+      <section className="px-6 md:px-[20rem] pt-8 pb-20">
+        <h3 className="text-blue-600 font-semibold text-xl md:text-2xl">
+          From Prototypes to Portals — We Engineer ERP Success
+        </h3>
+        <p className="text-gray-600 mt-4 text-base md:text-lg">
+          we empower businesses with tailored ERP systems and technology-driven innovations.
+
+          Our expertise is trusted by sectors like manufacturing, retail, and supply chain, especially where robust software ecosystems and seamless integrations are crucial.
+
+          At Aerele, we combine deep technical knowledge with practical business insights to deliver scalable, future-ready enterprise applications.
+        </p>
+        <button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white text-base px-6 py-2 rounded-full transition">
+          About Us
+        </button>
+
+      </section>
+
+      {/* Services Section */}
+      <section className="relative w-full px-6 md:px-24 py-24">
+        {/* Grey shadow "SERVICES" in background */}
+        <h1 className="relative text-center text-6xl md:text-8xl font-bold z-10 text-shadow-blue">
+          <span className="absolute text-gray-300 text-[10rem] md:text-[12rem] opacity-10 -top-16 left-1/2 -translate-x-1/2 select-none tracking-widest">
+            SERVICES
+          </span>
+          Our Services
+        </h1>
+
+
+        {/* Blurred E-shaped background (soft, spread out, responsive) */}
+        <div className="absolute left-1/4 top-[160px] w-[200px] ">
+          {/* Vertical spine of E */}
+          <div className="w-[50px] left-0px h-[1570px] bg-gray-300 opacity-20 rounded-full  blur-[10px]"></div>
+
+          {/* Top bar */}
+          <div className="absolute top-0 left-[-100px] w-[900px] h-[50px] bg-gray-300 opacity-25 rounded-full  blur-[10px]"></div>
+
+          {/* Middle bar */}
+          <div className="absolute top-[750px] left-[-100px] w-[900px] h-[50px] bg-gray-300 opacity-25 rounded-full blur-[10px]"></div>
+
+          {/* Bottom bar */}
+          <div className="absolute bottom-0 left-[-100px] w-[900px] h-[50px] bg-gray-300 opacity-25 rounded-full blur-[10px]"></div>
+        </div>
+
+
+
+
+
+
+        {/* Optional glowing circle */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-[160px] w-[300px] h-[300px] bg-blue-400 opacity-30 blur-[100px] rounded-full z-0"></div>
+
+        {/* Service Grid */}
+        <div className="relative mt-24 max-w-6xl mx-auto z-10 space-y-16">
+
+          {/* Item 1 - Left */}
+          <div className="md:flex md:items-start md:justify-between">
+            <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
+              <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
+                <h4 className="text-2xl md:text-3xl font-semibold">ERPNext Customization</h4>
+                <p className="text-base md:text-lg mt-4 text-gray-600">
+                  <strong>Tailor your ERP, your way.</strong> <br />
+                  We specialize in deeply customizing ERPNext to align with your unique business workflows — from module enhancements to custom apps, reports, and integrations.
+                </p>
+                <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Item 2 - Right */}
+          <div className="md:flex md:items-start md:justify-between md:flex-row-reverse">
+            <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
+              <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
+                <h4 className="text-2xl md:text-3xl font-semibold">Enterprise Portal Development</h4>
+                <p className="text-base md:text-lg mt-4 text-gray-600">
+                  <strong>Bringing data, processes, and users together.</strong> <br />
+                  We build user-friendly enterprise portals that connect teams, streamline operations, and offer intuitive interfaces over complex systems — all backed by Frappe.
+                </p>
+                <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+          {/* Optional glowing circle */}
+          <div className="absolute left-1/4 -translate-x-1/2 top-[460px] w-[200px] h-[200px] bg-blue-400 opacity-30 blur-[100px] rounded-full z-0"></div>
+          {/* Item 3 - Left */}
+          <div className="md:flex md:items-start md:justify-between">
+            <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
+              <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
+                <h4 className="text-2xl md:text-3xl font-semibold">Prototype & MVP Development</h4>
+                <p className="text-base md:text-lg mt-4 text-gray-600">
+                  <strong>Move fast. Validate faster.</strong> <br />
+                  Need to test an idea or launch a product fast? We help you build robust prototypes and MVPs using agile development practices and the power of Frappe.
+                </p>
+                <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute right-1/4 -translate-x-1/2 top-[660px] w-[200px] h-[200px] bg-blue-400 opacity-30 blur-[100px] rounded-full z-0"></div>
+          {/* Item 4 - Right */}
+          <div className="md:flex md:items-start md:justify-between md:flex-row-reverse">
+            <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
+              <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
+                <h4 className="text-2xl md:text-3xl font-semibold">DevOps & System Integration</h4>
+                <p className="text-base md:text-lg mt-4 text-gray-600">
+                  <strong>Seamless systems. Reliable delivery.</strong> <br />
+                  Our DevOps solutions ensure your ERP and enterprise apps are deployed, scaled, and monitored efficiently — with CI/CD pipelines, containerization, and third-party API integrations.
+                </p>
+                <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute left-1/4 -translate-x-1/2 top-[1000px] w-[200px] h-[200px] bg-blue-400 opacity-30 blur-[100px] rounded-full z-0"></div>
+
+          {/* Item 5 - Left */}
+          <div className="md:flex md:items-start md:justify-between">
+            <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
+              <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
+                <h4 className="text-2xl md:text-3xl font-semibold">Technology Consulting</h4>
+                <p className="text-base md:text-lg mt-4 text-gray-600">
+                  <strong>Your business, powered by the right tech.</strong> <br />
+                  We guide businesses through technology choices, architecture decisions, and digital transformation strategies to ensure scalable growth with the right tools.
+                </p>
+                <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </section>
+
+
+      <section className="w-full bg-gradient-to-br from-gray-100 via-white to-gray-50 py-20 px-6 md:px-24 text-center">
+        <h3 className="text-3xl md:text-4xl font-bold mb-16 text-gray-800 drop-shadow-[0_6px_8px_rgba(96,165,250,0.4)]">
+          Industries We Serve
+        </h3>
+
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-14 items-center justify-center">
+          {[
+            { name: "Manufacturing", img: "image 6.png" },
+            { name: "Distribution & Retail", img: "image 7.png" },
+            { name: "Textile & Apparel", img: "image 8.png" },
+            { name: "Services & Agencies", img: "image 10.png" },
+            { name: "ERP-driven Enterprises", img: "image 12.png" },
+          ].map((industry, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center gap-4 cursor-pointer group"
+            >
+              {/* Gradient glow only on hover */}
+              <div className="relative">
+                <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-visible shadow-blue-400 shadow-md transition duration-300 group-hover:scale-105">
+                  <img
+                    src={`/assets/${industry.img}`}
+                    alt={industry.name}
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </div>
+
+                {/* Bottom gradient only on hover */}
+                <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition duration-300">
+                  <div className="w-24 h-6 md:w-28 md:h-7 rounded-b-full bg-gradient-to-t from-blue-400 via-blue-300 to-transparent blur-md"></div>
+                </div>
+              </div>
+
+              <p className="text-sm md:text-base font-semibold text-gray-700 tracking-wide group-hover:text-blue-600 transition">
+                {industry.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+
+
+
+
+
+
     </main>
-  )
+  );
 }

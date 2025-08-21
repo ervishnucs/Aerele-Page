@@ -499,15 +499,8 @@ export default function ServicePage() {
           />
         </div>
       </div>
-
-
-
       {/* Industry veterans Trust us section */}
       <section className="max-w-7xl mx-auto mb-20 px-2">
-        <div className="flex flex-col items-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-6">
-            Industry veterans <span className="text-blue-700">Trust us</span>
-        </h2>
         <div className="w-full">
         <div className="flex flex-wrap justify-center items-center gap-8 py-4">
           <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833ef03ab58b_loreal.png?d=395x278" alt="loreal logo" width={170} height={95} />
@@ -521,9 +514,83 @@ export default function ServicePage() {
           <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833eea57ee44_flipkart.png?d=395x306" alt="flipkart logo" width={135} height={95} />
         </div>
         </div>
+     
+    </section>
+    {/* New: Trusted Partnership Section */}
+    <section className="max-w-6xl mx-auto mb-20 px-2">
+      <div className="relative flex flex-col items-center justify-center" style={{ minHeight: 230 }}>
+        {/* Large handshake image behind heading */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[230px] z-0 pointer-events-none select-none flex items-center justify-center">
+          <Image
+            src="/assets/handshake-line.png"
+            alt="Handshake background"
+            fill
+            className="object-contain opacity-100"
+            priority={true}
+          />
+        </div>
+        <h2 className="text-2xl md:text-3xl font-bold text-center relative z-10">
+          <span className="text-blue-700">More Than Services</span>
+          <span className="text-gray-700"> — A Trusted Partnership</span>
+        </h2>
+        
+      </div>
+      <div className="flex flex-col items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 w-full mb-12 justify-items-center">
+          {/* Card 1 */}
+          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-8 flex items-center justify-between min-h-[140px] max-w-[320px] mx-auto"
+               style={{ boxShadow: '0 8px 24px -8px #3b82f633' }}>
+            <div className="text-left font-semibold text-gray-800 text-lg">Domain-Driven<br />Custom Solutions</div>
+            <Image src="/assets/domain-driven.png" alt="" width={80} height={80} />
+          </div>
+          {/* Card 2 */}
+          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-8 flex items-center justify-between min-h-[140px] max-w-[320px] mx-auto"
+               style={{ boxShadow: '0 8px 24px -8px #3b82f633' }}>
+            <div className="text-left font-semibold text-gray-800 text-lg">Proven Across<br />Industries</div>
+            <Image src="/assets/proven-industries.png" alt="" width={80} height={80} />
+          </div>
+          {/* Card 3 */}
+          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-8 flex items-center justify-between min-h-[140px] max-w-[320px] mx-auto"
+               style={{ boxShadow: '0 8px 24px -8px #3b82f633' }}>
+            <div className="text-left font-semibold text-gray-800 text-lg">Transparent<br />Communication</div>
+            <Image src="/assets/transparent-comm.png" alt="" width={80} height={80} />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 w-full justify-items-center">
+          {/* Card 4 */}
+          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-8 flex items-center justify-between min-h-[140px] max-w-[320px] mx-auto"
+               style={{ boxShadow: '0 8px 24px -8px #3b82f633' }}>
+            <div className="text-left font-semibold text-gray-800 text-lg">Agile &<br />Responsive Team</div>
+            <Image src="/assets/agile-team.png" alt="" width={80} height={80} />
+          </div>
+          {/* Card 5 */}
+          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-8 flex items-center justify-between min-h-[140px] max-w-[320px] mx-auto"
+               style={{ boxShadow: '0 8px 24px -8px #3b82f633' }}>
+            <div className="text-left font-semibold text-gray-800 text-lg">Focused on ROI<br />and Scalability</div>
+            <Image src="/assets/roi-scalability.png" alt="" width={80} height={80} />
+          </div>
+        </div>
       </div>
     </section>
+
+         {/* Let's Make Something Great Together */}
+      <section className="w-full bg-blue-900 py-10 mt-8">
+        <h3 className="text-2xl font-bold text-white text-center mb-4">Let’s Make Something Great Together</h3>
+        <p className="text-center text-white mb-8">We look forward to collaborating with you to bring your ERP vision to life—seamlessly, strategically, and successfully.</p>
+        <form className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 bg-white bg-opacity-80 rounded-xl p-8 shadow">
+          <input type="text" placeholder="Name" className="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+          <input type="email" placeholder="Email" className="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+          <input type="text" placeholder="Phone" className="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 md:col-span-1" />
+          <input type="text" placeholder="Subject" className="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 md:col-span-1" />
+          <textarea placeholder="Message" className="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 md:col-span-2" rows={4}></textarea>
+          <button type="submit" className="bg-blue-900 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-blue-800 transition md:col-span-2">Send Message</button>
+        </form>
+        <div className="w-full flex justify-center mt-8">
+          <img src="/assets/erp-footer-city.png" alt="City silhouette" className="w-full max-w-2xl opacity-80" />
+        </div>
+      </section>
     </main>
   );
 }
+
 
