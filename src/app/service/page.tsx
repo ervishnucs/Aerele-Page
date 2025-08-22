@@ -4,50 +4,56 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-white py-12 px-4 md:px-16">
       {/* Hero Section with Blurred Blue Cards and Overlay Text */}
-      <section className="relative flex justify-center items-center mb-12 h-60">
-        {/* Blurred Blue Cards and Side Shadows */}
-        <div className="absolute inset-0 flex justify-center items-center gap-6" aria-hidden="true">
-          {/* Left Blur Shadow */}
-          <div className="w-[80px] h-[220px] bg-blue-700 rounded-3xl blur-2xl opacity-60 -ml-12" />
-          {/* Main Three Cards with different colors */}
-          <div className="w-[220px] h-[220px] bg-blue-800 rounded-3xl border-4 border-white blur-md shadow-lg" />
-          <div className="w-[220px] h-[220px] bg-blue-800 rounded-3xl border-4 border-white blur-md shadow-lg" />
-          <div className="w-[220px] h-[220px] bg-blue-800 rounded-3xl border-4 border-white blur-md shadow-lg" />
-          {/* Right Blur Shadow */}
-          <div className="w-[80px] h-[220px] bg-blue-700 rounded-3xl blur-2xl opacity-60 -mr-12" />
-        </div>
-        {/* Overlay Text and Double Angled Lines */}
-        <div className="relative z-10 flex flex-col items-center w-[320px]">
-          {/* Top Double Lines */}
-          <div className="w-full flex flex-col gap-1 mb-4">
-            <div className="border-t-2 border-white w-full" style={{ transform: 'rotate(-10deg)' }} />
-            <div className="border-t-2 border-white w-full" style={{ transform: 'rotate(-10deg)' }} />
-          </div>
-          {/* Blurred White Shadow Text */}
+      <section className="flex justify-center items-center mb-16">
+        <div className="relative flex items-center h-[120px] w-full max-w-4xl justify-center">
+          {/* Left: "Our" with slide-in from left */}
           <span
-            className="absolute left-1/2 top-1/2 text-4xl font-bold text-white opacity-40 pointer-events-none select-none"
-            style={{
-              transform: 'translate(-50%, -50%) rotate(-6deg)',
-              filter: 'blur(2px)',
-              zIndex: 0,
-              whiteSpace: 'nowrap'
-            }}
+        className="text-5xl md:text-7xl font-extrabold text-gray-700 mr-4 transition-all duration-700 ease-in-out animate-slideInLeft"
+        style={{
+          opacity: 1,
+        }}
           >
-            Our Services
+        Our
           </span>
-          {/* Main Text */}
-          <h1
-            className="text-4xl font-bold text-white text-center relative"
-            style={{ transform: 'rotate(-6deg)', zIndex: 1 }}
+          {/* Right: "Services" with slide-in from right */}
+          <span
+        className="text-5xl md:text-7xl font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
+        style={{
+          opacity: 1,
+        }}
           >
-            Our Services
-          </h1>
-          {/* Bottom Double Lines */}
-          <div className="w-full flex flex-col gap-1 mt-4">
-            <div className="border-t-2 border-white w-full" style={{ transform: 'rotate(-10deg)' }} />
-            <div className="border-t-2 border-white w-full" style={{ transform: 'rotate(-10deg)' }} />
-          </div>
+        Services
+          </span>
         </div>
+        {/* Animations */}
+        <style>{`
+          @keyframes slideInLeft {
+        from {
+          transform: translateX(-80px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+          }
+          @keyframes slideInRight {
+        from {
+          transform: translateX(80px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+          }
+          .animate-slideInLeft {
+        animation: slideInLeft 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+          }
+          .animate-slideInRight {
+        animation: slideInRight 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+          }
+        `}</style>
       </section>
       {/* Subtitle */}
       <section className="max-w-5xl mx-auto text-center mb-12">
@@ -573,24 +579,7 @@ export default function ServicePage() {
       </div>
     </section>
 
-         {/* Let's Make Something Great Together */}
-      <section className="w-full bg-blue-900 py-10 mt-8">
-        <h3 className="text-2xl font-bold text-white text-center mb-4">Let’s Make Something Great Together</h3>
-        <p className="text-center text-white mb-8">We look forward to collaborating with you to bring your ERP vision to life—seamlessly, strategically, and successfully.</p>
-        <form className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 bg-white bg-opacity-80 rounded-xl p-8 shadow">
-          <input type="text" placeholder="Name" className="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-          <input type="email" placeholder="Email" className="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-          <input type="text" placeholder="Phone" className="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 md:col-span-1" />
-          <input type="text" placeholder="Subject" className="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 md:col-span-1" />
-          <textarea placeholder="Message" className="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 md:col-span-2" rows={4}></textarea>
-          <button type="submit" className="bg-blue-900 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-blue-800 transition md:col-span-2">Send Message</button>
-        </form>
-        <div className="w-full flex justify-center mt-8">
-          <img src="/assets/erp-footer-city.png" alt="City silhouette" className="w-full max-w-2xl opacity-80" />
-        </div>
-      </section>
+
     </main>
   );
 }
-
-

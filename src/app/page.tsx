@@ -14,7 +14,7 @@ export default function Page() {
 
       {/* Intro Section */}
       <section className="px-6 md:px-[20rem] pt-8 pb-20">
-        <h3 className="text-blue-600 font-semibold text-xl md:text-2xl">
+        <h3 className="font-semibold text-xl md:text-2xl" style={{ color: "#032148" }}>
           From Prototypes to Portals — We Engineer ERP Success
         </h3>
         <p className="text-gray-600 mt-4 text-base md:text-lg">
@@ -24,17 +24,23 @@ export default function Page() {
 
           At Aerele, we combine deep technical knowledge with practical business insights to deliver scalable, future-ready enterprise applications.
         </p>
-        <button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white text-base px-6 py-2 rounded-full transition">
+        <motion.button
+          whileHover={{ scale: 1.05, backgroundColor: "#043072" }}
+          whileTap={{ scale: 0.97 }}
+          className="mt-6 text-white text-base px-6 py-2 rounded-full transition-colors duration-300"
+          style={{ backgroundColor: "#032148" }}
+          onClick={() => window.location.href = '/about'}
+        >
           About Us
-        </button>
+        </motion.button>
 
       </section>
 
       {/* Services Section */}
       <section className="relative w-full px-6 md:px-24 py-24">
         {/* Grey shadow "SERVICES" in background */}
-        <h1 className="relative text-center text-6xl md:text-8xl font-bold z-10 text-shadow-blue">
-          <span className="absolute text-gray-300 text-[10rem] md:text-[12rem] opacity-10 -top-16 left-1/2 -translate-x-1/2 select-none tracking-widest">
+        <h1 className="relative text-center text-6xl md:text-8xl font-bold z-10" style={{ color: "#032148" }}>
+          <span className="absolute text-gray-800 text-[10rem] md:text-[12rem] opacity-10 -top-16 left-1/2 -translate-x-1/2 select-none tracking-widest">
             SERVICES
           </span>
           Our Services

@@ -6,17 +6,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
+import './navbar.css'; // Responsive styles
 
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Our Team", href: "/team" },
+  { label: "Our Team", href: "/our-team" },
   { label: "Service", href: "/service" },
   { label: "ERPNext", href: "/erpnext" },
   { label: "Blogs", href: "/blogs" },
 ];
 
-export default function Navbar() {
+export default function Navbar() { 
   const pathname = usePathname();
 
   return (
@@ -54,7 +55,7 @@ export default function Navbar() {
               {isActive && (
                 <motion.div
                   layoutId="underline"
-                  className="absolute left-0 right-0 h-[3px] bg-blue-600"
+                  className="absolute left-0 right-0 h-[3px] bg-[#032148]"
                   transition={{ type: "spring", stiffness: 500, damping: 30 }}
                 />
               )}
@@ -63,7 +64,7 @@ export default function Navbar() {
         })}
         <li>
           <Link href="#contact">
-            <button className="ml-4 px-6 py-2 rounded-full bg-blue-500 text-white shadow-md hover:bg-blue-600 transition-all">
+            <button className="ml-4 px-6 py-2 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all">
               Contact us
             </button>
           </Link>
