@@ -57,8 +57,8 @@ export default function ServicePage() {
       </section>
       {/* Subtitle */}
       <section className="max-w-5xl mx-auto text-center mb-12">
-        <p className="text-lg text-gray-600">
-          Turn processes into progress — with Aerle’s tech expertise.
+        <p className="text-3xl text-gray-600">
+          Turn processes into progress — with Aerele’s tech expertise.
         </p>
       </section>
 

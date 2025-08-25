@@ -41,114 +41,127 @@ export default function Page() {
         {/* Grey shadow "SERVICES" in background */}
         <h1 className="relative text-center text-6xl md:text-8xl font-bold z-10" style={{ color: "#032148" }}>
           <span className="absolute text-gray-800 text-[10rem] md:text-[12rem] opacity-10 -top-16 left-1/2 -translate-x-1/2 select-none tracking-widest">
-            SERVICES
+        SERVICES
           </span>
           Our Services
         </h1>
 
-
         {/* Blurred E-shaped background (soft, spread out, responsive) */}
         <div className="absolute left-1/4 top-[160px] w-[200px] ">
-          {/* Vertical spine of E */}
           <div className="w-[50px] left-0px h-[1570px] bg-gray-300 opacity-20 rounded-full  blur-[10px]"></div>
-
-          {/* Top bar */}
           <div className="absolute top-0 left-[-100px] w-[900px] h-[50px] bg-gray-300 opacity-25 rounded-full  blur-[10px]"></div>
-
-          {/* Middle bar */}
           <div className="absolute top-[750px] left-[-100px] w-[900px] h-[50px] bg-gray-300 opacity-25 rounded-full blur-[10px]"></div>
-
-          {/* Bottom bar */}
           <div className="absolute bottom-0 left-[-100px] w-[900px] h-[50px] bg-gray-300 opacity-25 rounded-full blur-[10px]"></div>
         </div>
-
-
-
-
-
 
         {/* Optional glowing circle */}
         <div className="absolute left-1/2 -translate-x-1/2 top-[160px] w-[300px] h-[300px] bg-blue-400 opacity-30 blur-[100px] rounded-full z-0"></div>
 
         {/* Service Grid */}
         <div className="relative mt-24 max-w-6xl mx-auto z-10 space-y-16">
-
           {/* Item 1 - Left */}
-          <div className="md:flex md:items-start md:justify-between">
-            <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
-              <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
-                <h4 className="text-2xl md:text-3xl font-semibold">ERPNext Customization</h4>
-                <p className="text-base md:text-lg mt-4 text-gray-600">
-                  <strong>Tailor your ERP, your way.</strong> <br />
-                  We specialize in deeply customizing ERPNext to align with your unique business workflows — from module enhancements to custom apps, reports, and integrations.
-                </p>
-                <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
-              </div>
-            </div>
+          <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="md:flex md:items-start md:justify-between"
+          >
+        <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
+          <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
+            <h4 className="text-2xl md:text-3xl font-semibold">ERPNext Customization</h4>
+            <p className="text-base md:text-lg mt-4 text-gray-600">
+          <strong>Tailor your ERP, your way.</strong> <br />
+          We specialize in deeply customizing ERPNext to align with your unique business workflows — from module enhancements to custom apps, reports, and integrations.
+            </p>
+            <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
           </div>
+        </div>
+          </motion.div>
 
           {/* Item 2 - Right */}
-          <div className="md:flex md:items-start md:justify-between md:flex-row-reverse">
-            <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
-              <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
-                <h4 className="text-2xl md:text-3xl font-semibold">Enterprise Portal Development</h4>
-                <p className="text-base md:text-lg mt-4 text-gray-600">
-                  <strong>Bringing data, processes, and users together.</strong> <br />
-                  We build user-friendly enterprise portals that connect teams, streamline operations, and offer intuitive interfaces over complex systems — all backed by Frappe.
-                </p>
-                <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
-              </div>
-            </div>
+          <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="md:flex md:items-start md:justify-between md:flex-row-reverse"
+          >
+        <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
+          <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
+            <h4 className="text-2xl md:text-3xl font-semibold">Enterprise Portal Development</h4>
+            <p className="text-base md:text-lg mt-4 text-gray-600">
+          <strong>Bringing data, processes, and users together.</strong> <br />
+          We build user-friendly enterprise portals that connect teams, streamline operations, and offer intuitive interfaces over complex systems — all backed by Frappe.
+            </p>
+            <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
           </div>
-          {/* Optional glowing circle */}
+        </div>
+          </motion.div>
           <div className="absolute left-1/4 -translate-x-1/2 top-[460px] w-[200px] h-[200px] bg-blue-400 opacity-30 blur-[100px] rounded-full z-0"></div>
+
           {/* Item 3 - Left */}
-          <div className="md:flex md:items-start md:justify-between">
-            <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
-              <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
-                <h4 className="text-2xl md:text-3xl font-semibold">Prototype & MVP Development</h4>
-                <p className="text-base md:text-lg mt-4 text-gray-600">
-                  <strong>Move fast. Validate faster.</strong> <br />
-                  Need to test an idea or launch a product fast? We help you build robust prototypes and MVPs using agile development practices and the power of Frappe.
-                </p>
-                <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
-              </div>
-            </div>
+          <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="md:flex md:items-start md:justify-between"
+          >
+        <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
+          <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
+            <h4 className="text-2xl md:text-3xl font-semibold">Prototype & MVP Development</h4>
+            <p className="text-base md:text-lg mt-4 text-gray-600">
+          <strong>Move fast. Validate faster.</strong> <br />
+          Need to test an idea or launch a product fast? We help you build robust prototypes and MVPs using agile development practices and the power of Frappe.
+            </p>
+            <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
           </div>
+        </div>
+          </motion.div>
           <div className="absolute right-1/4 -translate-x-1/2 top-[660px] w-[200px] h-[200px] bg-blue-400 opacity-30 blur-[100px] rounded-full z-0"></div>
+
           {/* Item 4 - Right */}
-          <div className="md:flex md:items-start md:justify-between md:flex-row-reverse">
-            <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
-              <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
-                <h4 className="text-2xl md:text-3xl font-semibold">DevOps & System Integration</h4>
-                <p className="text-base md:text-lg mt-4 text-gray-600">
-                  <strong>Seamless systems. Reliable delivery.</strong> <br />
-                  Our DevOps solutions ensure your ERP and enterprise apps are deployed, scaled, and monitored efficiently — with CI/CD pipelines, containerization, and third-party API integrations.
-                </p>
-                <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
-              </div>
-            </div>
+          <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="md:flex md:items-start md:justify-between md:flex-row-reverse"
+          >
+        <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
+          <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
+            <h4 className="text-2xl md:text-3xl font-semibold">DevOps & System Integration</h4>
+            <p className="text-base md:text-lg mt-4 text-gray-600">
+          <strong>Seamless systems. Reliable delivery.</strong> <br />
+          Our DevOps solutions ensure your ERP and enterprise apps are deployed, scaled, and monitored efficiently — with CI/CD pipelines, containerization, and third-party API integrations.
+            </p>
+            <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
           </div>
+        </div>
+          </motion.div>
           <div className="absolute left-1/4 -translate-x-1/2 top-[1000px] w-[200px] h-[200px] bg-blue-400 opacity-30 blur-[100px] rounded-full z-0"></div>
 
           {/* Item 5 - Left */}
-          <div className="md:flex md:items-start md:justify-between">
-            <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
-              <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
-                <h4 className="text-2xl md:text-3xl font-semibold">Technology Consulting</h4>
-                <p className="text-base md:text-lg mt-4 text-gray-600">
-                  <strong>Your business, powered by the right tech.</strong> <br />
-                  We guide businesses through technology choices, architecture decisions, and digital transformation strategies to ensure scalable growth with the right tools.
-                </p>
-                <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
-              </div>
-            </div>
+          <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="md:flex md:items-start md:justify-between"
+          >
+        <div className="relative md:w-1/2 text-left p-6 group transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-[0_4px_12px_rgba(191,219,254,0.6)]">
+          <div className="transition-all duration-300 group-hover:bg-white group-hover:rounded-xl p-4">
+            <h4 className="text-2xl md:text-3xl font-semibold">Technology Consulting</h4>
+            <p className="text-base md:text-lg mt-4 text-gray-600">
+          <strong>Your business, powered by the right tech.</strong> <br />
+          We guide businesses through technology choices, architecture decisions, and digital transformation strategies to ensure scalable growth with the right tools.
+            </p>
+            <div className="absolute left-0 bottom-0 w-full h-[8px] rounded-b-4xl opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white to-blue-500 transition-all duration-300"></div>
           </div>
-
         </div>
-
-
-
+          </motion.div>
+        </div>
       </section>
 
 
