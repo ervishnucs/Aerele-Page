@@ -3,7 +3,7 @@ import styles from './Footer.module.css';
 export default function Footer() {
   return (
     <footer className={styles.footerRoot}>
-      <section className={`${styles.contactSection} fluid-px`}>
+      <section id="contact" className={`${styles.contactSection} fluid-px`}>
         <div className={styles.contactHeader}>
           <h3 className={`${styles.contactTitle} fluid-h2`}>Get In Touch</h3>
           <p className={`${styles.contactSubtitle} fluid-body`}>

@@ -1,0 +1,217 @@
+/* Page */
+.pageRoot {
+  background: #ffffff;
+}
+
+/* Header */
+.headerSection {
+  padding: 2rem 1rem 0 1rem;
+}
+.headerInner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+.headerTitle {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+/* Collage */
+.collageSection {
+  padding: 2rem 1rem;
+  background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28rem;
+  margin-bottom: 8rem;
+}
+.collageStage {
+  max-width: 72rem;
+  margin: 0 auto;
+  position: relative;
+  height: 28rem;
+}
+.splitCard {
+  position: absolute;
+  top: 8%;
+  width: 14rem;
+  height: 22rem;
+  background: center/cover no-repeat, #cbd5e1;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.18);
+  transition: box-shadow 0.25s ease, filter 0.25s ease;
+}
+.splitCard:hover {
+  box-shadow: 0 28px 60px rgba(2, 6, 23, 0.28);
+  filter: saturate(1.1);
+}
+
+/* Team */
+.teamSection {
+  padding: 2rem 1rem 3rem 1rem;
+}
+.teamIntro {
+  max-width: 56rem;
+  margin: 0 auto 1.25rem auto;
+  text-align: center;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+.subtitle {
+  color: #475569;
+}
+.avatarRow {
+  max-width: 64rem;
+  margin: 1.25rem auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  row-gap: 3rem; /* compact spacing while avoiding overlap */
+}
+.avatarButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  padding-bottom: 1rem; /* reserve space for name badge */
+}
+.avatarShadow {
+  position: absolute;
+  bottom: -10px;
+  width: 70%;
+  height: 14px;
+  border-radius: 999px;
+  background: radial-gradient(closest-side, rgba(2, 6, 23, 0.25), transparent 70%);
+  filter: blur(3px);
+}
+.avatarImg {
+  width: 9rem;
+  height: 9rem;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+.avatarButton:hover .avatarImg {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 18px 48px rgba(2, 6, 23, 0.28);
+  filter: saturate(1.05);
+}
+.avatarName {
+  position: absolute;
+  bottom: -2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.5rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 16px rgba(2, 6, 23, 0.25);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.avatarButton:hover .avatarName {
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Modal */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+}
+.modalCard {
+  position: relative;
+  width: 34rem;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 24px 64px rgba(2, 6, 23, 0.35);
+}
+.modalAvatar {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+.modalName {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.modalRole {
+  margin: 0.25rem 0 0.5rem 0;
+  color: #334155;
+  font-weight: 600;
+}
+.modalBio {
+  color: #475569;
+}
+.modalActions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #0f172a;
+  background: #f1f5f9;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.socialLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.15);
+  background: #e2e8f0;
+}
+.linkedin { color: #0a66c2; }
+.github { color: #111827; }
+.modalClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .collageStage { height: 22rem; }
+  .unifiedCard { width: 26rem; height: 14rem; }
+  .splitCard { width: 10rem; height: 14rem; }
+  .avatarRow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+

@@ -48,10 +48,10 @@ export default function ServicePage() {
         }
           }
           .animate-slideInLeft {
-        animation: slideInLeft 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+        animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards;
           }
           .animate-slideInRight {
-        animation: slideInRight 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+        animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards;
           }
         `}</style>
       </section>
