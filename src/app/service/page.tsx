@@ -2,13 +2,13 @@ import Image from 'next/image';
 
 export default function ServicePage() {
   return (
-    <main className="min-h-screen bg-white py-12 px-4 md:px-16">
+    <main className="min-h-screen bg-white py-12 px-4 md:px-16 fluid-px">
       {/* Hero Section with Blurred Blue Cards and Overlay Text */}
       <section className="flex justify-center items-center mb-16">
         <div className="relative flex items-center h-[120px] w-full max-w-4xl justify-center">
           {/* Left: "Our" with slide-in from left */}
           <span
-        className="text-5xl md:text-7xl font-extrabold text-gray-700 mr-4 transition-all duration-700 ease-in-out animate-slideInLeft"
+        className="fluid-h1 font-extrabold text-gray-700 mr-4 transition-all duration-700 ease-in-out animate-slideInLeft"
         style={{
           opacity: 1,
         }}
@@ -17,7 +17,7 @@ export default function ServicePage() {
           </span>
           {/* Right: "Services" with slide-in from right */}
           <span
-        className="text-5xl md:text-7xl font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
+        className="fluid-h1 font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
         style={{
           opacity: 1,
         }}
@@ -57,7 +57,7 @@ export default function ServicePage() {
       </section>
       {/* Subtitle */}
       <section className="max-w-5xl mx-auto text-center mb-12">
-        <p className="text-3xl text-gray-600">
+        <p className="fluid-body text-gray-600">
           Turn processes into progress — with Aerele’s tech expertise.
         </p>
       </section>
@@ -75,12 +75,12 @@ export default function ServicePage() {
                     className="object-contain pointer-events-none select-none"
                     style={{ zIndex: 10 }}
                 />
-                <h2 className="text-3xl md:text-4xl font-bold text-black text-center relative z-10">
+                <h2 className="fluid-h2 font-bold text-black text-center relative z-10">
                     ERPNext Customization
                 </h2>
             </div>
             {/* Description */}
-            <p className="text-gray-700 mb-6 max-w-2xl text-center">
+            <p className="text-gray-700 mb-6 max-w-2xl text-center fluid-body">
                 Every business is unique, and so should be its ERP. We specialize in deep ERPNext customizations to ensure your workflows are fully supported—not the other way around. Whether you need custom modules, workflow automations, tailored reports, or integrations with third-party tools, we build solutions that adapt to your business.
             </p>
             {/* Features List */}
@@ -160,12 +160,12 @@ export default function ServicePage() {
               className="object-contain pointer-events-none select-none"
               style={{ zIndex: 10 }}
             />
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center relative z-10">
+            <h2 className="fluid-h2 font-bold text-black text-center relative z-10">
               Enterprise Portal Development
             </h2>
           </div>
           {/* Description */}
-          <p className="text-gray-700 mb-6 max-w-2xl text-center">
+          <p className="text-gray-700 mb-6 max-w-2xl text-center fluid-body">
             Large enterprises deal with scattered systems, complex data, and disconnected teams. We build enterprise portals that act as a unified access point — connecting employees, customers, and partners through intuitive, user-friendly interfaces.
           </p>
           {/* Features List */}
@@ -245,12 +245,12 @@ export default function ServicePage() {
               className="object-contain pointer-events-none select-none"
               style={{ zIndex: 10 }}
             />
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center relative z-10">
+            <h2 className="fluid-h2 font-bold text-black text-center relative z-10">
               Prototype & MVP Development
             </h2>
           </div>
           {/* Description */}
-          <p className="text-gray-700 mb-6 max-w-2xl text-center">
+          <p className="text-gray-700 mb-6 max-w-2xl text-center fluid-body">
             In today’s fast-paced market, speed is everything. Whether you’re a startup validating an idea or an enterprise testing a new product line, we help you build robust prototypes and MVPs that let you test, validate, and pivot quickly.
           </p>
           {/* Features List */}
@@ -330,12 +330,12 @@ export default function ServicePage() {
               className="object-contain pointer-events-none select-none"
               style={{ zIndex: 10 }}
             />
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center relative z-10">
+            <h2 className="fluid-h2 font-bold text-black text-center relative z-10">
               DevOps & System Integration
             </h2>
           </div>
           {/* Description */}
-          <p className="text-gray-700 mb-6 max-w-2xl text-center">
+          <p className="text-gray-700 mb-6 max-w-2xl text-center fluid-body">
             Modern enterprises rely on multiple apps, tools, and systems — and we ensure they work together smoothly. Our DevOps and integration services help you achieve scalability, reliability, and automation in your IT infrastructure.
           </p>
           {/* Features List */}
@@ -399,7 +399,7 @@ export default function ServicePage() {
               alt="DevOps Screenshot 2"
               width={380}
               height={240}
-              className="absolute top-10 left-16 rounded-xl shadow-2xl object-contain z-10 bg-white"
+              className="absolute top-10 left-16 rounded-2xl shadow-2xl object-contain z-10 bg-white"
               style={{ background: 'white' }}
             />
           </div>
@@ -419,12 +419,12 @@ export default function ServicePage() {
               className="object-contain pointer-events-none select-none"
               style={{ zIndex: 10 }}
             />
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center relative z-10">
+            <h2 className="fluid-h2 font-bold text-black text-center relative z-10">
               Technology Consulting
             </h2>
           </div>
           {/* Description */}
-          <p className="text-gray-700 mb-6 max-w-2xl text-center">
+          <p className="text-gray-700 mb-6 max-w-2xl text-center fluid-body">
             Choosing the right technology stack can make or break your growth. Our consulting services help you navigate the digital landscape — from evaluating ERPNext fitment to planning IT architecture and long-term tech strategy.
           </p>
           {/* Features List */}
@@ -471,7 +471,7 @@ export default function ServicePage() {
           <div className="relative w-[420px] h-[260px] max-w-full">
             {/* Back image (shifted up/left, behind) */}
             <Image
-              src="/assets/consult-2appl.png"
+              src="/assets/consult-2.png"
               alt="Technology Consulting Screenshot 1"
               width={340}
               height={220}
@@ -493,7 +493,7 @@ export default function ServicePage() {
 
       {/* Connecting ERPNext with Your Business Ecosystem */}
       <div className="w-full flex flex-col items-center mb-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-2">
+        <h2 className="fluid-h2 text-gray-800 text-center mb-2">
           Connecting ERPNext with Your Business Ecosystem
         </h2>
         <div className="relative w-[920px] h-30 mx-auto mb-8">
@@ -535,7 +535,7 @@ export default function ServicePage() {
             priority={true}
           />
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-center relative z-10">
+        <h2 className="fluid-h2 text-center relative z-10">
           <span className="text-blue-700">More Than Services</span>
           <span className="text-gray-700"> — A Trusted Partnership</span>
         </h2>
