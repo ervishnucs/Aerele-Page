@@ -43,7 +43,7 @@ export default function OurTeamPage() {
             id: "tm-3",
             name: "Mythili G",
             role: "Admin",
-            avatar: FALLBACK_AVATAR,
+            avatar: "/assets/mythili.png",
             linkedin: "https://www.linkedin.com/",
             github: "https://github.com/",
           },

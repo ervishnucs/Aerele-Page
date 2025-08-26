@@ -37,7 +37,7 @@ export default function Navbar() {
             className="h-10 w-auto"
           />
         </Link>
-        <span className="font-bold text-gray-700 hidden sm:inline-block fluid-h2">
+        <span className="hidden sm:inline-block fluid-h2" style={{ fontFamily:'outfit', fontWeight: 800, color: '#334155' }}>
           Aerele Technologies
         </span>
       </div>
