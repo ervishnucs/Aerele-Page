@@ -203,32 +203,10 @@ function Header() {
   return (
     <section className={styles.headerSection}>
       <div className={styles.headerInner}>
-        <div className="relative flex items-center justify-center h-[120px] w-full">
-          <span
-            className="fluid-h1 font-extrabold text-gray-700 mr-4 transition-all duration-700 ease-in-out animate-slideInLeft"
-            style={{ opacity: 1 }}
-          >
-            Our
-          </span>
-          <span
-            className="fluid-h1 font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
-            style={{ opacity: 1 }}
-          >
-            Team
-          </span>
+        <div className={styles.headerTitleRow}>
+          <span className={`fluid-h1 ${styles.headerWord} ${styles.wordLeft} ${styles.animateSlideInLeft}`}>Our</span>
+          <span className={`fluid-h1 ${styles.headerWord} ${styles.wordRight} ${styles.animateSlideInRight}`}>Team</span>
         </div>
-        <style>{`
-          @keyframes slideInLeft {
-            from { transform: translateX(-80px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-          }
-          @keyframes slideInRight {
-            from { transform: translateX(80px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-          }
-          .animate-slideInLeft { animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards; }
-          .animate-slideInRight { animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards; }
-        `}</style>
       </div>
     </section>
   );

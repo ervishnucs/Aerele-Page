@@ -9,7 +9,7 @@ export default function ERPNextPage() {
       <section className={styles.heroSection}>
         <div className={styles.heroCard}>
           <div>
-            <h1 className={`${styles.heroTitle} fluid-h1`}>Your Business. One Platform. <span style={{ fontWeight: 800 }}>ERPNext</span></h1>
+            <h1 className={`${styles.heroTitle} fluid-h1`}>Your Business. One Platform. <span className={styles.bold}>ERPNext</span></h1>
             <p className={`${styles.heroDesc} fluid-body`}>Simplify operations and accelerate growth.</p>
             <button className={styles.heroButton}>Book your consultation Now</button>
           </div>
@@ -71,7 +71,7 @@ export default function ERPNextPage() {
 
       {/* Logos of users */}
       <section className={styles.usersSection}>
-        <h3 className={`${styles.usersTitle} fluid-h2`}>Loved by users<br /><span style={{ fontWeight: 400, fontSize: '1rem' }}>Used by more than 10,000 companies across the world</span></h3>
+        <h3 className={`${styles.usersTitle} fluid-h2`}>Loved by users<br /><span className={styles.usersSubtitle}>Used by more than 10,000 companies across the world</span></h3>
         <div className={styles.usersLogos}>
           <Image src="/assets/erpnext-users.png" alt="ERPNext Users Logos" className={styles.usersImg} width={1000} height={300} />
         </div>
@@ -112,7 +112,7 @@ export default function ERPNextPage() {
         </div>
       </section>
 
-  
+      
     </main>
   );
 }

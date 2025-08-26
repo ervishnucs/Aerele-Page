@@ -21,15 +21,24 @@
   gap: 1rem;
   color: #fff;
   position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.heroCard:hover {
+  box-shadow: 0 16px 48px rgba(30,58,138,0.18);
+  transform: translateY(-2px);
 }
 .heroTitle {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
+.bold {
+  font-weight: 800;
+}
 .heroDesc {
   font-size: 1.1rem;
   margin-bottom: 1rem;
+  opacity: 0.95;
 }
 .heroButton {
   background: #fff;
@@ -39,11 +48,13 @@
   border-radius: 999px;
   box-shadow: 0 4px 16px rgba(30,58,138,0.12);
   border: none;
-  transition: background 0.2s;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 .heroButton:hover {
   background: #e0e7ff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(30,58,138,0.18);
 }
 .heroSvg {
   position: absolute;
@@ -55,17 +66,24 @@
   width: 100%;
   max-width: 800px;
   margin: 2rem auto;
+  padding: 0 1rem;
 }
 .sectionTitle {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
 }
 .sectionDesc {
-  color: #444;
-  text-align: center;
-  margin-bottom: 1rem;
+  color: #374151;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-size: 1rem;
+  max-width: 100%;
+  text-indent: 0;
+  padding-left: 0;
 }
 .featuresGrid {
   display: grid;
@@ -78,14 +96,22 @@
   box-shadow: 0 4px 16px rgba(30,58,138,0.08);
   border-top: 4px solid #032148;
   padding: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.featureCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(30,58,138,0.12);
 }
 .featureTitle {
   font-weight: 600;
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
 }
 .featureDesc {
-  color: #666;
+  color: #6b7280;
+  line-height: 1.6;
+  text-align: left;
 }
 .screenshots {
   width: 100%;
@@ -106,17 +132,28 @@
   box-shadow: 0 4px 16px rgba(30,58,138,0.08);
   width: 420px;
   max-width: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.screenshotImg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(30,58,138,0.12);
 }
 .usersSection {
   width: 100%;
   max-width: 900px;
   margin: 2rem auto;
+  padding: 0 1rem;
 }
 .usersTitle {
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+.usersSubtitle {
+  font-weight: 400;
+  font-size: 1rem;
 }
 .usersLogos {
   background: #fff;
@@ -134,12 +171,14 @@
   width: 100%;
   max-width: 900px;
   margin: 2rem auto;
+  padding: 0 1rem;
 }
 .aereleTitle {
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
 }
 .aereleGrid {
   display: grid;
@@ -152,14 +191,22 @@
   box-shadow: 0 4px 16px rgba(30,58,138,0.08);
   border-top: 4px solid #032148;
   padding: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.aereleCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(30,58,138,0.12);
 }
 .aereleCardTitle {
   font-weight: 600;
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
 }
 .aereleCardDesc {
-  color: #666;
+  color: #6b7280;
+  line-height: 1.6;
+  text-align: left;
 }
 .togetherSection {
   width: 100%;
@@ -198,7 +245,7 @@
   border: 1px solid #d1d5db;
   font-size: 1rem;
   outline: none;
-  transition: border 0.2s;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 .togetherInput:focus {
   border-color: #1e3a8a;
@@ -211,7 +258,7 @@
   border: 1px solid #d1d5db;
   font-size: 1rem;
   outline: none;
-  transition: border 0.2s;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 .togetherTextarea:focus {
   border-color: #1e3a8a;
@@ -226,11 +273,13 @@
   border-radius: 999px;
   box-shadow: 0 4px 16px rgba(30,58,138,0.12);
   border: none;
-  transition: background 0.2s;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 .togetherButton:hover {
   background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(30,58,138,0.18);
 }
 .togetherFooter {
   width: 100%;

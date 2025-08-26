@@ -1,138 +1,99 @@
 import Image from 'next/image';
+import styles from './service.module.css';
 
 export default function ServicePage() {
   return (
-    <main className="min-h-screen bg-white py-12 px-4 md:px-16 fluid-px">
+    <main className={styles.servicePage}>
       {/* Hero Section with Blurred Blue Cards and Overlay Text */}
-      <section className="flex justify-center items-center mb-16">
-        <div className="relative flex items-center h-[120px] w-full max-w-4xl justify-center">
+      <section className={styles.heroSection}>
+        <div className={styles.heroTitle}>
           {/* Left: "Our" with slide-in from left */}
-          <span
-        className="fluid-h1 font-extrabold text-gray-700 mr-4 transition-all duration-700 ease-in-out animate-slideInLeft"
-        style={{
-          opacity: 1,
-        }}
-          >
-        Our
+          <span className={styles.heroText}>
+            Our
           </span>
           {/* Right: "Services" with slide-in from right */}
-          <span
-        className="fluid-h1 font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
-        style={{
-          opacity: 1,
-        }}
-          >
-        Services
+          <span className={styles.heroTextRight}>
+            Services
           </span>
         </div>
-        {/* Animations */}
-        <style>{`
-          @keyframes slideInLeft {
-        from {
-          transform: translateX(-80px);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-          }
-          @keyframes slideInRight {
-        from {
-          transform: translateX(80px);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-          }
-          .animate-slideInLeft {
-        animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards;
-          }
-          .animate-slideInRight {
-        animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards;
-          }
-        `}</style>
       </section>
+
       {/* Subtitle */}
-      <section className="max-w-5xl mx-auto text-center mb-12">
-        <p className="fluid-body text-gray-600">
-          Turn processes into progress — with Aerele’s tech expertise.
+      <section className={styles.subtitleSection}>
+        <p className={styles.subtitleText}>
+          Turn processes into progress with Aerele's tech expertise.
         </p>
       </section>
 
       {/* ERPNext Customization Section */}
-      <section className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 mb-16 px-2">
+      <section className={styles.serviceSection}>
         {/* Left: Text Content */}
-        <div className="flex-1 flex flex-col items-center justify-center mx-auto">
-            {/* Title with brush image background */}
-            <div className="relative flex justify-center items-center mx-auto mb-4 h-[100px] w-full">
-                <Image
-                    src="/assets/erpnext-brush.png"
-                    alt=""
-                    fill
-                    className="object-contain pointer-events-none select-none"
-                    style={{ zIndex: 10 }}
-                />
-                <h2 className="fluid-h2 font-bold text-black text-center relative z-10">
-                    ERPNext Customization
-                </h2>
-            </div>
-            {/* Description */}
-            <p className="text-gray-700 mb-6 max-w-2xl text-center fluid-body">
-                Every business is unique, and so should be its ERP. We specialize in deep ERPNext customizations to ensure your workflows are fully supported—not the other way around. Whether you need custom modules, workflow automations, tailored reports, or integrations with third-party tools, we build solutions that adapt to your business.
-            </p>
-            {/* Features List */}
-            <ul className="space-y-4 w-full max-w-xl mx-auto">
-                {[
-                    {
-                        title: "Enhanced Modules",
-                        desc: "adapting ERPNext to fit your unique workflows"
-                    },
-                    {
-                        title: "Custom Apps",
-                        desc: "building solutions on Frappe tailored to your needs"
-                    },
-                    {
-                        title: "Smart Reports",
-                        desc: "dynamic dashboards for data-driven decisions"
-                    },
-                    {
-                        title: "Seamless Integrations",
-                        desc: "connecting ERPNext with eCommerce, CRMs, gateways & APIs"
-                    }
-                ].map((feature, idx) => (
-                    <li key={feature.title} className="flex items-start gap-3">
-                        {/* Icon image */}
-                        <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center">
-                            <Image
-                                src="/assets/point.png"
-                                alt="Feature Icon"
-                                width={24}
-                                height={24}
-                                className="object-contain"
-                            />
-                        </div>
-                        <div>
-                            <span className="font-bold text-blue-900">{feature.title}</span>
-                            <span className="block text-gray-700 text-sm"> – {feature.desc}</span>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+        <div className={styles.serviceContent}>
+          {/* Title with brush image background */}
+          <div className={styles.titleContainer}>
+            <Image
+              src="/assets/erpnext-brush.png"
+              alt=""
+              fill
+              className={styles.brushBackground}
+            />
+            <h2 className={styles.sectionTitle}>
+              ERPNext Customization
+            </h2>
+          </div>
+          {/* Description */}
+          <p className={styles.description}>
+            Every business is unique, and so should be its ERP. We specialize in deep ERPNext customizations to ensure your workflows are fully supported—not the other way around. Whether you need custom modules, workflow automations, tailored reports, or integrations with third-party tools, we build solutions that adapt to your business.
+          </p>
+          {/* Features List */}
+          <ul className={styles.featuresList}>
+            {[
+              {
+                title: "Enhanced Modules",
+                desc: "adapting ERPNext to fit your unique workflows"
+              },
+              {
+                title: "Custom Apps",
+                desc: "building solutions on Frappe tailored to your needs"
+              },
+              {
+                title: "Smart Reports",
+                desc: "dynamic dashboards for data-driven decisions"
+              },
+              {
+                title: "Seamless Integrations",
+                desc: "connecting ERPNext with eCommerce, CRMs, gateways & APIs"
+              }
+            ].map((feature, idx) => (
+              <li key={feature.title} className={styles.featureItem}>
+                {/* Icon image */}
+                <div className={styles.featureIcon}>
+                  <Image
+                    src="/assets/point.png"
+                    alt="Feature Icon"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
+                </div>
+                <div className={styles.featureContent}>
+                  <span className={styles.featureTitle}>{feature.title}</span>
+                  <span className={styles.featureDescription}> – {feature.desc}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
         {/* Right: Overlapping Images */}
-        <div className="flex-1 flex flex-col items-center gap-4">
-          <div className="relative w-[420px] h-[260px] max-w-full">
+        <div className={styles.imageSection}>
+          <div className={styles.imageContainer}>
             {/* Back image (shifted up/left, behind) */}
             <Image
               src="/assets/erp-cust1.png"
               alt="ERPNext Customization Screenshot 1"
               width={340}
               height={220}
-              className="absolute top-0 left-0 rounded-xl shadow-lg object-contain z-0 -translate-x-8 -translate-y-6 bg-white"
-              style={{ background: 'white' }}
+              className={styles.backImage}
             />
             {/* Front image (main, shifted down/right, in front) */}
             <Image
@@ -140,36 +101,34 @@ export default function ServicePage() {
               alt="ERPNext Customization Screenshot 2"
               width={380}
               height={240}
-              className="absolute top-10 left-16 rounded-xl shadow-2xl object-contain z-10 bg-white"
-              style={{ background: 'white' }}
+              className={styles.frontImage}
             />
           </div>
         </div>
       </section>
 
       {/* Enterprise Portal Development Section */}
-      <section className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 mb-16 px-2">
+      <section className={styles.serviceSection}>
         {/* Left: Text Content */}
-        <div className="flex-1 flex flex-col items-center justify-center mx-auto">
+        <div className={styles.serviceContent}>
           {/* Title with brush image background */}
-          <div className="relative flex justify-center items-center mx-auto mb-4 h-[100px] w-full">
+          <div className={styles.titleContainer}>
             <Image
               src="/assets/erpnext-brush.png"
               alt=""
               fill
-              className="object-contain pointer-events-none select-none"
-              style={{ zIndex: 10 }}
+              className={styles.brushBackground}
             />
-            <h2 className="fluid-h2 font-bold text-black text-center relative z-10">
+            <h2 className={styles.sectionTitle}>
               Enterprise Portal Development
             </h2>
           </div>
           {/* Description */}
-          <p className="text-gray-700 mb-6 max-w-2xl text-center fluid-body">
+          <p className={styles.description}>
             Large enterprises deal with scattered systems, complex data, and disconnected teams. We build enterprise portals that act as a unified access point — connecting employees, customers, and partners through intuitive, user-friendly interfaces.
           </p>
           {/* Features List */}
-          <ul className="space-y-4 w-full max-w-xl mx-auto">
+          <ul className={styles.featuresList}>
             {[
               {
                 title: "Unified Dashboards",
@@ -188,9 +147,9 @@ export default function ServicePage() {
                 desc: "secure, mobile-friendly, and future-ready"
               }
             ].map((feature, idx) => (
-              <li key={feature.title} className="flex items-start gap-3">
+              <li key={feature.title} className={styles.featureItem}>
                 {/* Icon image */}
-                <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center">
+                <div className={styles.featureIcon}>
                   <Image
                     src="/assets/point.png"
                     alt="Feature Icon"
@@ -199,25 +158,24 @@ export default function ServicePage() {
                     className="object-contain"
                   />
                 </div>
-                <div>
-                  <span className="font-bold text-blue-900">{feature.title}</span>
-                  <span className="block text-gray-700 text-sm"> – {feature.desc}</span>
+                <div className={styles.featureContent}>
+                  <span className={styles.featureTitle}>{feature.title}</span>
+                  <span className={styles.featureDescription}> – {feature.desc}</span>
                 </div>
               </li>
             ))}
           </ul>
         </div>
         {/* Right: Overlapping Images */}
-        <div className="flex-1 flex flex-col items-center gap-4">
-          <div className="relative w-[420px] h-[260px] max-w-full">
+        <div className={styles.imageSection}>
+          <div className={styles.imageContainer}>
             {/* Back image (shifted up/left, behind) */}
             <Image
               src="/assets/erp-portal-1.png"
               alt="Enterprise Portal Screenshot 1"
               width={340}
               height={220}
-              className="absolute top-0 left-0 rounded-xl shadow-lg object-contain z-0 -translate-x-8 -translate-y-6 bg-white"
-              style={{ background: 'white' }}
+              className={styles.backImage}
             />
             {/* Front image (main, shifted down/right, in front) */}
             <Image
@@ -225,36 +183,34 @@ export default function ServicePage() {
               alt="Enterprise Portal Screenshot 2"
               width={380}
               height={240}
-              className="absolute top-10 left-16 rounded-xl shadow-2xl object-contain z-10 bg-white"
-              style={{ background: 'white' }}
+              className={styles.frontImage}
             />
           </div>
         </div>
       </section>
 
       {/* Prototype & MVP Development Section */}
-      <section className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 mb-16 px-2">
+      <section className={styles.serviceSection}>
         {/* Left: Text Content */}
-        <div className="flex-1 flex flex-col items-center justify-center mx-auto">
+        <div className={styles.serviceContent}>
           {/* Title with brush image background */}
-          <div className="relative flex justify-center items-center mx-auto mb-4 h-[100px] w-full">
+          <div className={styles.titleContainer}>
             <Image
               src="/assets/erpnext-brush.png"
               alt=""
               fill
-              className="object-contain pointer-events-none select-none"
-              style={{ zIndex: 10 }}
+              className={styles.brushBackground}
             />
-            <h2 className="fluid-h2 font-bold text-black text-center relative z-10">
+            <h2 className={styles.sectionTitle}>
               Prototype & MVP Development
             </h2>
           </div>
           {/* Description */}
-          <p className="text-gray-700 mb-6 max-w-2xl text-center fluid-body">
-            In today’s fast-paced market, speed is everything. Whether you’re a startup validating an idea or an enterprise testing a new product line, we help you build robust prototypes and MVPs that let you test, validate, and pivot quickly.
+          <p className={styles.description}>
+            In today's fast-paced market, speed is everything. Whether you're a startup validating an idea or an enterprise testing a new product line, we help you build robust prototypes and MVPs that let you test, validate, and pivot quickly.
           </p>
           {/* Features List */}
-          <ul className="space-y-4 w-full max-w-xl mx-auto">
+          <ul className={styles.featuresList}>
             {[
               {
                 title: "Rapid Prototyping",
@@ -273,9 +229,9 @@ export default function ServicePage() {
                 desc: "MVPs designed to scale into full products"
               }
             ].map((feature, idx) => (
-              <li key={feature.title} className="flex items-start gap-3">
+              <li key={feature.title} className={styles.featureItem}>
                 {/* Blue triangle icon */}
-                <div className="w-7 h-7 flex-shrink-0 flex items-center justify-center">
+                <div className={styles.featureIcon}>
                   <Image
                     src="/assets/point.png"
                     alt="Feature Icon"
@@ -284,25 +240,24 @@ export default function ServicePage() {
                     className="object-contain"
                   />
                 </div>
-                <div>
-                  <span className="font-bold text-blue-900">{feature.title}</span>
-                  <span className="block text-gray-700 text-sm"> – {feature.desc}</span>
+                <div className={styles.featureContent}>
+                  <span className={styles.featureTitle}>{feature.title}</span>
+                  <span className={styles.featureDescription}> – {feature.desc}</span>
                 </div>
               </li>
             ))}
           </ul>
         </div>
         {/* Right: Overlapping Images */}
-        <div className="flex-1 flex flex-col items-center gap-4">
-          <div className="relative w-[420px] h-[260px] max-w-full">
+        <div className={styles.imageSection}>
+          <div className={styles.imageContainer}>
             {/* Back image (shifted up/left, behind) */}
             <Image
               src="/assets/mvp-1.png"
               alt="Prototype Screenshot 1"
               width={340}
               height={220}
-              className="absolute top-0 left-0 rounded-xl shadow-lg object-contain z-0 -translate-x-8 -translate-y-6 bg-white"
-              style={{ background: 'white' }}
+              className={styles.backImage}
             />
             {/* Front image (main, shifted down/right, in front) */}
             <Image
@@ -310,36 +265,34 @@ export default function ServicePage() {
               alt="Prototype Screenshot 2"
               width={380}
               height={240}
-              className="absolute top-10 left-16 rounded-xl shadow-2xl object-contain z-10 bg-white"
-              style={{ background: 'white' }}
+              className={styles.frontImage}
             />
           </div>
         </div>
       </section>
 
       {/* DevOps & System Integration Section */}
-      <section className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 mb-16 px-2">
+      <section className={styles.serviceSection}>
         {/* Left: Text Content */}
-        <div className="flex-1 flex flex-col items-center justify-center mx-auto">
+        <div className={styles.serviceContent}>
           {/* Title with brush image background */}
-          <div className="relative flex justify-center items-center mx-auto mb-4 h-[100px] w-full">
+          <div className={styles.titleContainer}>
             <Image
               src="/assets/erpnext-brush.png"
               alt=""
               fill
-              className="object-contain pointer-events-none select-none"
-              style={{ zIndex: 10 }}
+              className={styles.brushBackground}
             />
-            <h2 className="fluid-h2 font-bold text-black text-center relative z-10">
+            <h2 className={styles.sectionTitle}>
               DevOps & System Integration
             </h2>
           </div>
           {/* Description */}
-          <p className="text-gray-700 mb-6 max-w-2xl text-center fluid-body">
+          <p className={styles.description}>
             Modern enterprises rely on multiple apps, tools, and systems — and we ensure they work together smoothly. Our DevOps and integration services help you achieve scalability, reliability, and automation in your IT infrastructure.
           </p>
           {/* Features List */}
-          <ul className="space-y-6 w-full max-w-xl mx-auto">
+          <ul className={styles.featuresList}>
             {[
               {
                 title: "CI/CD Pipelines",
@@ -358,40 +311,35 @@ export default function ServicePage() {
                 desc: "reliable uptime & optimized performance"
               }
             ].map((feature, idx) => (
-              <li key={feature.title} className="flex flex-col gap-1">
-                <div className="flex items-center gap-3">
-                  {/* Blue gradient triangle icon */}
-                  <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
-                    <Image
-                      src="/assets/point.png"
-                      alt="Feature Icon"
-                      width={32}
-                      height={32}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div>
-                    <span className="font-bold text-blue-900">{feature.title}</span>
-                    <span className="text-gray-900"> – {feature.desc}</span>
-                  </div>
+              <li key={feature.title} className={styles.featureItem}>
+                {/* Blue gradient triangle icon */}
+                <div className={styles.featureIcon}>
+                  <Image
+                    src="/assets/point.png"
+                    alt="Feature Icon"
+                    width={32}
+                    height={32}
+                    className="object-contain"
+                  />
                 </div>
-                {/* Bottom line */}
-                <div className="ml-10 mt-1 h-1 w-3/4 bg-gray-300 rounded-full" />
+                <div className={styles.featureContent}>
+                  <span className={styles.featureTitle}>{feature.title}</span>
+                  <span className={styles.featureDescription}> – {feature.desc}</span>
+                </div>
               </li>
             ))}
           </ul>
         </div>
         {/* Right: Overlapping Images */}
-        <div className="flex-1 flex flex-col items-center gap-4">
-          <div className="relative w-[420px] h-[260px] max-w-full">
+        <div className={styles.imageSection}>
+          <div className={styles.imageContainer}>
             {/* Back image (shifted up/left, behind) */}
             <Image
               src="/assets/devops-2.png"
               alt="DevOps Screenshot 1"
               width={340}
               height={220}
-              className="absolute top-0 left-0 rounded-xl shadow-lg object-contain z-0 -translate-x-8 -translate-y-6 bg-white"
-              style={{ background: 'white' }}
+              className={styles.backImage}
             />
             {/* Front image (main, shifted down/right, in front) */}
             <Image
@@ -399,36 +347,34 @@ export default function ServicePage() {
               alt="DevOps Screenshot 2"
               width={380}
               height={240}
-              className="absolute top-10 left-16 rounded-2xl shadow-2xl object-contain z-10 bg-white"
-              style={{ background: 'white' }}
+              className={styles.frontImage}
             />
           </div>
         </div>
       </section>
 
       {/* Technology Consulting Section */}
-      <section className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 mb-16 px-2">
+      <section className={styles.serviceSection}>
         {/* Left: Text Content */}
-        <div className="flex-1 flex flex-col items-center justify-center mx-auto">
+        <div className={styles.serviceContent}>
           {/* Title with brush image background */}
-          <div className="relative flex justify-center items-center mx-auto mb-4 h-[80px] w-full">
+          <div className={styles.titleContainer}>
             <Image
               src="/assets/erpnext-brush.png"
               alt=""
               fill
-              className="object-contain pointer-events-none select-none"
-              style={{ zIndex: 10 }}
+              className={styles.brushBackground}
             />
-            <h2 className="fluid-h2 font-bold text-black text-center relative z-10">
+            <h2 className={styles.sectionTitle}>
               Technology Consulting
             </h2>
           </div>
           {/* Description */}
-          <p className="text-gray-700 mb-6 max-w-2xl text-center fluid-body">
+          <p className={styles.description}>
             Choosing the right technology stack can make or break your growth. Our consulting services help you navigate the digital landscape — from evaluating ERPNext fitment to planning IT architecture and long-term tech strategy.
           </p>
           {/* Features List */}
-          <ul className="space-y-6 w-full max-w-xl mx-auto">
+          <ul className={styles.featuresList}>
             {[
               {
                 title: "Tech Assessments",
@@ -447,9 +393,9 @@ export default function ServicePage() {
                 desc: "strategies for automation & transformation"
               }
             ].map((feature, idx) => (
-              <li key={feature.title} className="flex items-center gap-3">
+              <li key={feature.title} className={styles.featureItem}>
                 {/* Blue gradient triangle icon */}
-                <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
+                <div className={styles.featureIcon}>
                   <Image
                     src="/assets/point.png"
                     alt="Feature Icon"
@@ -458,25 +404,24 @@ export default function ServicePage() {
                     className="object-contain"
                   />
                 </div>
-                <div>
-                  <span className="font-bold text-blue-900">{feature.title}</span>
-                  <span className="block text-gray-700 text-sm"> – {feature.desc}</span>
+                <div className={styles.featureContent}>
+                  <span className={styles.featureTitle}>{feature.title}</span>
+                  <span className={styles.featureDescription}> – {feature.desc}</span>
                 </div>
               </li>
             ))}
           </ul>
         </div>
         {/* Right: Overlapping Images */}
-        <div className="flex-1 flex flex-col items-center gap-4">
-          <div className="relative w-[420px] h-[260px] max-w-full">
+        <div className={styles.imageSection}>
+          <div className={styles.imageContainer}>
             {/* Back image (shifted up/left, behind) */}
             <Image
               src="/assets/consult-2.png"
               alt="Technology Consulting Screenshot 1"
               width={340}
               height={220}
-              className="absolute top-0 left-0 rounded-xl shadow-lg object-contain z-0 -translate-x-8 -translate-y-6 bg-white"
-              style={{ background: 'white' }}
+              className={styles.backImage}
             />
             {/* Front image (main, shifted down/right, in front) */}
             <Image
@@ -484,19 +429,18 @@ export default function ServicePage() {
               alt="Technology Consulting Screenshot 2"
               width={380}
               height={240}
-              className="absolute top-10 left-16 rounded-xl shadow-2xl object-contain z-10 bg-white"
-              style={{ background: 'white' }}
+              className={styles.frontImage}
             />
           </div>
         </div>
       </section>
 
       {/* Connecting ERPNext with Your Business Ecosystem */}
-      <div className="w-full flex flex-col items-center mb-20">
-        <h2 className="fluid-h2 text-gray-800 text-center mb-2">
+      <div className={styles.ecosystemSection}>
+        <h2 className={styles.ecosystemTitle}>
           Connecting ERPNext with Your Business Ecosystem
         </h2>
-        <div className="relative w-[920px] h-30 mx-auto mb-8">
+        <div className={styles.ecosystemBrush}>
           <Image
             src="/assets/erpnext-connect-brush.png"
             alt="ERPNext Connect Brush"
@@ -505,81 +449,73 @@ export default function ServicePage() {
           />
         </div>
       </div>
+
       {/* Industry veterans Trust us section */}
-      <section className="max-w-7xl mx-auto mb-20 px-2">
-        <div className="w-full">
-        <div className="flex flex-wrap justify-center items-center gap-8 py-4">
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833ef03ab58b_loreal.png?d=395x278" alt="loreal logo" width={170} height={95} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc92ec17499_home_icon_walmart.png?d=288x190" alt="walmart logo" width={144} height={95} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc8d799faf3_home_icon_asian_paints2.png?d=222x198" alt="asian paints logo" width={107} height={95} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc84534cce0_home_icon_aditya_birla_group.png?d=222x190" alt="aditya birla logo" width={96} height={95} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/676e48b78b746_hp.png?d=200x200" alt="Hindustan Petroleum logo" width={111} height={95} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/687096c62be4a_zydus.png?d=215x214" alt="Zydus logo" width={111} height={95} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc8e3873ff1_home_icon_wipro2.png?d=222x190" alt="Wipro logo" width={111} height={95} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833ee5e70d03_amazone.png?d=395x294" alt="amazon logo" width={146} height={95} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833eea57ee44_flipkart.png?d=395x306" alt="flipkart logo" width={135} height={95} />
+      <section className={styles.trustSection}>
+        <div className={styles.trustLogos}>
+          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833ef03ab58b_loreal.png?d=395x278" alt="loreal logo" className={styles.trustLogo} />
+          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc92ec17499_home_icon_walmart.png?d=288x190" alt="walmart logo" className={styles.trustLogo} />
+          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc8d799faf3_home_icon_asian_paints2.png?d=222x198" alt="asian paints logo" className={styles.trustLogo} />
+          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc84534cce0_home_icon_aditya_birla_group.png?d=222x190" alt="aditya birla logo" className={styles.trustLogo} />
+          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/676e48b78b746_hp.png?d=200x200" alt="Hindustan Petroleum logo" className={styles.trustLogo} />
+          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/687096c62be4a_zydus.png?d=215x214" alt="Zydus logo" className={styles.trustLogo} />
+          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc8e3873ff1_home_icon_wipro2.png?d=222x190" alt="Wipro logo" className={styles.trustLogo} />
+          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833ee5e70d03_amazone.png?d=395x294" alt="amazon logo" className={styles.trustLogo} />
+          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833eea57ee44_flipkart.png?d=395x306" alt="flipkart logo" className={styles.trustLogo} />
         </div>
+      </section>
+
+      {/* New: Trusted Partnership Section */}
+      <section className={styles.partnershipSection}>
+        <div className={styles.partnershipHeader}>
+          {/* Large handshake image behind heading */}
+          <div className={styles.handshakeBackground}>
+            <Image
+              src="/assets/handshake-line.png"
+              alt="Handshake background"
+              fill
+              className="object-contain opacity-100"
+              priority={true}
+            />
+          </div>
+          <h2 className={styles.partnershipTitle}>
+            <span className={styles.partnershipTitleBlue}>More Than Services</span>
+            <span className={styles.partnershipTitleGray}> — A Trusted Partnership</span>
+          </h2>
         </div>
-     
-    </section>
-    {/* New: Trusted Partnership Section */}
-    <section className="max-w-6xl mx-auto mb-20 px-2">
-      <div className="relative flex flex-col items-center justify-center" style={{ minHeight: 230 }}>
-        {/* Large handshake image behind heading */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[230px] z-0 pointer-events-none select-none flex items-center justify-center">
-          <Image
-            src="/assets/handshake-line.png"
-            alt="Handshake background"
-            fill
-            className="object-contain opacity-100"
-            priority={true}
-          />
-        </div>
-        <h2 className="fluid-h2 text-center relative z-10">
-          <span className="text-blue-700">More Than Services</span>
-          <span className="text-gray-700"> — A Trusted Partnership</span>
-        </h2>
         
-      </div>
-      <div className="flex flex-col items-center">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 w-full mb-12 justify-items-center">
-          {/* Card 1 */}
-          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-8 flex items-center justify-between min-h-[140px] max-w-[320px] mx-auto"
-               style={{ boxShadow: '0 8px 24px -8px #3b82f633' }}>
-            <div className="text-left font-semibold text-gray-800 text-lg">Domain-Driven<br />Custom Solutions</div>
-            <Image src="/assets/domain-driven.png" alt="" width={80} height={80} />
+        <div className={styles.partnershipCards}>
+          <div className={styles.cardsGrid}>
+            {/* Card 1 */}
+            <div className={styles.partnershipCard}>
+              <div className={styles.cardText}>Domain-Driven<br />Custom Solutions</div>
+              <Image src="/assets/domain-driven.png" alt="" width={80} height={80} className={styles.cardIcon} />
+            </div>
+            {/* Card 2 */}
+            <div className={styles.partnershipCard}>
+              <div className={styles.cardText}>Proven Across<br />Industries</div>
+              <Image src="/assets/proven-industries.png" alt="" width={80} height={80} className={styles.cardIcon} />
+            </div>
+            {/* Card 3 */}
+            <div className={styles.partnershipCard}>
+              <div className={styles.cardText}>Transparent<br />Communication</div>
+              <Image src="/assets/transparent-comm.png" alt="" width={80} height={80} className={styles.cardIcon} />
+            </div>
           </div>
-          {/* Card 2 */}
-          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-8 flex items-center justify-between min-h-[140px] max-w-[320px] mx-auto"
-               style={{ boxShadow: '0 8px 24px -8px #3b82f633' }}>
-            <div className="text-left font-semibold text-gray-800 text-lg">Proven Across<br />Industries</div>
-            <Image src="/assets/proven-industries.png" alt="" width={80} height={80} />
-          </div>
-          {/* Card 3 */}
-          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-8 flex items-center justify-between min-h-[140px] max-w-[320px] mx-auto"
-               style={{ boxShadow: '0 8px 24px -8px #3b82f633' }}>
-            <div className="text-left font-semibold text-gray-800 text-lg">Transparent<br />Communication</div>
-            <Image src="/assets/transparent-comm.png" alt="" width={80} height={80} />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 w-full justify-items-center">
-          {/* Card 4 */}
-          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-8 flex items-center justify-between min-h-[140px] max-w-[320px] mx-auto"
-               style={{ boxShadow: '0 8px 24px -8px #3b82f633' }}>
-            <div className="text-left font-semibold text-gray-800 text-lg">Agile &<br />Responsive Team</div>
-            <Image src="/assets/agile-team.png" alt="" width={80} height={80} />
-          </div>
-          {/* Card 5 */}
-          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-8 flex items-center justify-between min-h-[140px] max-w-[320px] mx-auto"
-               style={{ boxShadow: '0 8px 24px -8px #3b82f633' }}>
-            <div className="text-left font-semibold text-gray-800 text-lg">Focused on ROI<br />and Scalability</div>
-            <Image src="/assets/roi-scalability.png" alt="" width={80} height={80} />
+          <div className={styles.cardsGridBottom}>
+            {/* Card 4 */}
+            <div className={styles.partnershipCard}>
+              <div className={styles.cardText}>Agile &<br />Responsive Team</div>
+              <Image src="/assets/agile-team.png" alt="" width={80} height={80} className={styles.cardIcon} />
+            </div>
+            {/* Card 5 */}
+            <div className={styles.partnershipCard}>
+              <div className={styles.cardText}>Focused on ROI<br />and Scalability</div>
+              <Image src="/assets/roi-scalability.png" alt="" width={80} height={80} className={styles.cardIcon} />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-
+      </section>
     </main>
   );
 }
