@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import './HeroSection.css'
 
 export default function HeroSection() {
   const [showRocket, setShowRocket] = useState(true)
@@ -26,14 +27,14 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full h-[700px] flex items-start justify-center bg-white px-6 md:px-24 pt-12 overflow-hidden fluid-px">
+    <section className="hero-section">
 
       {/* Paper background fades out with rocket */}
       <motion.div
         initial={{ opacity: 50 }}
         animate={{ opacity: showRocket ? 50 : 0 }}
         transition={{ duration: 1 }}
-        className="absolute inset-0 z-10"
+        className="paper-background"
       >
         <Image
           src="/assets/paper.png"
@@ -62,8 +63,7 @@ export default function HeroSection() {
             scale: 0.6,
           }}
           transition={{ duration: 2, ease: 'easeInOut' }}
-          className="absolute w-[700px] z-20"
-          style={{ left: '50%', top: '50%', transform: 'scaleX(-1) translate(-50%, -50%)' }}
+          className="rocket-animation"
         />
       )}
 
@@ -90,8 +90,7 @@ export default function HeroSection() {
               ease: 'easeInOut',
               onComplete: () => setShowText(true),
             }}
-            className="absolute z-30 w-[200px]"
-            style={{ left: '60%', top: '60%' }}
+            className="plane-animation"
           >
             <Image
               src="/assets/plane.png"
@@ -108,7 +107,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
-            className="absolute top-0 left-[320px] z-20 pointer-events-none"
+            className="cloud-background"
           >
             <Image
               src="/assets/cloud.png"
@@ -122,14 +121,14 @@ export default function HeroSection() {
       )}
 
       {/* Text Section */}
-      <div className="relative z-40 mt-12 text-left">
-        <h1 className="fluid-h1 font-bold leading-tight text-black">
+      <div className="text-section">
+        <h1 className="hero-title">
           Your Dream,<br />Our Commitment!
         </h1>
 
         {showText && (
           <motion.div
-            className="mt-4 text-gray-700 fluid-body space-y-1 font-medium font-[Sanchez]"
+            className="hero-description"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}

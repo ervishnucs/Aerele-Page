@@ -26,30 +26,32 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="w-full flex items-center justify-between px-8 py-4 fixed top-0 left-0 z-50 bg-white shadow">
+    <nav className="w-full flex items-center justify-between px-6 py-3 fixed top-0 left-0 z-50 bg-white shadow">
       <div className="flex items-center gap-2">
-        <Link href="/" onClick={closeMenu}>
+        <Link href="/" prefetch onClick={closeMenu}>
           <Image
             src="/assets/logo.png"
             alt="Aerele Logo"
-            width={48}
-            height={48}
-            className="h-10 w-auto"
+            width={40}
+            height={40}
+            className="h-8 w-auto"
+            priority
           />
         </Link>
-        <span className="hidden sm:inline-block fluid-h2" style={{ fontFamily:'outfit', fontWeight: 800, color: '#334155' }}>
-          Aerele Technologies
+        <span className="hidden sm:inline-block fluid-h2 text-4xl" style={{ color: '#334155' }}>
+          𝐀𝐞𝐫𝐞𝐥𝐞 𝐓𝐞𝐜𝐡𝐧𝐨𝐥𝐨𝐠𝐢𝐞𝐬
         </span>
       </div>
 
       {/* Desktop Links (visible from >=640px) */}
-      <ul className="relative gap-6 items-center font-medium hidden sm:flex">
+      <ul className="relative gap-4 items-center font-medium text-sm hidden sm:flex">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (
             <li key={item.href} className="relative">
               <Link
                 href={item.href}
+                prefetch
                 className={`pb-1 transition-colors ${
                   isActive ? 'text-black' : 'text-gray-700 hover:text-blue-600'
                 }`}
@@ -67,8 +69,8 @@ export default function Navbar() {
           );
         })}
         <li>
-          <Link href="#contact">
-            <button className="ml-2 px-4 py-2 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all">
+          <Link href="#contact" prefetch>
+            <button className="ml-2 px-3 py-1.5 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all text-sm">
               Contact us
             </button>
           </Link>
@@ -104,6 +106,7 @@ export default function Navbar() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
+                      prefetch
                       onClick={closeMenu}
                       className={`block w-full py-2 ${
                         isActive ? 'text-black' : 'text-gray-700 hover:text-blue-600'

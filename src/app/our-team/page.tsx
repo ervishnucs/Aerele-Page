@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./team.module.css";
+import CollageAnimation from '@/components/CollageAnimation'
 
 type TeamMember = {
   id: string;
@@ -15,7 +16,6 @@ type TeamMember = {
 
 
 export default function OurTeamPage() {
-  const [isUnified, setIsUnified] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
   const FALLBACK_AVATAR = "/assets/erpnext-users.png";
 
@@ -84,66 +84,16 @@ export default function OurTeamPage() {
     []
   );
 
-  // Collage images (replace with your four slices later)
-  const splitImages = useMemo(
-    () => [
-      "/assets/erp-portal-1.png",
-      "/assets/erp-portal-2.png",
-      "/assets/erp-dashboard.png",
-      "/assets/erp-dashboard-1.png",
-    ],
-    []
-  );
-  // Poses for separated vs unified state
-  const separated = useMemo(
-    () => [
-      { x: -300, y: -10, rotate: -8, scale: 1 },
-      { x: -110, y: 0, rotate: 8, scale: 1 },
-      { x: 110, y: 20, rotate: -4, scale: 1 },
-      { x: 300, y: -5, rotate: 4, scale: 1 },
-    ],
-    []
-  );
-  const unified = useMemo(
-    () => [
-      { x: -180, y: 0, rotate: 0, scale: 1 },
-      { x: -60, y: 0, rotate: 0, scale: 1 },
-      { x: 60, y: 0, rotate: 0, scale: 1 },
-      { x: 180, y: 0, rotate: 0, scale: 1 },
-    ],
-    []
-  );
+  
+ 
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsUnified((prev) => !prev);
-    }, 2500); // 2s transition + 0.5s pause
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+ 
 
   return (
     <div className={styles.pageRoot}>
       <Header />
-
-      <section className={styles.collageSection}>
-        <div className={styles.collageStage}>
-          {/* Four slices that animate into one combined photo */}
-          {splitImages.map((img, i) => (
-            <SplitCard
-              key={img}
-              from={separated[i]}
-              to={unified[i]}
-              delay={0.05 * i}
-              index={i}
-              isUnified={isUnified}
-              image={img}
-            />
-          ))}
-        </div>
-      </section>
-
+      <CollageAnimation />    
+      <div style={{ height: "80px" }} />
       <section className={styles.teamSection}>
         <div className={styles.teamIntro}>
           <motion.h2
@@ -192,8 +142,8 @@ export default function OurTeamPage() {
             key={activeId}
             member={team.find((t) => t.id === activeId)!}
             onClose={() => setActiveId(null)}
-          />)
-        }
+          />
+        )}
       </AnimatePresence>
     </div>
   );
@@ -203,40 +153,37 @@ function Header() {
   return (
     <section className={styles.headerSection}>
       <div className={styles.headerInner}>
-        <div className={styles.headerTitleRow}>
-          <span className={`fluid-h1 ${styles.headerWord} ${styles.wordLeft} ${styles.animateSlideInLeft}`}>Our</span>
-          <span className={`fluid-h1 ${styles.headerWord} ${styles.wordRight} ${styles.animateSlideInRight}`}>Team</span>
+        <div className="relative flex items-center justify-center h-[120px] w-full">
+          <span
+            className="fluid-h1 font-extrabold text-gray-700 mr-4 transition-all duration-700 ease-in-out animate-slideInLeft"
+            style={{ opacity: 1 }}
+          >
+            Our
+          </span>
+          <span
+            className="fluid-h1 font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
+            style={{ opacity: 1 }}
+          >
+            Team
+          </span>
         </div>
+        <style>{`
+          @keyframes slideInLeft {
+            from { transform: translateX(-80px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+          }
+          @keyframes slideInRight {
+            from { transform: translateX(80px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+          }
+          .animate-slideInLeft { animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards; }
+          .animate-slideInRight { animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards; }
+        `}</style>
       </div>
     </section>
   );
 }
 
-function SplitCard({
-  from,
-  to,
-  delay,
-  index,
-  isUnified,
-  image,
-}: {
-  from: any;
-  to: any;
-  delay: number;
-  index: number;
-  isUnified: boolean;
-  image: string;
-}) {
-  return (
-    <motion.div
-      initial={from}
-      animate={isUnified ? to : from}
-      transition={{ duration: 2, delay, ease: "easeInOut" }}
-      className={styles.splitCard}
-      style={{ backgroundImage: `url(${image})`, zIndex: isUnified ? 0 : 10 - index }}
-    />
-  );
-}
 
 function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => void }) {
   return (
@@ -294,5 +241,3 @@ function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => v
     </motion.div>
   );
 }
-
-

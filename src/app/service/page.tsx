@@ -453,15 +453,15 @@ export default function ServicePage() {
       {/* Industry veterans Trust us section */}
       <section className={styles.trustSection}>
         <div className={styles.trustLogos}>
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833ef03ab58b_loreal.png?d=395x278" alt="loreal logo" className={styles.trustLogo} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc92ec17499_home_icon_walmart.png?d=288x190" alt="walmart logo" className={styles.trustLogo} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc8d799faf3_home_icon_asian_paints2.png?d=222x198" alt="asian paints logo" className={styles.trustLogo} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc84534cce0_home_icon_aditya_birla_group.png?d=222x190" alt="aditya birla logo" className={styles.trustLogo} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/676e48b78b746_hp.png?d=200x200" alt="Hindustan Petroleum logo" className={styles.trustLogo} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/687096c62be4a_zydus.png?d=215x214" alt="Zydus logo" className={styles.trustLogo} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc8e3873ff1_home_icon_wipro2.png?d=222x190" alt="Wipro logo" className={styles.trustLogo} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833ee5e70d03_amazone.png?d=395x294" alt="amazon logo" className={styles.trustLogo} />
-          <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833eea57ee44_flipkart.png?d=395x306" alt="flipkart logo" className={styles.trustLogo} />
+          <Image src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833ef03ab58b_loreal.png?d=395x278" alt="loreal logo" width={170} height={95} className={styles.trustLogo} loading="lazy" />
+          <Image src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc92ec17499_home_icon_walmart.png?d=288x190" alt="walmart logo" width={144} height={95} className={styles.trustLogo} loading="lazy" />
+          <Image src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc8d799faf3_home_icon_asian_paints2.png?d=222x198" alt="asian paints logo" width={107} height={95} className={styles.trustLogo} loading="lazy" />
+          <Image src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc84534cce0_home_icon_aditya_birla_group.png?d=222x190" alt="aditya birla logo" width={96} height={95} className={styles.trustLogo} loading="lazy" />
+          <Image src="https://d8it4huxumps7.cloudfront.net/uploads/images/676e48b78b746_hp.png?d=200x200" alt="Hindustan Petroleum logo" width={111} height={95} className={styles.trustLogo} loading="lazy" />
+          <Image src="https://d8it4huxumps7.cloudfront.net/uploads/images/687096c62be4a_zydus.png?d=215x214" alt="Zydus logo" width={111} height={95} className={styles.trustLogo} loading="lazy" />
+          <Image src="https://d8it4huxumps7.cloudfront.net/uploads/images/65cc8e3873ff1_home_icon_wipro2.png?d=222x190" alt="Wipro logo" width={111} height={95} className={styles.trustLogo} loading="lazy" />
+          <Image src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833ee5e70d03_amazone.png?d=395x294" alt="amazon logo" width={146} height={95} className={styles.trustLogo} loading="lazy" />
+          <Image src="https://d8it4huxumps7.cloudfront.net/uploads/images/6833eea57ee44_flipkart.png?d=395x306" alt="flipkart logo" width={135} height={95} className={styles.trustLogo} loading="lazy" />
         </div>
       </section>
 

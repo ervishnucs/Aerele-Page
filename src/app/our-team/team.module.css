@@ -1,6 +1,16 @@
 /* Page */
 .pageRoot {
   background: #ffffff;
+ .modalBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  box-sizing: border-box;
+ }
 }
 
 /* Header */
@@ -77,26 +87,41 @@
 }
 .splitCard:hover {
   box-shadow: 0 28px 60px rgba(2, 6, 23, 0.28);
-  filter: saturate(1.1);
-}
-
-/* Team */
-.teamSection {
-  padding: 2rem 1rem 3rem 1rem;
-}
-.teamIntro {
-  max-width: 56rem;
-  margin: 0 auto 1.25rem auto;
-  text-align: center;
-}
-.title {
+    position: relative;
+    width: 36rem;
+    max-width: 98vw;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 2rem 2rem 1.5rem 2rem;
+    box-shadow: 0 8px 32px rgba(2, 6, 23, 0.45), 0 0 0 2px #e0e7ef;
+    border: 1px solid #e0e7ef;
+    overflow: hidden;
   font-size: 2rem;
   font-weight: 800;
   color: #0f172a;
   margin: 0 0 0.5rem 0;
 }
+.teamIntro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
 .subtitle {
   color: #475569;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 .avatarRow {
   max-width: 64rem;
@@ -163,34 +188,50 @@
   inset: 0;
   background: rgba(2, 6, 23, 0.45);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 1rem;
-  z-index: 50;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  z-index: 100;
 }
 .modalCard {
   position: relative;
-  width: 34rem;
-  max-width: 100%;
+  width: 36rem;
+  max-width: 98vw;
+  min-width: 320px;
   display: grid;
   grid-template-columns: 7rem 1fr;
-  gap: 1rem;
-  background: #ffffff;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 24px 64px rgba(2, 6, 23, 0.35);
+  gap: 1.5rem;
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 2rem 2rem 1.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(2, 6, 23, 0.45), 0 0 0 2px #e0e7ef;
+  border: 1px solid #e0e7ef;
 }
 .modalAvatar {
   width: 7rem;
   height: 7rem;
   object-fit: cover;
   border-radius: 0.75rem;
+    margin-bottom: 1rem;
 }
 .modalName {
   margin: 0;
   font-size: 1.125rem;
   font-weight: 700;
   color: #0f172a;
+}
+/* Remove broken lines above. Add correct block below. */
+
+.modalBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  box-sizing: border-box;
 }
 .modalRole {
   margin: 0.25rem 0 0.5rem 0;
