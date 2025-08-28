@@ -1,80 +1,65 @@
+"use client";
 import Image from 'next/image';
+import { useEffect } from 'react';
 import styles from './service.module.css';
 
 export default function ServicePage() {
+  useEffect(() => {
+    const sections = document.querySelectorAll(`.${styles.serviceSection}`);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.animateBorder);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className={styles.servicePage}>
-      {/* Hero Section with Blurred Blue Cards and Overlay Text */}
+      {/* Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroTitle}>
-          {/* Left: "Our" with slide-in from left */}
-          <span className={styles.heroText}>
-            Our
-          </span>
-          {/* Right: "Services" with slide-in from right */}
-          <span className={styles.heroTextRight}>
-            Services
-          </span>
+          <span className={styles.heroText}>Our</span>
+          <span className={styles.heroTextRight}>Services</span>
         </div>
       </section>
 
-      {/* Subtitle */}
       <section className={styles.subtitleSection}>
         <p className={styles.subtitleText}>
           Turn processes into progress with Aerele's tech expertise.
         </p>
       </section>
 
-      {/* ERPNext Customization Section */}
+      {/* ERPNext Customization */}
       <section className={styles.serviceSection}>
-        {/* Left: Text Content */}
+        <div className={styles.leftBorder}></div> {/* 🔹 Border */}
         <div className={styles.serviceContent}>
-          {/* Title with brush image background */}
           <div className={styles.titleContainer}>
-            <Image
-              src="/assets/erpnext-brush.png"
-              alt=""
-              fill
-              className={styles.brushBackground}
-            />
-            <h2 className={styles.sectionTitle}>
-              ERPNext Customization
-            </h2>
+            <Image src="/assets/erpnext-brush.png" alt="" fill className={styles.brushBackground} />
+            <h2 className={styles.sectionTitle}>ERPNext Customization</h2>
           </div>
-          {/* Description */}
           <p className={styles.description}>
-            Every business is unique, and so should be its ERP. We specialize in deep ERPNext customizations to ensure your workflows are fully supported—not the other way around. Whether you need custom modules, workflow automations, tailored reports, or integrations with third-party tools, we build solutions that adapt to your business.
+            Every business is unique, and so should be its ERP. We specialize in deep ERPNext
+            customizations to ensure your workflows are fully supported — not the other way around.
           </p>
-          {/* Features List */}
           <ul className={styles.featuresList}>
             {[
-              {
-                title: "Enhanced Modules",
-                desc: "adapting ERPNext to fit your unique workflows"
-              },
-              {
-                title: "Custom Apps",
-                desc: "building solutions on Frappe tailored to your needs"
-              },
-              {
-                title: "Smart Reports",
-                desc: "dynamic dashboards for data-driven decisions"
-              },
-              {
-                title: "Seamless Integrations",
-                desc: "connecting ERPNext with eCommerce, CRMs, gateways & APIs"
-              }
-            ].map((feature, idx) => (
+              { title: "Enhanced Modules", desc: "adapting ERPNext to fit your unique workflows" },
+              { title: "Custom Apps", desc: "building solutions on Frappe tailored to your needs" },
+              { title: "Smart Reports", desc: "dynamic dashboards for data-driven decisions" },
+              { title: "Seamless Integrations", desc: "connecting ERPNext with eCommerce, CRMs, gateways & APIs" }
+            ].map((feature) => (
               <li key={feature.title} className={styles.featureItem}>
-                {/* Icon image */}
                 <div className={styles.featureIcon}>
-                  <Image
-                    src="/assets/point.png"
-                    alt="Feature Icon"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
+                  <Image src="/assets/point.png" alt="Feature Icon" width={24} height={24} />
                 </div>
                 <div className={styles.featureContent}>
                   <span className={styles.featureTitle}>{feature.title}</span>
@@ -84,53 +69,29 @@ export default function ServicePage() {
             ))}
           </ul>
         </div>
-        {/* Right: Overlapping Images */}
+
         <div className={styles.imageSection}>
           <div className={styles.imageContainer}>
-            {/* Back image (shifted up/left, behind) */}
-            <Image
-              src="/assets/erp-cust1.png"
-              alt="ERPNext Customization Screenshot 1"
-              width={340}
-              height={220}
-              className={styles.backImage}
-            />
-            {/* Front image (main, shifted down/right, in front) */}
-            <Image
-              src="/assets/erp-cust2.png"
-              alt="ERPNext Customization Screenshot 2"
-              width={380}
-              height={240}
-              className={styles.frontImage}
-            />
+            <Image src="/assets/erp-cust1.png" alt="" width={340} height={220} className={styles.backImage} />
+            <Image src="/assets/erp-cust2.png" alt="" width={380} height={240} className={styles.frontImage} />
           </div>
         </div>
       </section>
-
-      {/* Enterprise Portal Development Section */}
+      {/*   Enterprise Portal Development */}
       <section className={styles.serviceSection}>
-        {/* Left: Text Content */}
+        <div className={styles.leftBorder}></div> {/* 🔹 Border */}
         <div className={styles.serviceContent}>
-          {/* Title with brush image background */}
           <div className={styles.titleContainer}>
-            <Image
-              src="/assets/erpnext-brush.png"
-              alt=""
-              fill
-              className={styles.brushBackground}
-            />
-            <h2 className={styles.sectionTitle}>
-              Enterprise Portal Development
-            </h2>
+            <Image src="/assets/erpnext-brush.png" alt="" fill className={styles.brushBackground} />
+            <h2 className={styles.sectionTitle}> Enterprise Portal Development </h2>
           </div>
-          {/* Description */}
           <p className={styles.description}>
-            Large enterprises deal with scattered systems, complex data, and disconnected teams. We build enterprise portals that act as a unified access point — connecting employees, customers, and partners through intuitive, user-friendly interfaces.
+              Large enterprises deal with scattered systems, complex data, and disconnected teams. We build enterprise portals that act as a 
+              unified access point — connecting employees,customers, and partners through intuitive, user-friendly interfaces.
           </p>
-          {/* Features List */}
           <ul className={styles.featuresList}>
             {[
-              {
+                {
                 title: "Unified Dashboards",
                 desc: "one place for teams, data & operations"
               },
@@ -146,17 +107,10 @@ export default function ServicePage() {
                 title: "Scalable Design",
                 desc: "secure, mobile-friendly, and future-ready"
               }
-            ].map((feature, idx) => (
+            ].map((feature) => (
               <li key={feature.title} className={styles.featureItem}>
-                {/* Icon image */}
                 <div className={styles.featureIcon}>
-                  <Image
-                    src="/assets/point.png"
-                    alt="Feature Icon"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
+                  <Image src="/assets/point.png" alt="Feature Icon" width={24} height={24} />
                 </div>
                 <div className={styles.featureContent}>
                   <span className={styles.featureTitle}>{feature.title}</span>
@@ -166,11 +120,10 @@ export default function ServicePage() {
             ))}
           </ul>
         </div>
-        {/* Right: Overlapping Images */}
+
         <div className={styles.imageSection}>
           <div className={styles.imageContainer}>
-            {/* Back image (shifted up/left, behind) */}
-            <Image
+             <Image
               src="/assets/erp-portal-1.png"
               alt="Enterprise Portal Screenshot 1"
               width={340}
@@ -189,27 +142,19 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Prototype & MVP Development Section */}
+
+      {/*  Prototype & MVP Development*/}
       <section className={styles.serviceSection}>
-        {/* Left: Text Content */}
+        <div className={styles.leftBorder}></div> {/* 🔹 Border */}
         <div className={styles.serviceContent}>
-          {/* Title with brush image background */}
           <div className={styles.titleContainer}>
-            <Image
-              src="/assets/erpnext-brush.png"
-              alt=""
-              fill
-              className={styles.brushBackground}
-            />
-            <h2 className={styles.sectionTitle}>
-              Prototype & MVP Development
-            </h2>
+            <Image src="/assets/erpnext-brush.png" alt="" fill className={styles.brushBackground} />
+            <h2 className={styles.sectionTitle}> Prototype & MVP Development</h2>
           </div>
-          {/* Description */}
           <p className={styles.description}>
-            In today's fast-paced market, speed is everything. Whether you're a startup validating an idea or an enterprise testing a new product line, we help you build robust prototypes and MVPs that let you test, validate, and pivot quickly.
+             In today's fast-paced market, speed is everything. Whether you're a startup validating an idea or an enterprise 
+             testing a new product line,we help you build robust prototypes and MVPs that let you test, validate, and pivot quickly.
           </p>
-          {/* Features List */}
           <ul className={styles.featuresList}>
             {[
               {
@@ -228,17 +173,10 @@ export default function ServicePage() {
                 title: "Growth-Ready",
                 desc: "MVPs designed to scale into full products"
               }
-            ].map((feature, idx) => (
+            ].map((feature) => (
               <li key={feature.title} className={styles.featureItem}>
-                {/* Blue triangle icon */}
                 <div className={styles.featureIcon}>
-                  <Image
-                    src="/assets/point.png"
-                    alt="Feature Icon"
-                    width={28}
-                    height={28}
-                    className="object-contain"
-                  />
+                  <Image src="/assets/point.png" alt="Feature Icon" width={24} height={24} />
                 </div>
                 <div className={styles.featureContent}>
                   <span className={styles.featureTitle}>{feature.title}</span>
@@ -248,11 +186,10 @@ export default function ServicePage() {
             ))}
           </ul>
         </div>
-        {/* Right: Overlapping Images */}
+
         <div className={styles.imageSection}>
           <div className={styles.imageContainer}>
-            {/* Back image (shifted up/left, behind) */}
-            <Image
+             <Image
               src="/assets/mvp-1.png"
               alt="Prototype Screenshot 1"
               width={340}
@@ -263,38 +200,28 @@ export default function ServicePage() {
             <Image
               src="/assets/mvp-2.png"
               alt="Prototype Screenshot 2"
-              width={380}
-              height={240}
+              width={320}
+              height={200}
               className={styles.frontImage}
             />
           </div>
         </div>
       </section>
-
-      {/* DevOps & System Integration Section */}
+      {/*   DevOps & System Integration*/}
       <section className={styles.serviceSection}>
-        {/* Left: Text Content */}
+        <div className={styles.leftBorder}></div> {/* 🔹 Border */}
         <div className={styles.serviceContent}>
-          {/* Title with brush image background */}
           <div className={styles.titleContainer}>
-            <Image
-              src="/assets/erpnext-brush.png"
-              alt=""
-              fill
-              className={styles.brushBackground}
-            />
-            <h2 className={styles.sectionTitle}>
-              DevOps & System Integration
-            </h2>
+            <Image src="/assets/erpnext-brush.png" alt="" fill className={styles.brushBackground} />
+            <h2 className={styles.sectionTitle}>  DevOps & System Integration</h2>
           </div>
-          {/* Description */}
           <p className={styles.description}>
-            Modern enterprises rely on multiple apps, tools, and systems — and we ensure they work together smoothly. Our DevOps and integration services help you achieve scalability, reliability, and automation in your IT infrastructure.
+             Modern enterprises rely on multiple apps, tools, and systems — and we ensure they work together smoothly.
+             Our DevOps and integration services help you achieve scalability, reliability, and automation in your IT infrastructure.
           </p>
-          {/* Features List */}
           <ul className={styles.featuresList}>
             {[
-              {
+                {
                 title: "CI/CD Pipelines",
                 desc: "faster, automated, error-free deployments"
               },
@@ -310,17 +237,10 @@ export default function ServicePage() {
                 title: "Proactive Monitoring",
                 desc: "reliable uptime & optimized performance"
               }
-            ].map((feature, idx) => (
+            ].map((feature) => (
               <li key={feature.title} className={styles.featureItem}>
-                {/* Blue gradient triangle icon */}
                 <div className={styles.featureIcon}>
-                  <Image
-                    src="/assets/point.png"
-                    alt="Feature Icon"
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
+                  <Image src="/assets/point.png" alt="Feature Icon" width={24} height={24} />
                 </div>
                 <div className={styles.featureContent}>
                   <span className={styles.featureTitle}>{feature.title}</span>
@@ -330,11 +250,10 @@ export default function ServicePage() {
             ))}
           </ul>
         </div>
-        {/* Right: Overlapping Images */}
+
         <div className={styles.imageSection}>
           <div className={styles.imageContainer}>
-            {/* Back image (shifted up/left, behind) */}
-            <Image
+             <Image
               src="/assets/devops-2.png"
               alt="DevOps Screenshot 1"
               width={340}
@@ -352,28 +271,17 @@ export default function ServicePage() {
           </div>
         </div>
       </section>
-
-      {/* Technology Consulting Section */}
+      {/*   Technology Consulting Section*/}
       <section className={styles.serviceSection}>
-        {/* Left: Text Content */}
+        <div className={styles.leftBorder}></div> {/* 🔹 Border */}
         <div className={styles.serviceContent}>
-          {/* Title with brush image background */}
           <div className={styles.titleContainer}>
-            <Image
-              src="/assets/erpnext-brush.png"
-              alt=""
-              fill
-              className={styles.brushBackground}
-            />
-            <h2 className={styles.sectionTitle}>
-              Technology Consulting
-            </h2>
+            <Image src="/assets/erpnext-brush.png" alt="" fill className={styles.brushBackground} />
+            <h2 className={styles.sectionTitle}>  Technology Consulting </h2>
           </div>
-          {/* Description */}
           <p className={styles.description}>
             Choosing the right technology stack can make or break your growth. Our consulting services help you navigate the digital landscape — from evaluating ERPNext fitment to planning IT architecture and long-term tech strategy.
           </p>
-          {/* Features List */}
           <ul className={styles.featuresList}>
             {[
               {
@@ -392,17 +300,10 @@ export default function ServicePage() {
                 title: "Digital Roadmaps",
                 desc: "strategies for automation & transformation"
               }
-            ].map((feature, idx) => (
+            ].map((feature) => (
               <li key={feature.title} className={styles.featureItem}>
-                {/* Blue gradient triangle icon */}
                 <div className={styles.featureIcon}>
-                  <Image
-                    src="/assets/point.png"
-                    alt="Feature Icon"
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
+                  <Image src="/assets/point.png" alt="Feature Icon" width={24} height={24} />
                 </div>
                 <div className={styles.featureContent}>
                   <span className={styles.featureTitle}>{feature.title}</span>
@@ -412,11 +313,10 @@ export default function ServicePage() {
             ))}
           </ul>
         </div>
-        {/* Right: Overlapping Images */}
+
         <div className={styles.imageSection}>
           <div className={styles.imageContainer}>
-            {/* Back image (shifted up/left, behind) */}
-            <Image
+               <Image
               src="/assets/consult-2.png"
               alt="Technology Consulting Screenshot 1"
               width={340}
@@ -434,9 +334,7 @@ export default function ServicePage() {
           </div>
         </div>
       </section>
-
-      {/* Connecting ERPNext with Your Business Ecosystem */}
-      <div className={styles.ecosystemSection}>
+       <div className={styles.ecosystemSection}>
         <h2 className={styles.ecosystemTitle}>
           Connecting ERPNext with Your Business Ecosystem
         </h2>
@@ -516,6 +414,7 @@ export default function ServicePage() {
           </div>
         </div>
       </section>
+     
     </main>
   );
 }

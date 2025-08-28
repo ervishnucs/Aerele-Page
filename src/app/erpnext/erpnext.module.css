@@ -94,7 +94,7 @@
   background: #fff;
   border-radius: 1rem;
   box-shadow: 0 4px 16px rgba(30,58,138,0.08);
-  border-top: 4px solid #032148;
+  border-top: 4px solid #2462b3;
   padding: 1.5rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -189,7 +189,7 @@
   background: #fff;
   border-radius: 1rem;
   box-shadow: 0 4px 16px rgba(30,58,138,0.08);
-  border-top: 4px solid #032148;
+  border-top: 4px solid #2462b3;
   padding: 1.5rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
