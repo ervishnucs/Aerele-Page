@@ -131,6 +131,12 @@
   gap: 1.5rem;
   row-gap: 3rem; /* compact spacing while avoiding overlap */
 }
+
+.avatarContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 .avatarButton {
   position: relative;
   display: flex;
@@ -141,6 +147,7 @@
   cursor: pointer;
   transition: transform 0.25s ease;
   padding-bottom: 1rem; /* reserve space for name badge */
+  z-index: 1;
 }
 .avatarShadow {
   position: absolute;
@@ -280,11 +287,98 @@
   cursor: pointer;
 }
 
+/* Hover Card Styles */
+.hoverCard {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 500px;
+  min-height: 180px;
+  margin-top: 16px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 32px 0 rgba(59,130,246,0.18), 0 0 0 8px rgba(59,130,246,0.10);
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hoverCardContent {
+  background: transparent;
+  border-radius: 20px;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2rem;
+  position: relative;
+}
+
+.hoverCardContent::before {
+  content: none;
+}
+
+.hoverAvatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: none;
+  box-shadow: 0 2px 12px rgba(59,130,246,0.10);
+  margin: 24px 0 24px 24px;
+  flex-shrink: 0;
+}
+
+.hoverName {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #222;
+  text-align: left;
+}
+
+.hoverRole {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: #64748b;
+  text-align: left;
+  font-weight: 500;
+}
+
+.hoverActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+}
+/* Bio text for hover card */
+.hoverBio {
+  font-size: 1rem;
+  color: #222;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
 @media (max-width: 900px) {
   .collageStage { height: 22rem; }
   .unifiedCard { width: 26rem; height: 14rem; }
   .splitCard { width: 10rem; height: 14rem; }
   .avatarRow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  
+  .hoverCard {
+    width: 180px;
+  }
+  
+  .hoverAvatar {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 
