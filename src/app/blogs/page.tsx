@@ -1,24 +1,36 @@
 "use client";
+"use client";
 
 import Link from "next/link";
 import { BLOG_POSTS } from "./data";
 import styles from "./blogs.module.css";
+import { motion } from 'framer-motion';
 
 export default function BlogsPage() {
   return (
     <main className={styles.pageRoot}>
       <section className={styles.hero}>
         <div className={styles.heroTitleRow}>
-          <span className="fluid-h1 font-extrabold text-gray-700 mr-4 animate-slideInLeft">Our</span>
-          <span className="fluid-h1 font-extrabold text-gray-900 animate-slideInRight">Blogs</span>
+          <motion.span
+            className="fluid-h1 font-extrabold text-gray-700 mr-4"
+            initial={{ x: 80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, type: 'spring' }}
+            viewport={{ once: true }}
+          >
+            Our
+          </motion.span>
+          <motion.span
+            className="fluid-h1 font-extrabold text-gray-900"
+            initial={{ x: -80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, type: 'spring' }}
+            viewport={{ once: true }}
+          >
+            Blogs
+          </motion.span>
         </div>
         <p className={`${styles.subTitle} fluid-body`}>Your Source for ERP Expertise and Strategic Growth Ideas</p>
-        <style>{`
-          @keyframes slideInLeft { from { transform: translateX(-80px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-          @keyframes slideInRight { from { transform: translateX(80px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-          .animate-slideInLeft { animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards; }
-          .animate-slideInRight { animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards; }
-        `}</style>
       </section>
 
       <section className={styles.grid}>

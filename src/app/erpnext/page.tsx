@@ -1,5 +1,7 @@
+"use client";
 
 import styles from './erpnext.module.css';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function ERPNextPage() {
@@ -9,7 +11,25 @@ export default function ERPNextPage() {
       <section className={styles.heroSection}>
         <div className={styles.heroCard}>
           <div>
-            <h1 className={`${styles.heroTitle} fluid-h1`}>Your Business. One Platform. <span className={styles.bold}>ERPNext</span></h1>
+            <h1 className={`${styles.heroTitle} fluid-h1`}>
+              <motion.span
+                initial={{ x: 80, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, type: 'spring' }}
+                viewport={{ once: true }}
+              >
+                Your Business. One Platform.
+              </motion.span>
+              <motion.span
+                className={styles.bold}
+                initial={{ x: -80, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, type: 'spring' }}
+                viewport={{ once: true }}
+              >
+                ERPNext
+              </motion.span>
+            </h1>
             <p className={`${styles.heroDesc} fluid-body`}>Simplify operations and accelerate growth.</p>
             <button className={styles.heroButton}>Book your consultation Now</button>
           </div>

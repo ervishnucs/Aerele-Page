@@ -2,6 +2,11 @@
 import './globals.css';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/Footer';
+import AboutPage from './about/page';
+import ServicePage from './service/page';
+import OurTeamPage from './our-team/page';
+import ERPNextPage from './erpnext/page';
+import OurBlogs from './blogs/page';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -22,6 +27,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Navbar />
         <main className="pt-15">{children}</main>
+        <section id="about">
+          <AboutPage />
+        </section>
+        <section id="service">
+          <ServicePage />
+        </section>
+        <section id="our-team">
+          <OurTeamPage />
+        </section>
+        <section id="erpnext">
+          <ERPNextPage />
+        </section>
+        <section id="blogs">
+          <OurBlogs />
+        </section>
         <Footer />
       </body>
     </html>
