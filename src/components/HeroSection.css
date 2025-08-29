@@ -65,6 +65,15 @@
   color: black;
 }
 
+.slide-left {
+  display: inline-block;
+  animation: slideInLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.slide-right {
+  display: inline-block;
+  animation: slideInRight 1.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
 .hero-description {
   margin-top: 1rem;
   color: #4b5563;
@@ -72,4 +81,13 @@
   line-height: 1.5;
   font-weight: 500;
   font-family: 'Sanchez', serif;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-80px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideInRight {
+  from { transform: translateX(80px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }

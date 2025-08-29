@@ -26,6 +26,16 @@ img, video {
 section, main, header, footer, nav, div {
   box-sizing: border-box;
 }
+
+/* Footer visibility control */
+.footer-hidden [data-footer="true"] { display: none !important; }
+.show-footer [data-footer="true"] { display: block !important; }
+.footer-hidden [data-footer="true"] {
+  display: none !important;
+}
+.show-footer [data-footer="true"] {
+  display: block !important;
+}
 .container {
   width: 100%;
   max-width: 1200px;

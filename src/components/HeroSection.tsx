@@ -122,8 +122,9 @@ export default function HeroSection() {
 
       {/* Text Section */}
       <div className="text-section">
-        <h1 className="hero-title">
-          Your Dream,<br />Our Commitment!
+        <h1 className="hero-title" data-replay-on-active>
+          <span className="slide-left">Your Dream,</span><br />
+          <span className="slide-right">Our Commitment!</span>
         </h1>
 
         {showText && (

@@ -184,12 +184,14 @@ function Header() {
         <div className="relative flex items-center justify-center h-[120px] w-full">
           <span
             className="fluid-h1 font-extrabold text-gray-700 mr-4 transition-all duration-700 ease-in-out animate-slideInLeft"
+            data-replay-on-active
             style={{ opacity: 1 }}
           >
             Our
           </span>
           <span
             className="fluid-h1 font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
+            data-replay-on-active
             style={{ opacity: 1 }}
           >
             Team

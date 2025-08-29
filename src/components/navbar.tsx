@@ -6,24 +6,126 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './navbar.css';
 
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },  
-  { label: 'Service', href: '/service' },
-  { label: 'ERPNext', href: '/erpnext' },
-  { label: 'Our Team', href: '/our-team' },
-  { label: 'Blogs', href: '/blogs' },
+  { label: 'Home', href: '#home' },
+  { label: 'About Us', href: '#about' },  
+  { label: 'Service', href: '#service' },
+  { label: 'ERPNext', href: '#erpnext' },
+  { label: 'Our Team', href: '#our-team' },
+  { label: 'Blogs', href: '#blogs' },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [activeHash, setActiveHash] = useState<string>('#home');
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const lastActiveRef = useRef<string>('#home');
 
   const toggleMenu = () => setIsOpen((v) => !v);
   const closeMenu = () => setIsOpen(false);
+
+  // Track visible section to highlight active nav item
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-section][id]'));
+    if (!sections.length) return;
+
+    if (observerRef.current) observerRef.current.disconnect();
+    const replayAnimations = (container: HTMLElement) => {
+      const animatables = container.querySelectorAll<HTMLElement>('[data-replay-on-active]');
+      animatables.forEach((el) => {
+        el.style.animation = 'none';
+        // force reflow
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        el.offsetHeight;
+        el.style.animation = '';
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const sorted = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (sorted[0]?.target) {
+          const sectionEl = sorted[0].target as HTMLElement;
+          const id = sectionEl.id;
+          if (lastActiveRef.current !== `#${id}`) {
+            lastActiveRef.current = `#${id}`;
+            setActiveHash(`#${id}`);
+            if (history.replaceState) {
+              history.replaceState(null, '', `#${id}`);
+            }
+            replayAnimations(sectionEl);
+          }
+        }
+      },
+      { threshold: [0.4, 0.6] }
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+    observerRef.current = observer;
+    // Scroll-based fallback to ensure active state updates
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const viewportMiddle = window.scrollY + window.innerHeight * 0.4;
+        let closestId = sections[0].id;
+        let closestDist = Infinity;
+        sections.forEach((sec) => {
+          const top = sec.offsetTop;
+          const bottom = top + sec.offsetHeight;
+          const mid = top + (bottom - top) / 2;
+          const dist = Math.abs(mid - viewportMiddle);
+          if (dist < closestDist) {
+            closestDist = dist;
+            closestId = sec.id;
+          }
+        });
+        if (lastActiveRef.current !== `#${closestId}`) {
+          lastActiveRef.current = `#${closestId}`;
+          setActiveHash(`#${closestId}`);
+          if (history.replaceState) {
+            history.replaceState(null, '', `#${closestId}`);
+          }
+          const target = document.getElementById(closestId);
+          if (target) replayAnimations(target);
+        }
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  const handleAnchorClick = (hash: string) => {
+    const el = document.querySelector(hash);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveHash(hash);
+      // Replay animations when navigating by click
+      const sectionEl = el as HTMLElement;
+      const animatables = sectionEl.querySelectorAll<HTMLElement>('[data-replay-on-active]');
+      animatables.forEach((node) => {
+        node.style.animation = 'none';
+        // force reflow
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        node.offsetHeight;
+        node.style.animation = '';
+      });
+      // Hide footer if navigating to any section
+      document.body.classList.add('footer-hidden');
+      document.body.classList.remove('show-footer');
+    }
+  };
 
   return (
     <nav className="w-full flex items-center justify-between px-6 py-3 fixed top-0 left-0 z-50 bg-white shadow">
@@ -47,18 +149,21 @@ export default function Navbar() {
       {/* Desktop Links (visible from >=640px) */}
       <ul className="relative gap-4 items-center font-medium text-sm hidden sm:flex">
         {navItems.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive = activeHash === item.href;
           return (
             <li key={item.href} className="relative">
-              <Link
+              <a
                 href={item.href}
-                prefetch
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleAnchorClick(item.href);
+                }}
                 className={`pb-1 transition-colors ${
                   isActive ? 'text-black' : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {item.label}
-              </Link>
+              </a>
               {isActive && (
                 <motion.div
                   layoutId="underline"
@@ -71,7 +176,20 @@ export default function Navbar() {
         })}
         <li>
           <Link href="#contact" prefetch>
-            <button className="ml-2 px-3 py-1.5 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all text-sm">
+            <button
+              data-contact-btn
+              className="ml-2 px-3 py-1.5 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all text-sm"
+              onClick={(e) => {
+                e.preventDefault();
+                document.body.classList.remove('footer-hidden');
+                document.body.classList.add('show-footer');
+                const contact = document.getElementById('contact');
+                if (contact) {
+                  contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  if (history.replaceState) history.replaceState(null, '', '#contact');
+                }
+              }}
+            >
               Contact us
             </button>
           </Link>
@@ -102,25 +220,41 @@ export default function Navbar() {
           >
             <ul className="flex flex-col p-4 gap-2">
               {navItems.map((item) => {
-                const isActive = pathname === item.href;
+                const isActive = activeHash === item.href;
                 return (
                   <li key={item.href}>
-                    <Link
+                    <a
                       href={item.href}
-                      prefetch
-                      onClick={closeMenu}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleAnchorClick(item.href);
+                        closeMenu();
+                      }}
                       className={`block w-full py-2 ${
                         isActive ? 'text-black' : 'text-gray-700 hover:text-blue-600'
                       }`}
                     >
                       {item.label}
-                    </Link>
+                    </a>
                   </li>
                 );
               })}
               <li className="pt-2">
                 <Link href="#contact" onClick={closeMenu}>
-                  <button className="w-full px-6 py-2 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all">
+                  <button
+                    data-contact-btn
+                    className="w-full px-6 py-2 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.body.classList.remove('footer-hidden');
+                      document.body.classList.add('show-footer');
+                      const contact = document.getElementById('contact');
+                      if (contact) {
+                        contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        if (history.replaceState) history.replaceState(null, '', '#contact');
+                      }
+                    }}
+                  >
                     Contact us
                   </button>
                 </Link>
