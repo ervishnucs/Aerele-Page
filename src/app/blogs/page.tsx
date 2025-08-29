@@ -9,8 +9,8 @@ export default function BlogsPage() {
     <main className={styles.pageRoot}>
       <section className={styles.hero}>
         <div className={styles.heroTitleRow}>
-          <span className="fluid-h1 font-extrabold text-gray-700 mr-4 animate-slideInLeft" data-replay-on-active>Our</span>
-          <span className="fluid-h1 font-extrabold text-gray-900 animate-slideInRight" data-replay-on-active>Blogs</span>
+          <span className={`fluid-h1 font-extrabold text-gray-700 mr-4 animate-slideInLeft ${styles.loopLeft}`} data-replay-on-active>Our</span>
+          <span className={`fluid-h1 font-extrabold text-gray-900 animate-slideInRight ${styles.loopRight}`} data-replay-on-active>Blogs</span>
         </div>
         <p className={`${styles.subTitle} fluid-body`}>Your Source for ERP Expertise and Strategic Growth Ideas</p>
         <style>{`

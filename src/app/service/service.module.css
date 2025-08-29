@@ -28,7 +28,8 @@
   color: #1f2937;
   margin-right: 1rem;
   transition: all 0.7s ease-in-out;
-  animation: slideInLeft 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: slideInLeft 2s cubic-bezier(0.4, 0, 0.2, 1) forwards infinite alternate;
+  animation-delay: 0s;
 }
 
 .heroTextRight {
@@ -36,7 +37,8 @@
   font-weight: 800;
   color: #111827;
   transition: all 0.7s ease-in-out;
-  animation: slideInRight 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: slideInRight 2s cubic-bezier(0.4, 0, 0.2, 1) forwards infinite alternate;
+  animation-delay: 0.4s;
 }
 
 /* Subtitle */

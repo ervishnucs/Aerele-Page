@@ -206,8 +206,8 @@ function Header() {
             from { transform: translateX(80px); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
           }
-          .animate-slideInLeft { animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards; }
-          .animate-slideInRight { animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards; }
+          .animate-slideInLeft { animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards infinite alternate; }
+          .animate-slideInRight { animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards infinite alternate; }
         `}</style>
       </div>
     </section>

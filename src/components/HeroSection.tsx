@@ -2,28 +2,52 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './HeroSection.css'
 
 export default function HeroSection() {
   const [showRocket, setShowRocket] = useState(true)
   const [showPlane, setShowPlane] = useState(false)
   const [showText, setShowText] = useState(false)
+  const timersRef = useRef<number[]>([])
 
   useEffect(() => {
-    const rocketTimer = setTimeout(() => {
-      setShowRocket(false)
-      setShowPlane(true)
-    }, 1000)
-
-    const textTimer = setTimeout(() => {
-      setShowText(true)
-    }, 2500)
-
-    return () => {
-      clearTimeout(rocketTimer)
-      clearTimeout(textTimer)
+    const clearTimers = () => {
+      timersRef.current.forEach((t) => clearTimeout(t))
+      timersRef.current = []
     }
+
+    const runCycle = () => {
+      // Reset states for a new cycle
+      setShowRocket(true)
+      setShowPlane(false)
+      setShowText(false)
+
+      // Rocket flies for 1s, then plane appears
+      timersRef.current.push(
+        window.setTimeout(() => {
+          setShowRocket(false)
+          setShowPlane(true)
+        }, 1000)
+      )
+
+      // Reveal text a bit after plane arrives
+      timersRef.current.push(
+        window.setTimeout(() => {
+          setShowText(true)
+        }, 2500)
+      )
+
+      // Loop the whole sequence after a delay
+      timersRef.current.push(
+        window.setTimeout(() => {
+          runCycle()
+        }, 8000)
+      )
+    }
+
+    runCycle()
+    return () => clearTimers()
   }, [])
 
   return (

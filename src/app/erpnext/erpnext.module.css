@@ -34,11 +34,13 @@
 }
 .slideLeft {
   display: inline-block;
-  animation: slideInLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation: slideInLeft 1.6s cubic-bezier(0.4, 0, 0.2, 1) both infinite alternate;
+  animation-delay: 0s;
 }
 .slideRight {
   display: inline-block;
-  animation: slideInRight 1.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation: slideInRight 1.6s cubic-bezier(0.4, 0, 0.2, 1) both infinite alternate;
+  animation-delay: 0.4s;
 }
 .bold {
   font-weight: 800;

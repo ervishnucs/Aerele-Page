@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -52,20 +52,37 @@ const SubtractImage = ({ isVisible }: { isVisible: boolean }) => (
 export default function CollageAnimation() {
   const [startAnimation, setStartAnimation] = useState(false)
   const [showFinalImage, setShowFinalImage] = useState(false)
+  const timersRef = useRef<number[]>([])
 
   useEffect(() => {
-    const animateTimer = setTimeout(() => {
-      setStartAnimation(true)
-    }, 500)
-
-    const finalImageTimer = setTimeout(() => {
-      setShowFinalImage(true)
-    }, 3000)
-
-    return () => {
-      clearTimeout(animateTimer)
-      clearTimeout(finalImageTimer)
+    const clearTimers = () => {
+      timersRef.current.forEach((t) => clearTimeout(t))
+      timersRef.current = []
     }
+
+    const runCycle = () => {
+      // reset
+      setStartAnimation(false)
+      setShowFinalImage(false)
+
+      // kick off quadrant motion after small delay
+      timersRef.current.push(
+        window.setTimeout(() => setStartAnimation(true), 400)
+      )
+
+      // show merged image
+      timersRef.current.push(
+        window.setTimeout(() => setShowFinalImage(true), 3000)
+      )
+
+      // hold final image, then restart cycle
+      timersRef.current.push(
+        window.setTimeout(() => runCycle(), 7000)
+      )
+    }
+
+    runCycle()
+    return () => clearTimers()
   }, [])
 
   return (
