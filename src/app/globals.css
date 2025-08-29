@@ -1,3 +1,11 @@
+section#home,
+section#about,
+section#our-team,
+section#service,
+section#erpnext,
+section#blogs {
+  scroll-margin-top: 90px;
+}
 html {
   scroll-behavior: smooth;
 }
