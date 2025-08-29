@@ -63,7 +63,7 @@ export default function Navbar() {
           }
         }
       },
-      { threshold: [0.4, 0.6] }
+      { threshold: [0.25, 0.5], rootMargin: '0px 0px -45% 0px' }
     );
 
     sections.forEach((sec) => observer.observe(sec));
@@ -74,26 +74,20 @@ export default function Navbar() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const viewportMiddle = window.scrollY + window.innerHeight * 0.4;
-        let closestId = sections[0].id;
-        let closestDist = Infinity;
-        sections.forEach((sec) => {
-          const top = sec.offsetTop;
-          const bottom = top + sec.offsetHeight;
-          const mid = top + (bottom - top) / 2;
-          const dist = Math.abs(mid - viewportMiddle);
-          if (dist < closestDist) {
-            closestDist = dist;
-            closestId = sec.id;
-          }
-        });
-        if (lastActiveRef.current !== `#${closestId}`) {
-          lastActiveRef.current = `#${closestId}`;
-          setActiveHash(`#${closestId}`);
+        // Use section tops: pick the last section whose top is above the viewport with a small offset
+        const offset = 100; // accounts for fixed navbar height + padding
+        const viewportTop = window.scrollY + offset;
+        let currentId = sections[0].id;
+        for (const sec of sections) {
+          if (sec.offsetTop <= viewportTop) currentId = sec.id;
+        }
+        if (lastActiveRef.current !== `#${currentId}`) {
+          lastActiveRef.current = `#${currentId}`;
+          setActiveHash(`#${currentId}`);
           if (history.replaceState) {
-            history.replaceState(null, '', `#${closestId}`);
+            history.replaceState(null, '', `#${currentId}`);
           }
-          const target = document.getElementById(closestId);
+          const target = document.getElementById(currentId);
           if (target) replayAnimations(target);
         }
         ticking = false;

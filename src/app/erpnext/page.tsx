@@ -10,9 +10,9 @@ export default function ERPNextPage() {
         <div className={styles.heroCard}>
           <div>
             <h1 className={`${styles.heroTitle} fluid-h1`}>
-              <span className={styles.slideLeft}>Your Business.</span>{' '}
-              <span className={styles.slideRight}>One Platform.</span>{' '}
-              <span className={`${styles.bold} ${styles.slideRight}`}>ERPNext</span>
+              <span className={styles.slideLeft} data-replay-on-active>Your Business.</span>{' '}
+              <span className={styles.slideRight} data-replay-on-active>One Platform.</span>{' '}
+              <span className={`${styles.bold} ${styles.slideRight}`} data-replay-on-active>ERPNext</span>
             </h1>
             <p className={`${styles.heroDesc} fluid-body`}>Simplify operations and accelerate growth.</p>
             <button className={styles.heroButton}>Book your consultation Now</button>

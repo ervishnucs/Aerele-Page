@@ -11,13 +11,7 @@
   justify-content: center;
   height: 120px;
 }
-.loopLeft {
-  animation: slideInLeft 1.6s cubic-bezier(0.4,0,0.2,1) infinite alternate;
-}
-.loopRight {
-  animation: slideInRight 1.6s cubic-bezier(0.4,0,0.2,1) infinite alternate;
-  animation-delay: 0.4s;
-}
+/* looping classes removed */
 .subTitle {
   color: #475569;
 }

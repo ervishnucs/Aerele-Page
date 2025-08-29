@@ -49,16 +49,20 @@
   color: #1f2937;
   margin-right: 1rem;
   transition: all 0.7s ease-in-out;
-  animation: slideInLeft 2s cubic-bezier(0.4, 0, 0.2, 1) forwards infinite alternate;
-  animation-delay: 0s;
+  animation: slideInLeft 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  display: inline-block;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 .slideRight {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   color: #111827;
   transition: all 0.7s ease-in-out;
-  animation: slideInRight 2s cubic-bezier(0.4, 0, 0.2, 1) forwards infinite alternate;
-  animation-delay: 0.4s;
+  animation: slideInRight 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  display: inline-block;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 .citySection {
   width: 100%;
@@ -132,8 +136,8 @@
 }
 .valuesSection {
   text-align: center;
-  margin: 80px auto;
-  padding: 40px 20px;
+  margin: 40px auto 0 auto; /* reduce bottom space */
+  padding: 40px 20px 0 20px; /* remove bottom padding */
 }
 
 .valuesHeading {
@@ -175,4 +179,10 @@
   font-size: 1rem;
   line-height: 1.5;
   color: #555;
+}
+
+/* Ensure no trailing whitespace at the end of the page */
+.main > *:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
