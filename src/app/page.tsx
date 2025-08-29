@@ -2,12 +2,13 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import HeroSection from '@/components/HeroSection';
+import HeroSection from '@/components/CollageAnimation';
+import CollageAnimation from '@/components/CollageAnimation';
 
 export default function Page() {
   return (
     <main className="bg-white w-full text-gray-800 overflow-hidden">
-      <HeroSection />
+      <CollageAnimation/>
 
 
 

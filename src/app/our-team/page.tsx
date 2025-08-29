@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./team.module.css";
-import CollageAnimation from '@/components/CollageAnimation'
+
 
 type TeamMember = {
   id: string;
@@ -84,20 +84,11 @@ export default function OurTeamPage() {
   return (
     <div className={styles.pageRoot}>
       <Header />
-      <CollageAnimation />    
+        
       <div style={{ height: "80px" }} />
       <section className={styles.teamSection}>
         <div className={styles.teamIntro}>
-          <motion.h2
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className={styles.title}
-          >
-            Meet Our Team
-          </motion.h2>
-          <motion.p
+           <motion.p
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -187,8 +178,7 @@ function Header() {
             data-replay-on-active
             style={{ opacity: 1 }}
           >
-            Our
-          </span>
+            Meet Our          </span>
           <span
             className="fluid-h1 font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
             data-replay-on-active

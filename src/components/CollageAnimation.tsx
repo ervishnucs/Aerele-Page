@@ -54,36 +54,28 @@ export default function CollageAnimation() {
   const [showFinalImage, setShowFinalImage] = useState(false)
   const timersRef = useRef<number[]>([])
 
-  useEffect(() => {
-    const clearTimers = () => {
-      timersRef.current.forEach((t) => clearTimeout(t))
-      timersRef.current = []
-    }
+useEffect(() => {
+  const clearTimers = () => {
+    timersRef.current.forEach((t) => clearTimeout(t));
+    timersRef.current = [];
+  };
 
-    const runCycle = () => {
-      // reset
-      setStartAnimation(false)
-      setShowFinalImage(false)
+  // Reset states
+  setStartAnimation(false);
+  setShowFinalImage(false);
 
-      // kick off quadrant motion after small delay
-      timersRef.current.push(
-        window.setTimeout(() => setStartAnimation(true), 400)
-      )
+  // Start quadrant animation after delay
+  timersRef.current.push(
+    window.setTimeout(() => setStartAnimation(true), 400)
+  );
 
-      // show merged image
-      timersRef.current.push(
-        window.setTimeout(() => setShowFinalImage(true), 3000)
-      )
+  // Show final merged image
+  timersRef.current.push(
+    window.setTimeout(() => setShowFinalImage(true), 3000)
+  );
 
-      // hold final image, then restart cycle
-      timersRef.current.push(
-        window.setTimeout(() => runCycle(), 7000)
-      )
-    }
-
-    runCycle()
-    return () => clearTimers()
-  }, [])
+  return () => clearTimers();
+}, []);
 
   return (
     <div className="relative w-full h-[600px] flex items-center justify-center py-10 mb-20">
