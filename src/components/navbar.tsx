@@ -28,22 +28,21 @@ export default function Navbar() {
   React.useEffect(() => {
     const handleScroll = () => {
       const sections = [
-        { id: 'home', label: 'Home' },
         { id: 'about', label: 'About Us' },
-        { id: 'our-team', label: 'Our Team' },
         { id: 'service', label: 'Service' },
+        { id: 'our-team', label: 'Our Team' },
         { id: 'erpnext', label: 'ERPNext' },
         { id: 'blogs', label: 'Blogs' },
       ];
-      let lastSection = 'home';
-      const scrollY = window.scrollY + 130; // offset for navbar (adjusted)
+      let current = 'home';
+      const scrollY = window.scrollY + 80; // offset for navbar
       for (const section of sections) {
         const el = document.getElementById(section.id);
         if (el && el.offsetTop <= scrollY) {
-          lastSection = section.id;
+          current = section.id;
         }
       }
-      setActiveSection(lastSection);
+      setActiveSection(current);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);

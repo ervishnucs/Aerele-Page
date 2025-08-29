@@ -1,4 +1,3 @@
-import Page from './page';
 
 import './globals.css';
 import Navbar from '@/components/navbar';
@@ -27,21 +26,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Navbar />
-  {/* Removed main tag and padding for precise section alignment */}
-        <section id="home">
-          {/* Home page content */}
-          <Page />
-        </section>
+        <main className="pt-15">{children}</main>
         <section id="about">
           <AboutPage />
-        </section>
-             <section id="our-team">
-          <OurTeamPage />
         </section>
         <section id="service">
           <ServicePage />
         </section>
-   
+        <section id="our-team">
+          <OurTeamPage />
+        </section>
         <section id="erpnext">
           <ERPNextPage />
         </section>
