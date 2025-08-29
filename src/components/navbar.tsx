@@ -11,10 +11,10 @@ import './navbar.css';
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Our Team', href: '/our-team' },
+  { label: 'About Us', href: '/about' },  
   { label: 'Service', href: '/service' },
   { label: 'ERPNext', href: '/erpnext' },
+  { label: 'Our Team', href: '/our-team' },
   { label: 'Blogs', href: '/blogs' },
 ];
 
@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="flex items-center gap-2">
         <Link href="/" prefetch onClick={closeMenu}>
           <Image
-            src="/assets/logo.png"
+            src="/assets/logon.png"
             alt="Aerele Logo"
             width={40}
             height={40}
@@ -38,9 +38,10 @@ export default function Navbar() {
             priority
           />
         </Link>
-        <span className="hidden sm:inline-block fluid-h2 text-2xl" style={{ color: '#334155' }}>
-          𝐀𝐞𝐫𝐞𝐥𝐞 𝐓𝐞𝐜𝐡𝐧𝐨𝐥𝐨𝐠𝐢𝐞𝐬
-        </span>
+       <span className="span-logo">
+  AERELE TECHNOLOGIES
+</span>
+
       </div>
 
       {/* Desktop Links (visible from >=640px) */}
@@ -78,16 +79,16 @@ export default function Navbar() {
       </ul>
 
       {/* Mobile Hamburger (only below 640px) */}
-      <button
-        aria-label="Toggle menu"
-        aria-expanded={isOpen}
-        className="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-300 bg-white/90 shadow-sm"
-        onClick={toggleMenu}
-      >
-        <span className="block w-5 h-[2px] bg-gray-900" />
-        <span className="block w-5 h-[2px] bg-gray-900 mt-1.5" />
-        <span className="block w-5 h-[2px] bg-gray-900 mt-1.5" />
-      </button>
+     <button
+  aria-label="Toggle menu"
+  aria-expanded={isOpen}
+  onClick={() => setIsOpen(!isOpen)}  // your menu toggle logic
+  className="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-300 bg-white/90 shadow-sm"
+>
+  <span className="block w-5 h-[2px] bg-gray-900" />
+  <span className="block w-5 h-[2px] bg-gray-900 mt-1.5" />
+  <span className="block w-5 h-[2px] bg-gray-900 mt-1.5" />
+</button>
 
       {/* Mobile Sheet */}
       <AnimatePresence>

@@ -1,13 +1,8 @@
-
 import './globals.css';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/Footer';
-import AboutPage from './about/page';
-import ServicePage from './service/page';
-import OurTeamPage from './our-team/page';
-import ERPNextPage from './erpnext/page';
-import OurBlogs from './blogs/page';
 import type { Metadata } from 'next';
+import ScrollNavigator from '@/components/ScrollNavigator'; // 👈 from earlier snippet
 
 export const metadata: Metadata = {
   title: {
@@ -26,12 +21,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Navbar />
-        <main className="pt-15">{children}</main>
-        <AboutPage />
-        <ServicePage />
-        <OurTeamPage />
-        <ERPNextPage />
-        <OurBlogs />
+        <ScrollNavigator>
+          <main className="pt-15">{children}</main>
+        </ScrollNavigator>
         <Footer />
       </body>
     </html>
