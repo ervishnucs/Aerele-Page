@@ -38,7 +38,7 @@ export default function Navbar() {
             priority
           />
         </Link>
-        <span className="hidden sm:inline-block fluid-h2 text-4xl" style={{ color: '#334155' }}>
+        <span className="hidden sm:inline-block fluid-h2 text-2xl" style={{ color: '#334155' }}>
           𝐀𝐞𝐫𝐞𝐥𝐞 𝐓𝐞𝐜𝐡𝐧𝐨𝐥𝐨𝐠𝐢𝐞𝐬
         </span>
       </div>

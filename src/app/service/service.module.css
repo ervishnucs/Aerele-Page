@@ -41,14 +41,14 @@
 
 /* Subtitle */
 .subtitleSection {
-  max-width: 4xl;
+  max-width: 30xl;
   margin: 0 auto 3rem auto;
   text-align: center;
   padding: 0 1rem;
 }
 
 .subtitleText {
-  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-size: clamp(1.357rem, 0.5vw, 2rem);
   color: #6b7280;
   line-height: 1.5;
   max-width: 36rem;
@@ -83,7 +83,8 @@
   flex-direction: column;
   align-items: center;  /* ✅ Center horizontally */
   justify-content: center; /* ✅ Center vertically */
-  text-align: left;   /* ✅ Center text */
+  text-align: left; 
+  font-size: 1.2rem;  /* ✅ Center text */
   padding: 0 1rem;
 }
 
@@ -137,6 +138,7 @@
   max-width: 28rem;
   margin: 0;
   align-items: left;
+  font-weight: 1.1rem;
 }
 
 .featureItem {
@@ -147,6 +149,7 @@
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   width: 100%;
+  font-weight: 1.1rem;
 }
 
 .featureItem:hover {
@@ -178,7 +181,7 @@
 
 .featureDescription {
   color: #6b7280;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
@@ -237,7 +240,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .ecosystemTitle {
@@ -263,7 +266,7 @@
 /* Trust Section */
 .trustSection {
   max-width: 7xl;
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 2rem auto;
   padding: 0 1rem;
 }
 
@@ -273,7 +276,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
 }
 
 .trustLogo {
@@ -342,24 +345,27 @@
 .partnershipCards {
   display: flex;
   flex-direction: column;
+  gap: 24px;
   align-items: center;
 }
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  width: 100%;
-  margin-bottom: 2.5rem;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 4px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 2px;
 }
 
 .cardsGridBottom {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  width: 100%;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 4px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  
 }
 
 .partnershipCard {
@@ -367,7 +373,7 @@
   border-radius: 1rem;
   box-shadow: 0 8px 24px -8px rgba(59, 130, 246, 0.2);
   border: 1px solid #dbeafe;
-  padding: 2rem;
+  padding: 12px 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -375,6 +381,7 @@
   max-width: 320px;
   margin: 0 auto;
   transition: all 0.3s ease;
+  
 }
 
 .partnershipCard:hover {
@@ -398,7 +405,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 6px;
+  width: 8px;
   height: 0;
   border-radius: 6px;
   background: linear-gradient(180deg, #004aad, #0099ff);
@@ -490,8 +497,8 @@
   .cardsGrid,
   .cardsGridBottom {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+    gap: 8px;
+    }
   
   .partnershipCard {
     max-width: 100%;

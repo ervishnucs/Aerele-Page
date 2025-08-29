@@ -31,8 +31,8 @@ export default function HeroSection() {
 
       {/* Paper background fades out with rocket */}
       <motion.div
-        initial={{ opacity: 50 }}
-        animate={{ opacity: showRocket ? 50 : 0 }}
+        initial={{ opacity: 0.1 }}
+        animate={{ opacity: showRocket ? 1 : 0 }}
         transition={{ duration: 1 }}
         className="paper-background"
       >

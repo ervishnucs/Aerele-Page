@@ -5,22 +5,27 @@ import styles from './service.module.css';
 
 export default function ServicePage() {
   useEffect(() => {
-    const sections = document.querySelectorAll(`.${styles.serviceSection}`);
+  const sections = document.querySelectorAll(`.${styles.serviceSection}`);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles.animateBorder);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.animateBorder);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
+  sections.forEach((section) => observer.observe(section));
+
+  return () => {
+    sections.forEach((section) => observer.unobserve(section)); // 👈 unobserve each node
+    observer.disconnect();
+  };
+}, []);
+
 
   return (
     <main className={styles.servicePage}>

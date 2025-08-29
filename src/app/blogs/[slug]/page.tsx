@@ -4,8 +4,10 @@ import Link from "next/link";
 import { BLOG_POSTS } from "../data";
 import styles from "../blogs.module.css";
 
-export default function BlogDetail({ params }: { params: { slug: string } }) {
+export default async function BlogDetail({ params }: { params: { slug: string } }) {
   const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+
+  
   if (!post) return <main className={styles.pageRoot}><div className={styles.content}>Not found.</div></main>;
 
   return (
