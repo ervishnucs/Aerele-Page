@@ -1,7 +1,5 @@
-"use client";
 
 import styles from './about.module.css';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function AboutPage() {
@@ -11,24 +9,8 @@ export default function AboutPage() {
 			<div className={styles.citySection}>
 				<Image src="/assets/about.png" alt="City sketch" className={styles.cityImg} width={1200} height={400} />
 				<h1 className={styles.heading}>
-					<motion.span
-						className={styles.slideLeft}
-						initial={{ x: 80, opacity: 0 }}
-						whileInView={{ x: 0, opacity: 1 }}
-						transition={{ duration: 0.8, type: 'spring' }}
-						viewport={{ once: true }}
-					>
-						About
-					</motion.span>
-					<motion.span
-						className={styles.slideRight}
-						initial={{ x: -80, opacity: 0 }}
-						whileInView={{ x: 0, opacity: 1 }}
-						transition={{ duration: 0.8, type: 'spring' }}
-						viewport={{ once: true }}
-					>
-						Us
-					</motion.span>
+					<span className={styles.slideLeft}>About</span>
+					<span className={styles.slideRight}> Us</span>
 				</h1>
 			</div>
 			{/* Company description */}

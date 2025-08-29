@@ -3,7 +3,6 @@
 'use client';
 
 import Link from 'next/link';
-import React from 'react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,42 +10,17 @@ import { useState } from 'react';
 import './navbar.css';
 
 const navItems = [
-  { label: 'Home', href: '#' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Our Team', href: '#our-team' },
-  { label: 'Service', href: '#service' },
-  { label: 'ERPNext', href: '#erpnext' },
-  { label: 'Blogs', href: '#blogs' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Our Team', href: '/our-team' },
+  { label: 'Service', href: '/service' },
+  { label: 'ERPNext', href: '/erpnext' },
+  { label: 'Blogs', href: '/blogs' },
 ];
 
 export default function Navbar() {
-  // ...existing code...
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-
-  // Scroll spy logic
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        { id: 'about', label: 'About Us' },
-        { id: 'service', label: 'Service' },
-        { id: 'our-team', label: 'Our Team' },
-        { id: 'erpnext', label: 'ERPNext' },
-        { id: 'blogs', label: 'Blogs' },
-      ];
-      let current = 'home';
-      const scrollY = window.scrollY + 80; // offset for navbar
-      for (const section of sections) {
-        const el = document.getElementById(section.id);
-        if (el && el.offsetTop <= scrollY) {
-          current = section.id;
-        }
-      }
-      setActiveSection(current);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleMenu = () => setIsOpen((v) => !v);
   const closeMenu = () => setIsOpen(false);
@@ -54,7 +28,7 @@ export default function Navbar() {
   return (
     <nav className="w-full flex items-center justify-between px-6 py-3 fixed top-0 left-0 z-50 bg-white shadow">
       <div className="flex items-center gap-2">
-        <a href="#" onClick={closeMenu}>
+        <Link href="/" prefetch onClick={closeMenu}>
           <Image
             src="/assets/logo.png"
             alt="Aerele Logo"
@@ -63,7 +37,7 @@ export default function Navbar() {
             className="h-8 w-auto"
             priority
           />
-        </a>
+        </Link>
         <span className="hidden sm:inline-block fluid-h2 text-2xl" style={{ color: '#334155' }}>
           𝐀𝐞𝐫𝐞𝐥𝐞 𝐓𝐞𝐜𝐡𝐧𝐨𝐥𝐨𝐠𝐢𝐞𝐬
         </span>
@@ -72,19 +46,18 @@ export default function Navbar() {
       {/* Desktop Links (visible from >=640px) */}
       <ul className="relative gap-4 items-center font-medium text-sm hidden sm:flex">
         {navItems.map((item) => {
-          const sectionId = item.href === '#' ? 'home' : item.href.replace('#', '');
-          const isActive = activeSection === sectionId;
+          const isActive = pathname === item.href;
           return (
             <li key={item.href} className="relative">
-              <a
+              <Link
                 href={item.href}
+                prefetch
                 className={`pb-1 transition-colors ${
                   isActive ? 'text-black' : 'text-gray-700 hover:text-blue-600'
                 }`}
-                onClick={closeMenu}
               >
                 {item.label}
-              </a>
+              </Link>
               {isActive && (
                 <motion.div
                   layoutId="underline"
@@ -96,11 +69,11 @@ export default function Navbar() {
           );
         })}
         <li>
-          <a href="#contact" onClick={closeMenu}>
+          <Link href="#contact" prefetch>
             <button className="ml-2 px-3 py-1.5 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all text-sm">
               Contact us
             </button>
-          </a>
+          </Link>
         </li>
       </ul>
 
@@ -128,28 +101,28 @@ export default function Navbar() {
           >
             <ul className="flex flex-col p-4 gap-2">
               {navItems.map((item) => {
-                const sectionId = item.href === '#' ? 'home' : item.href.replace('#', '');
-                const isActive = activeSection === sectionId;
+                const isActive = pathname === item.href;
                 return (
                   <li key={item.href}>
-                    <a
+                    <Link
                       href={item.href}
+                      prefetch
                       onClick={closeMenu}
                       className={`block w-full py-2 ${
                         isActive ? 'text-black' : 'text-gray-700 hover:text-blue-600'
                       }`}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
               <li className="pt-2">
-                <a href="#contact" onClick={closeMenu}>
+                <Link href="#contact" onClick={closeMenu}>
                   <button className="w-full px-6 py-2 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all">
                     Contact us
                   </button>
-                </a>
+                </Link>
               </li>
             </ul>
           </motion.div>

@@ -27,21 +27,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Navbar />
         <main className="pt-15">{children}</main>
-        <section id="about">
-          <AboutPage />
-        </section>
-        <section id="service">
-          <ServicePage />
-        </section>
-        <section id="our-team">
-          <OurTeamPage />
-        </section>
-        <section id="erpnext">
-          <ERPNextPage />
-        </section>
-        <section id="blogs">
-          <OurBlogs />
-        </section>
+        <AboutPage />
+        <ServicePage />
+        <OurTeamPage />
+        <ERPNextPage />
+        <OurBlogs />
         <Footer />
       </body>
     </html>

@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import { useEffect } from 'react';
 import styles from './service.module.css';
-import { motion } from 'framer-motion';
 
 export default function ServicePage() {
   useEffect(() => {
@@ -33,31 +32,11 @@ export default function ServicePage() {
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroTitle}>
-          <motion.span
-            className={styles.heroText}
-            initial={{ x: 80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, type: 'spring' }}
-            viewport={{ once: true }}
-          >
-            Our
-          </motion.span>
-          <motion.span
-            className={styles.heroTextRight}
-            initial={{ x: -80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, type: 'spring' }}
-            viewport={{ once: true }}
-          >
-            Services
-          </motion.span>
+          <span className={styles.heroText}>Our</span>
+          <span className={styles.heroTextRight}>Services</span>
         </div>
       </section>
 
-      {/* Example: Animate first image in subtitleSection if present */}
-      <section className={styles.subtitleSection}>
-        {/* ...existing code... */}
-      </section>
       <section className={styles.subtitleSection}>
         <p className={styles.subtitleText}>
           Turn processes into progress with Aerele's tech expertise.
@@ -98,22 +77,8 @@ export default function ServicePage() {
 
         <div className={styles.imageSection}>
           <div className={styles.imageContainer}>
-            <motion.div
-              initial={{ x: 80, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, type: 'spring' }}
-              viewport={{ once: true }}
-            >
-              <Image src="/assets/erp-cust1.png" alt="" width={340} height={220} className={styles.backImage} />
-            </motion.div>
-            <motion.div
-              initial={{ x: -80, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, type: 'spring' }}
-              viewport={{ once: true }}
-            >
-              <Image src="/assets/erp-cust2.png" alt="" width={380} height={240} className={styles.frontImage} />
-            </motion.div>
+            <Image src="/assets/erp-cust1.png" alt="" width={340} height={220} className={styles.backImage} />
+            <Image src="/assets/erp-cust2.png" alt="" width={380} height={240} className={styles.frontImage} />
           </div>
         </div>
       </section>
