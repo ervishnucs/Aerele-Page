@@ -4,16 +4,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1.5rem;
+  padding: 1.5rem 1.5rem; /* Increased vertical padding for larger navbar */
   position: fixed;
   top: 0;
   left: 0;
   z-index: 50;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Reduce shadow for less gap illusion */
 }
 .logo img {
-  height: 40px;
+  height: 56px; /* Increase logo size for better proportion */
   width: auto;
 }
 .nav-links {
@@ -81,3 +81,4 @@
     padding: 0.5rem;
   }
 }
+

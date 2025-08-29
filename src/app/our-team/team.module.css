@@ -1,6 +1,7 @@
 /* Page */
 .pageRoot {
   background: #ffffff;
+  padding-bottom: 120px; /* Ensure space for footer */
  .modalBody {
   width: 100%;
   display: flex;

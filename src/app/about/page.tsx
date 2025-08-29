@@ -8,7 +8,10 @@ export default function AboutPage() {
 			{/* City sketch and About Us heading */}
 			<div className={styles.citySection}>
 				<Image src="/assets/about.png" alt="City sketch" className={styles.cityImg} width={1200} height={400} />
-				<h1 className={`${styles.heading} fluid-h1`}>About Us</h1>
+				<h1 className={styles.heading}>
+					<span className={styles.slideLeft}>About</span>
+					<span className={styles.slideRight}> Us</span>
+				</h1>
 			</div>
 			{/* Company description */}
 			<div className="px-6 md:px-[20rem] pt-8 pb-20">

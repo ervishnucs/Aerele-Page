@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Navbar />
-        <main className="pt-20">{children}</main>
+        <main className="pt-15">{children}</main>
         <Footer />
       </body>
     </html>

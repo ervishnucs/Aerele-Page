@@ -5,7 +5,7 @@
 /* Contact dark section (like team-page) */
 .contactSection {
   background: #0f172a;
-  padding: 4.5rem 0 3rem 0; /* extra top padding so anchor centers near form */
+  padding: 2rem 0 1.25rem 0; /* reduced vertical padding for smaller footer */
 }
 .contactHeader {
   text-align: center;

@@ -18,8 +18,6 @@ type TeamMember = {
 export default function OurTeamPage() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const FALLBACK_AVATAR = "/assets/erpnext-users.png";
-
-  // Placeholder data – replace images later
   const team: TeamMember[] = useMemo(
     () => [
         {
@@ -83,12 +81,6 @@ export default function OurTeamPage() {
     ],
     []
   );
-
-  
- 
-
- 
-
   return (
     <div className={styles.pageRoot}>
       <Header />
@@ -219,6 +211,3 @@ function Header() {
     </section>
   );
 }
-
-
-// Hover card implementation replaces the modal dialog
