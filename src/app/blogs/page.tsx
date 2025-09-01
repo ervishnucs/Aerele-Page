@@ -6,7 +6,7 @@ import styles from "./blogs.module.css";
 
 export default function BlogsPage() {
   return (
-    <main className={styles.pageRoot}>
+    <main className={`${styles.pageRoot} fluid-px`}>
       <section className={styles.hero}>
         <div className={styles.heroTitleRow}>
           <span className={"fluid-h1 font-extrabold text-gray-700 mr-4 animate-slideInLeft"} data-replay-on-active>Our</span>

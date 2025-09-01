@@ -2,7 +2,7 @@
   background: #ffffff;
 }
 .hero {
-  padding: 2rem 1rem 0 1rem;
+  padding: 2rem 0 0 0;
   text-align: center;
 }
 .heroTitleRow {
@@ -18,7 +18,7 @@
 .grid {
   max-width: 72rem;
   margin: 1.5rem auto 3rem auto;
-  padding: 0 1rem;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
@@ -171,8 +171,20 @@
   text-decoration: none;
 }
 
+@media (max-width: 1200px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; }
+  .thumb { height: 140px; }
+}
+
+@media (max-width: 600px) {
+  .hero { padding-top: 1rem; }
+  .grid { gap: 0.75rem; }
+  .cardBody { padding: 0.75rem; }
+  .thumb { height: 120px; }
 }
 
 
