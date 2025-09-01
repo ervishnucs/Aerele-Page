@@ -17,7 +17,7 @@ type TeamMember = {
 
 export default function OurTeamPage() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const FALLBACK_AVATAR = "/assets/erpnext-users.png";
+  const FALLBACK_AVATAR = "/assets/default.png";
   const team: TeamMember[] = useMemo(
     () => [
         {
@@ -49,7 +49,7 @@ export default function OurTeamPage() {
         id: "tm-4",
         name: "Ananya R",
         role: "ERPNext Consultant",
-        avatar: "/assets/ananya.png",
+        avatar: FALLBACK_AVATAR,
         linkedin: "https://www.linkedin.com/",
         github: "https://github.com/",
       },
@@ -110,10 +110,12 @@ export default function OurTeamPage() {
               className={styles.avatarContainer}
               onMouseEnter={() => setHoveredId(m.id)}
               onMouseLeave={(e) => {
-                if (!e.currentTarget.contains(e.relatedTarget as Node)) {
-                  setHoveredId(null);
-                }
-              }}
+  const related = e.relatedTarget as HTMLElement | null;
+  if (!related || !e.currentTarget.contains(related)) {
+    setHoveredId(null);
+  }
+}}
+            
             >
               <div className={styles.avatarButton}>
                 <span className={styles.avatarShadow} />

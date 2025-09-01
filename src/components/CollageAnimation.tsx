@@ -58,10 +58,10 @@ export default function CollageAnimation() {
   const timersRef = useRef<number[]>([])
 
   const mobilePositions = {
-    image1: { initialX: 50, initialY: 25, finalX: -15, finalY: 25 },
-    image2: { initialX: 30, initialY: 50, finalX: 83, finalY: 25 },
-    image3: { initialX: 80, initialY: 25, finalX: 180, finalY: 25 },
-    image4: { initialX: 90, initialY: 50, finalX: 279, finalY: 25 }
+    image1: { initialX: -10, initialY: 25, finalX: -15, finalY: 25 },
+    image2: { initialX: 75, initialY: 50, finalX: 83, finalY: 25 },
+    image3: { initialX: 170, initialY: 25, finalX: 180, finalY: 25 },
+    image4: { initialX: 250, initialY: 50, finalX: 279, finalY: 25 }
   }
 
   const desktopPositions = {

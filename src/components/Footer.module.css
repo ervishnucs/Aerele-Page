@@ -162,3 +162,33 @@
     height: 2rem;
   }
 }
+@media (max-width: 480px) {
+  .contactForm {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;                /* Reduced padding */
+    max-width: 90%;                 /* Limit width */
+    margin: 0 auto;                 /* Center the form */
+  }
+
+  .textarea,
+  .submitButton {
+    grid-column: span 1;
+    padding: 0.5rem;                /* Reduce padding inside */
+    font-size: 0.875rem;            /* Slightly smaller text */
+  }
+
+  .contactInfo {
+    gap: 0.75rem;                   /* Reduced gap */
+  }
+
+  .contactItem {
+    padding: 0.25rem 0.5rem;        /* Tighter spacing */
+    font-size: 0.875rem;            /* Optional: smaller font */
+  }
+
+  .icon {
+    width: 1.5rem;                  /* Smaller icon */
+    height: 1.5rem;
+  }
+}
+

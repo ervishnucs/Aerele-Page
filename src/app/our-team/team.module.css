@@ -475,97 +475,132 @@
     height: 14px;
   }
 }
+@media (max-width: 600px) {
+  .hoverCard {
+    width: 92vw;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    padding: 1rem 0.75rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 99;
+    position: absolute;
+  }
 
-@media (max-width: 480px) {
-  .pageRoot {
-    padding-bottom: 60px;
+  .hoverCardContent {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+    gap: 0.5rem;
   }
-  
-  .headerSection {
-    padding: 0.75rem 0.25rem 0 0.25rem;
-  }
-  
-  .headerTitleRow {
+
+  .hoverAvatar {
+    width: 60px;
     height: 60px;
+    border-radius: 10px;
+    margin: 0;
   }
-  
-  .headerTitle {
-    font-size: clamp(1.25rem, 6vw, 1.75rem);
+
+  .hoverName {
+    font-size: 1.1rem;
+    font-weight: 700;
   }
-  
-  .wordLeft, .wordRight {
-    margin-right: 0.25rem;
+
+  .hoverRole {
+    font-size: 0.9rem;
+    color: #64748b;
   }
-  
-  .collageSection {
-    padding: 0.75rem 0.25rem;
-    min-height: 16rem;
-    margin-bottom: 3rem;
-  }
-  
-  .collageStage {
-    height: 16rem;
-  }
-  
-  .splitCard {
-    width: 8rem;
-    height: 12rem;
-    top: 12%;
-  }
-  
-  .teamSection {
-    padding: 0.75rem 0.25rem;
-  }
-  
-  .teamIntro {
-    margin-bottom: 1.5rem;
-  }
-  
-  .subtitle {
-    font-size: clamp(0.8rem, 4vw, 1rem);
-    line-height: 1.4;
-  }
-  
-  .teamGrid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    padding: 0 0.25rem;
-  }
-  
-  .teamCard {
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-  }
-  
-  .teamCardAvatar {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .teamCardName {
+
+  .hoverBio {
     font-size: 0.85rem;
-    margin-bottom: 0.2rem;
+    line-height: 1.4;
+    padding: 0 0.5rem;
   }
-  
-  .teamCardRole {
-    font-size: 0.7rem;
-    margin-bottom: 0.5rem;
+
+  .hoverActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
   }
-  
-  .teamCardLinks {
-    gap: 0.4rem;
-  }
-  
-  .teamCardLink {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .teamCardLink svg {
-    width: 12px;
-    height: 12px;
+
+  .socialLink {
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
   }
 }
 
 
+/* For tablets and below */
+@media (max-width: 900px) {
+  .hoverCard {
+    width: 95vw;
+    min-width: 80px;
+    min-height: 120px;
+    margin-top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 14px;
+    flex-direction: column;
+    padding: 0.5rem 0.5rem;
+  }
+  .hoverCardContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+  .hoverAvatar {
+    width: 80px;
+    height: 80px;
+    margin: 16px 0 0 0;
+    border-radius: 12px;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 600px) {
+  .hoverCard {
+    width: 45vw;
+    min-width: 50px;
+    min-height: 50px;
+    margin-top: 8px;
+    border-radius: 10px;
+    padding: 0.25rem 0.25rem;
+    transform: translate(-50%, -110%);
+  }
+  .hoverCardContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+  }
+  .hoverAvatar {
+    width: 60px;
+    height: 60px;
+    margin: 12px 0 0 0;
+    border-radius: 10px;
+  }
+  .hoverName {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .hoverRole {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  .hoverBio {
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+}
