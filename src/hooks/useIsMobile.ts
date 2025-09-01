@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
+// hooks/useIsMobile.ts
+import { useState, useEffect } from 'react'
 
-export function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(false);
+export const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState<boolean | null>(null)
 
   useEffect(() => {
-    const checkScreen = () => setIsMobile(window.innerWidth < breakpoint);
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, [breakpoint]);
+    const check = () => setIsMobile(window.innerWidth <= 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
-  return isMobile;
+  return isMobile
 }
