@@ -172,38 +172,40 @@ export default function Page() {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8 md:gap-14 items-center justify-center">
           {[
-            { name: "Manufacturing", img: "image 6.png" },
-            { name: "Distribution & Retail", img: "image 7.png" },
-            { name: "Textile & Apparel", img: "image 8.png" },
-            { name: "Services & Agencies", img: "image 10.png" },
-            { name: "ERP-driven Enterprises", img: "image 12.png" },
-          ].map((industry, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center gap-4 cursor-pointer group"
-            >
-              {/* Gradient glow only on hover */}
-              <div className="relative">
-                <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-visible shadow-blue-400 shadow-md transition duration-300 group-hover:scale-105">
-                  <img
-                    src={`/assets/${industry.img}`}
-                    alt={industry.name}
-                    className="w-full h-full rounded-full object-cover"
-                  />
-                </div>
+  { name: "Manufacturing", img: "image 6.png" },
+  { name: "Distribution & Retail", img: "image 7.png" },
+  { name: "Textile & Apparel", img: "image 8.png" },
+  { name: "Services & Agencies", img: "image 10.png" },
+  { name: "ERP-driven Enterprises", img: "image 12.png" },
+].map((industry, index, array) => (
+  <div
+    key={index}
+    className={`flex flex-col items-center justify-center gap-4 cursor-pointer group
+      ${index === array.length - 1 ? "col-span-2 sm:col-span-1" : ""}
+    `}
+  >
+    {/* Gradient glow only on hover */}
+    <div className="relative">
+      <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-visible shadow-blue-400 shadow-md transition duration-300 group-hover:scale-105">
+        <img
+          src={`/assets/${industry.img}`}
+          alt={industry.name}
+          className="w-full h-full rounded-full object-cover"
+        />
+      </div>
 
-                {/* Bottom gradient only on hover */}
-                <div className="absolute bottom-[-8px] sm:bottom-[-10px] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition duration-300">
-                  <div className="w-16 h-4 sm:w-24 sm:h-6 md:w-28 md:h-7 rounded-b-full bg-gradient-to-t from-blue-400 via-blue-300 to-transparent blur-md"></div>
-                </div>
-              </div>
+      {/* Bottom gradient only on hover */}
+      <div className="absolute bottom-[-8px] sm:bottom-[-10px] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition duration-300">
+        <div className="w-16 h-4 sm:w-24 sm:h-6 md:w-28 md:h-7 rounded-b-full bg-gradient-to-t from-blue-400 via-blue-300 to-transparent blur-md"></div>
+      </div>
+    </div>
 
-              <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-700 tracking-wide group-hover:text-blue-600 transition">
-                {industry.name}
-              </p>
-            </div>
-          ))}
-        </div>
+    <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-700 tracking-wide group-hover:text-blue-600 transition">
+      {industry.name}
+    </p>
+  </div>
+))}
+</div>
       </section>
 
 

@@ -523,10 +523,29 @@
     gap: 0.75rem;
   }
   
-  .featureCard {
-    padding: 0.75rem;
-  }
-  
+ .featureCard {
+  position: relative;                  /* needed for pseudo-element */
+  padding: 0.75rem;
+  border-radius: 0.75rem; 
+  border-top: 4px solid #ffffff;             /* card radius */
+  box-shadow: 0 4px 8px rgba(2,6,23,0.1);
+  background: #fff;                     /* optional */
+  overflow: hidden;                     /* keeps pseudo-element within rounded corners */
+}
+
+/* Bottom gradient border */
+.featureCard::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;                          /* thickness of bottom border */
+  border-bottom-left-radius: 0.75rem;   /* match card radius */
+  border-bottom-right-radius: 0.75rem;  /* match card radius */
+  background: linear-gradient(90deg, #70a7f0, #d2d7dd);
+}
+
   .featureTitle {
     font-size: 0.9rem;
     margin-bottom: 0.4rem;
@@ -572,8 +591,28 @@
   }
   
   .aereleCard {
-    padding: 0.75rem;
-  }
+  position: relative;                  /* needed for pseudo-element */
+  padding: 0.75rem;
+  border-radius: 0.75rem; 
+  border-top: 4px solid #ffffff;             /* card radius */
+  box-shadow: 0 4px 8px rgba(2,6,23,0.1);
+  background: #fff;                     /* optional */
+  overflow: hidden;                     /* keeps pseudo-element within rounded corners */
+}
+
+/* Bottom gradient border */
+.aereleCard::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;                          /* thickness of bottom border */
+  border-bottom-left-radius: 0.75rem;   /* match card radius */
+  border-bottom-right-radius: 0.75rem;  /* match card radius */
+  background: linear-gradient(90deg, #70a7f0, #d2d7dd);
+}
+
   
   .aereleCardTitle {
     font-size: 0.9rem;

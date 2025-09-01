@@ -63,6 +63,8 @@ section, main, header, footer, nav, div {
   }
   p, li, a, button {
     font-size: 1em;
+    text-align: left;
+   
   }
 }
 @keyframes mymove {

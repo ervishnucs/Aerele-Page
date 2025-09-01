@@ -191,16 +191,18 @@ export default function Navbar() {
       </ul>
 
       {/* Mobile Hamburger (only below 640px) */}
-     <button
+    <button
   aria-label="Toggle menu"
   aria-expanded={isOpen}
-  onClick={() => setIsOpen(!isOpen)}  // your menu toggle logic
-  className="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-300 bg-white/90 shadow-sm"
+  onClick={() => setIsOpen(!isOpen)}
+  className="sm:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg bg-white/90 shadow-sm"
 >
-  <span className="block w-5 h-[2px] bg-gray-900" />
-  <span className="block w-5 h-[2px] bg-gray-900 mt-1.5" />
-  <span className="block w-5 h-[2px] bg-gray-900 mt-1.5" />
+  <span className="block w-5 h-0.5 bg-[#032148] " />
+  <span className="block w-5 h-0.5 bg-[#032148] my-[5px]" />
+  <span className="block w-5 h-0.5 bg-[#032148] " />
 </button>
+
+
 
       {/* Mobile Sheet */}
       <AnimatePresence>

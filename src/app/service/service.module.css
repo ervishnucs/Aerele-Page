@@ -512,6 +512,16 @@
   .partnershipCard {
     max-width: 100%;
   }
+  .leftBorder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 0;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #004aad, #0099ff);
+  transition: height 1s ease;
+}
 }
 
 /* Mobile Responsive Styles */
@@ -523,6 +533,7 @@
   
   .heroTitle {
     height: 60px;
+    
   }
   
   .heroText, .heroTextRight {
@@ -533,11 +544,15 @@
   .subtitleSection {
     margin-bottom: 2rem;
     padding: 0 0.5rem;
+    
+
   }
   
   .subtitleText {
     font-size: clamp(1rem, 3vw, 1.5rem);
     max-width: 100%;
+    text-align: left;
+
   }
   
   .serviceSection {
@@ -552,7 +567,7 @@
   .serviceContent {
     font-size: 1rem;
     padding: 0;
-    text-align: center;
+    text-align: left;
   }
   
   .titleContainer {
@@ -563,11 +578,29 @@
   .sectionTitle {
     font-size: clamp(1.25rem, 4vw, 1.5rem);
   }
-  
+  .cardText {
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 150px;
+    height: 70px;
+    padding-top: 15px;
+    padding-left: 5px;
+  }
+
   .description {
     font-size: 0.9rem;
     line-height: 1.6;
   }
+  .leftBorder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 0;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #004aad, #0099ff);
+  transition: height 1s ease;
+}
   
   .featuresList {
     gap: 0.75rem;
