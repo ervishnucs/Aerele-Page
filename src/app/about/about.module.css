@@ -107,34 +107,6 @@
   box-shadow: 0 8px 32px rgba(59,130,246,0.12);
   border: 1px solid #2563eb22;
 }
-@media (max-width: 900px) {
-  .heading {
-    font-size: 2rem;
-  }
-  .citySection, .descSection {
-    max-width: 100%;
-    padding: 0 0.5rem;
-  }
-  .dashboardImg {
-    max-width: 100%;
-    height: auto;
-  }
-}
-@media (max-width: 600px) {
-  .main {
-    padding: 1rem 0.25rem;
-  }
-  .heading {
-    font-size: 1.2rem;
-  }
-  .descSection {
-    font-size: 0.95rem;
-    padding: 0 0.25rem;
-  }
-  .dashboardImg {
-    height: auto;
-  }
-}
 .valuesSection {
   text-align: center;
   margin: 40px auto 0 auto; /* reduce bottom space */
@@ -186,4 +158,148 @@
 .main > *:last-child {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .main {
+    padding: 2rem 1rem;
+  }
+  
+  .heading {
+    height: 60px;
+    margin-top: -30px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .slideLeft, .slideRight {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-right: 0.5rem;
+  }
+  
+  .citySection {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .cityImg {
+    max-height: 250px;
+    margin-bottom: -40px;
+  }
+  
+  .dashboardSection {
+    margin-top: 1rem;
+  }
+  
+  .dashboardImg {
+    max-width: 100%;
+    border-radius: 1rem;
+  }
+  
+  .valuesSection {
+    margin: 20px auto 0 auto;
+    padding: 20px 10px 0 10px;
+  }
+  
+  .valuesHeading {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 20px;
+  }
+  
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 100%;
+  }
+  
+  .valueCard {
+    padding: 16px;
+    margin-bottom: 0;
+  }
+  
+  .valueCard h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .valueCard p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .heading {
+    height: 50px;
+    margin-top: -25px;
+  }
+  
+  .slideLeft, .slideRight {
+    font-size: clamp(1.25rem, 7vw, 2rem);
+    margin-right: 0.25rem;
+  }
+  
+  .cityImg {
+    max-height: 200px;
+    margin-bottom: -30px;
+  }
+  
+  .valuesSection {
+    margin: 15px auto 0 auto;
+    padding: 15px 5px 0 5px;
+  }
+  
+  .valuesHeading {
+    font-size: clamp(1.25rem, 6vw, 2rem);
+    margin-bottom: 15px;
+  }
+  
+  .valuesGrid {
+    gap: 12px;
+  }
+  
+  .valueCard {
+    padding: 12px;
+  }
+  
+  .valueCard h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  
+  .valueCard p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .heading {
+    font-size: 2rem;
+  }
+  .citySection, .descSection {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+  .dashboardImg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 600px) {
+  .main {
+    padding: 1rem 0.25rem;
+  }
+  .heading {
+    font-size: 1.2rem;
+  }
+  .descSection {
+    font-size: 0.95rem;
+    padding: 0 0.25rem;
+  }
+  .dashboardImg {
+    height: auto;
+  }
 }

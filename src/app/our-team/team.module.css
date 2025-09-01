@@ -382,4 +382,190 @@
   }
 }
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .pageRoot {
+    padding-bottom: 80px;
+  }
+  
+  .headerSection {
+    padding: 1rem 0.5rem 0 0.5rem;
+  }
+  
+  .headerTitleRow {
+    height: 80px;
+  }
+  
+  .headerTitle {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+  }
+  
+  .wordLeft, .wordRight {
+    margin-right: 0.5rem;
+  }
+  
+  .collageSection {
+    padding: 1rem 0.5rem;
+    min-height: 20rem;
+    margin-bottom: 4rem;
+  }
+  
+  .collageStage {
+    height: 20rem;
+  }
+  
+  .splitCard {
+    width: 10rem;
+    height: 16rem;
+    top: 10%;
+  }
+  
+  .teamSection {
+    padding: 1rem 0.5rem;
+  }
+  
+  .teamIntro {
+    margin-bottom: 2rem;
+  }
+  
+  .subtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    line-height: 1.5;
+    max-width: 100%;
+  }
+  
+  .teamGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .teamCard {
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+  
+  .teamCardAvatar {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .teamCardName {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .teamCardRole {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .teamCardLinks {
+    gap: 0.5rem;
+  }
+  
+  .teamCardLink {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .teamCardLink svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageRoot {
+    padding-bottom: 60px;
+  }
+  
+  .headerSection {
+    padding: 0.75rem 0.25rem 0 0.25rem;
+  }
+  
+  .headerTitleRow {
+    height: 60px;
+  }
+  
+  .headerTitle {
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+  }
+  
+  .wordLeft, .wordRight {
+    margin-right: 0.25rem;
+  }
+  
+  .collageSection {
+    padding: 0.75rem 0.25rem;
+    min-height: 16rem;
+    margin-bottom: 3rem;
+  }
+  
+  .collageStage {
+    height: 16rem;
+  }
+  
+  .splitCard {
+    width: 8rem;
+    height: 12rem;
+    top: 12%;
+  }
+  
+  .teamSection {
+    padding: 0.75rem 0.25rem;
+  }
+  
+  .teamIntro {
+    margin-bottom: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+    line-height: 1.4;
+  }
+  
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0 0.25rem;
+  }
+  
+  .teamCard {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
+  
+  .teamCardAvatar {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .teamCardName {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .teamCardRole {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .teamCardLinks {
+    gap: 0.4rem;
+  }
+  
+  .teamCardLink {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .teamCardLink svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
 

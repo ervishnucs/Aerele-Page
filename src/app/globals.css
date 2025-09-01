@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
 
 
 :root {
@@ -26,16 +27,6 @@ img, video {
 section, main, header, footer, nav, div {
   box-sizing: border-box;
 }
-
-/* Footer visibility control */
-.footer-hidden [data-footer="true"] { display: none !important; }
-.show-footer [data-footer="true"] { display: block !important; }
-.footer-hidden [data-footer="true"] {
-  display: none !important;
-}
-.show-footer [data-footer="true"] {
-  display: block !important;
-}
 .container {
   width: 100%;
   max-width: 1200px;
@@ -47,15 +38,6 @@ section, main, header, footer, nav, div {
 .fluid-h2 { font-size: clamp(1.5rem, 1rem + 2.2vw, 2.5rem); line-height: 1.2; }
 .fluid-body { font-size: clamp(1rem, 0.9rem + 0.6vw, 1.125rem); }
 .fluid-px { padding-left: clamp(1rem, 4vw, 6rem); padding-right: clamp(1rem, 4vw, 6rem); }
-
-/* Center all top-level sections like Our Values positioning */
-main > section,
-main > div[data-center="true"],
-main > div:not([class*="absolute"]):not([class*="fixed"]) {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 @media (max-width: 900px) {
   .container {

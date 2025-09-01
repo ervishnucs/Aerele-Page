@@ -344,3 +344,244 @@
     grid-column: span 1;
   }
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .heroSection {
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+  
+  .heroCard {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
+  
+  .heroTitle {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+  }
+  
+  .heroDesc {
+    font-size: 0.9rem;
+  }
+  
+  .heroButton {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .heroSvg {
+    right: 1rem;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .section {
+    margin: 1.5rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    margin-bottom: 1rem;
+  }
+  
+  .sectionDesc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .featureCard {
+    padding: 1rem;
+  }
+  
+  .featureTitle {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .featureDesc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .screenshots {
+    padding: 0 1rem;
+  }
+  
+  .screenshotImages {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .screenshotImg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .usersSection {
+    padding: 0 1rem;
+  }
+  
+  .usersTitle {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    margin-bottom: 1rem;
+  }
+  
+  .usersSubtitle {
+    font-size: 0.8rem;
+  }
+  
+  .usersImg {
+    width: 100%;
+    height: auto;
+  }
+  
+  .aereleSection {
+    padding: 0 1rem;
+  }
+  
+  .aereleTitle {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    margin-bottom: 1rem;
+  }
+  
+  .aereleGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .aereleCard {
+    padding: 1rem;
+  }
+  
+  .aereleCardTitle {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .aereleCardDesc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    margin: 0.75rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  .heroCard {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  
+  .heroTitle {
+    font-size: clamp(1rem, 6vw, 1.5rem);
+  }
+  
+  .heroDesc {
+    font-size: 0.85rem;
+  }
+  
+  .heroButton {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+  }
+  
+  .heroSvg {
+    right: 0.75rem;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .section {
+    margin: 1rem auto;
+    padding: 0 0.25rem;
+  }
+  
+  .sectionTitle {
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    margin-bottom: 0.75rem;
+  }
+  
+  .sectionDesc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+  
+  .featuresGrid {
+    gap: 0.75rem;
+  }
+  
+  .featureCard {
+    padding: 0.75rem;
+  }
+  
+  .featureTitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .featureDesc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  .screenshots {
+    padding: 0 0.5rem;
+  }
+  
+  .screenshotImages {
+    gap: 0.75rem;
+  }
+  
+  .usersSection {
+    padding: 0 0.5rem;
+  }
+  
+  .usersTitle {
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    margin-bottom: 0.75rem;
+  }
+  
+  .usersSubtitle {
+    font-size: 0.75rem;
+  }
+  
+  .aereleSection {
+    padding: 0 0.5rem;
+  }
+  
+  .aereleTitle {
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    margin-bottom: 0.75rem;
+  }
+  
+  .aereleGrid {
+    gap: 0.75rem;
+  }
+  
+  .aereleCard {
+    padding: 0.75rem;
+  }
+  
+  .aereleCardTitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .aereleCardDesc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}

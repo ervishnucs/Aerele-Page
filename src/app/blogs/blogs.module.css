@@ -171,6 +171,161 @@
   text-decoration: none;
 }
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .hero {
+    padding: 1.5rem 0 0 0;
+  }
+  
+  .heroTitleRow {
+    height: 80px;
+  }
+  
+  .subTitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    line-height: 1.5;
+    padding: 0 1rem;
+  }
+  
+  .grid {
+    margin: 1rem auto 2rem auto;
+    padding: 0 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  
+  .card {
+    border-radius: 0.75rem;
+  }
+  
+  .thumb {
+    height: 140px;
+  }
+  
+  .cardBody {
+    padding: 0.75rem;
+  }
+  
+  .cardTitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    margin-bottom: 0.25rem;
+  }
+  
+  .meta {
+    font-size: 0.75rem;
+  }
+  
+  .detailHero {
+    padding: 1.5rem 1rem;
+  }
+  
+  .blogHeader {
+    margin-bottom: 1rem;
+  }
+  
+  .blogTitle {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    margin-bottom: 0.4rem;
+  }
+  
+  .blogAuthor {
+    font-size: 0.8rem;
+  }
+  
+  .detailImage {
+    height: 240px;
+    margin: 1rem 0;
+    border-radius: 0.4rem;
+  }
+  
+  .content {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    margin: 1.5rem 0 0.75rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem 0 0 0;
+  }
+  
+  .heroTitleRow {
+    height: 60px;
+  }
+  
+  .subTitle {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+    line-height: 1.4;
+    padding: 0 0.5rem;
+  }
+  
+  .grid {
+    margin: 0.75rem auto 1.5rem auto;
+    padding: 0 0.5rem;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .card {
+    border-radius: 0.5rem;
+  }
+  
+  .thumb {
+    height: 120px;
+  }
+  
+  .cardBody {
+    padding: 0.5rem;
+  }
+  
+  .cardTitle {
+    font-size: clamp(0.85rem, 4vw, 1rem);
+    margin-bottom: 0.2rem;
+  }
+  
+  .meta {
+    font-size: 0.7rem;
+  }
+  
+  .detailHero {
+    padding: 1rem 0.5rem;
+  }
+  
+  .blogHeader {
+    margin-bottom: 0.75rem;
+  }
+  
+  .blogTitle {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+    margin-bottom: 0.3rem;
+  }
+  
+  .blogAuthor {
+    font-size: 0.75rem;
+  }
+  
+  .detailImage {
+    height: 200px;
+    margin: 0.75rem 0;
+    border-radius: 0.3rem;
+  }
+  
+  .content {
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    margin: 1.25rem 0 0.5rem 0;
+  }
+}
+
 @media (max-width: 1200px) {
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
