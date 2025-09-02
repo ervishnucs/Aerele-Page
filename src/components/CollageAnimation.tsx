@@ -40,18 +40,27 @@ const QuadrantImage = ({
   </motion.div>
 )
 
-const SubtractImage = ({ isVisible }: { isVisible: boolean }) => (
+const SubtractImage = ({
+  isVisible,
+  onComplete
+}: {
+  isVisible: boolean
+  onComplete?: () => void
+}) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: isVisible ? 1 : 0 }}
     transition={{ duration: 0.5 }}
+    onAnimationComplete={() => {
+      if (isVisible) onComplete?.() // ✅ fires only after fade-in completes
+    }}
     className="absolute top-30% left-70%"
   >
     <Image src="/assets/Subtract.png" alt="Merged Image" width={1200} height={900} />
   </motion.div>
 )
 
-export default function CollageAnimation() {
+export default function CollageAnimation({ onComplete }: { onComplete?: () => void }) {
   const isMobile = useIsMobile()
   const [startAnimation, setStartAnimation] = useState(false)
   const [showFinalImage, setShowFinalImage] = useState(false)
@@ -86,22 +95,20 @@ export default function CollageAnimation() {
       window.setTimeout(() => setStartAnimation(true), 400)
     )
     timersRef.current.push(
-      window.setTimeout(() => setShowFinalImage(true), 3000)
+      window.setTimeout(() => setShowFinalImage(true), 3000) // only shows image
     )
 
     return () => clearTimers()
   }, [])
 
-  // ⛔ FIXED: moved after all hooks
   if (isMobile === null) return null
 
   return (
-   <div
-  className={`relative w-full ${
-    isMobile ? 'min-h-[250px] py-2 mb-2' : 'h-[600px] py-10 mb-20'
-  } flex items-center justify-center`}
->
-
+    <div
+      className={`relative w-full ${
+        isMobile ? 'min-h-[250px] py-2 mb-2' : 'h-[600px] py-10 mb-20'
+      } flex items-center justify-center`}
+    >
       <div
         className={`relative ${
           isMobile ? 'w-[90%] max-w-[360px] min-h-[250px]' : 'w-[1230px] h-[600px]'
@@ -115,7 +122,7 @@ export default function CollageAnimation() {
             <QuadrantImage src="/assets/4 1.png" {...positions.image4} delay={0} animateNow={startAnimation} isMobile={isMobile} />
           </>
         )}
-        <SubtractImage isVisible={showFinalImage} />
+        <SubtractImage isVisible={showFinalImage} onComplete={onComplete} />
       </div>
     </div>
   )
