@@ -7,8 +7,7 @@ import CollageAnimation from '@/components/CollageAnimation';
 export default function Page() {
   return (
     <main className="bg-white w-full text-gray-800 overflow-hidden">
-      <CollageAnimation/>
-
+      
 
 
 

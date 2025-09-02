@@ -84,19 +84,10 @@ export default function OurTeamPage() {
   return (
     <div className={styles.pageRoot}>
       <Header />
-      <CollageAnimation />    
-      <div style={{ height: "80px" }} />
+          
       <section className={styles.teamSection}>
         <div className={styles.teamIntro}>
-          <motion.h2
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className={styles.title}
-          >
-            Meet Our Team
-          </motion.h2>
+         
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -186,7 +177,7 @@ function Header() {
             className="fluid-h1 font-extrabold text-gray-700 mr-4 transition-all duration-700 ease-in-out animate-slideInLeft"
             style={{ opacity: 1 }}
           >
-            Our
+            Meet Our
           </span>
           <span
             className="fluid-h1 font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
