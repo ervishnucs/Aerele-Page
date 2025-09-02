@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./team.module.css";
-
+import CollageAnimation from '@/components/CollageAnimation'
 
 type TeamMember = {
   id: string;
@@ -17,7 +17,7 @@ type TeamMember = {
 
 export default function OurTeamPage() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const FALLBACK_AVATAR = "/assets/default.png";
+  const FALLBACK_AVATAR = "/assets/erpnext-users.png";
   const team: TeamMember[] = useMemo(
     () => [
         {
@@ -49,7 +49,7 @@ export default function OurTeamPage() {
         id: "tm-4",
         name: "Ananya R",
         role: "ERPNext Consultant",
-        avatar: FALLBACK_AVATAR,
+        avatar: "/assets/ananya.png",
         linkedin: "https://www.linkedin.com/",
         github: "https://github.com/",
       },
@@ -84,11 +84,20 @@ export default function OurTeamPage() {
   return (
     <div className={styles.pageRoot}>
       <Header />
-        
+      <CollageAnimation />    
       <div style={{ height: "80px" }} />
       <section className={styles.teamSection}>
         <div className={styles.teamIntro}>
-           <motion.p
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className={styles.title}
+          >
+            Meet Our Team
+          </motion.h2>
+          <motion.p
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -110,12 +119,10 @@ export default function OurTeamPage() {
               className={styles.avatarContainer}
               onMouseEnter={() => setHoveredId(m.id)}
               onMouseLeave={(e) => {
-  const related = e.relatedTarget as HTMLElement | null;
-  if (!related || !e.currentTarget.contains(related)) {
-    setHoveredId(null);
-  }
-}}
-            
+                if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                  setHoveredId(null);
+                }
+              }}
             >
               <div className={styles.avatarButton}>
                 <span className={styles.avatarShadow} />
@@ -177,13 +184,12 @@ function Header() {
         <div className="relative flex items-center justify-center h-[120px] w-full">
           <span
             className="fluid-h1 font-extrabold text-gray-700 mr-4 transition-all duration-700 ease-in-out animate-slideInLeft"
-            data-replay-on-active
             style={{ opacity: 1 }}
           >
-            Meet Our          </span>
+            Our
+          </span>
           <span
             className="fluid-h1 font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
-            data-replay-on-active
             style={{ opacity: 1 }}
           >
             Team
@@ -198,8 +204,8 @@ function Header() {
             from { transform: translateX(80px); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
           }
-          .animate-slideInLeft { animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards infinite alternate; }
-          .animate-slideInRight { animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards infinite alternate; }
+          .animate-slideInLeft { animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards; }
+          .animate-slideInRight { animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards; }
         `}</style>
       </div>
     </section>

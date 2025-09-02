@@ -9,15 +9,13 @@ export default function ERPNextPage() {
       <section className={styles.heroSection}>
         <div className={styles.heroCard}>
           <div>
-            <h1 className={`${styles.heroTitle} fluid-h1`}>
-              <span className={styles.slideLeft} data-replay-on-active>Your Business.</span>{' '}
-              <span className={styles.slideRight} data-replay-on-active>One Platform.</span>{' '}
-              <span className={`${styles.bold} ${styles.slideRight}`} data-replay-on-active>ERPNext</span>
-            </h1>
+            <h1 className={`${styles.heroTitle} fluid-h1`}>Your Business. One Platform. <span className={styles.bold}>ERPNext</span></h1>
             <p className={`${styles.heroDesc} fluid-body`}>Simplify operations and accelerate growth.</p>
             <button className={styles.heroButton}>Book your consultation Now</button>
           </div>
-         
+          <div className={styles.heroSvg}>
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><polygon points="0,0 80,40 0,80" fill="#1e3a8a" /></svg>
+          </div>
         </div>
       </section>
 

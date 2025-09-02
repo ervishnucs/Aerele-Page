@@ -9,8 +9,8 @@ export default function AboutPage() {
 			<div className={styles.citySection}>
 				<Image src="/assets/about.png" alt="City sketch" className={styles.cityImg} width={1200} height={400} />
 				<h1 className={styles.heading}>
-					<span className={styles.slideLeft} data-replay-on-active>About</span>
-					<span className={styles.slideRight} data-replay-on-active> Us</span>
+					<span className={styles.slideLeft}>About</span>
+					<span className={styles.slideRight}> Us</span>
 				</h1>
 			</div>
 			{/* Company description */}
@@ -24,7 +24,7 @@ export default function AboutPage() {
 					Our expertise is trusted by sectors like manufacturing, retail, and supply chain, especially where
 					 robust software ecosystems and seamless integrations are crucial.
 				</p>
-				<p className={`${styles.descText} fluid-body`}>
+				<p className="fluid-body">
 					At Aerele, we combine deep technical knowledge with practical business insights to deliver scalable, 
 					future-ready enterprise applications.
 				</p>
