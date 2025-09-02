@@ -17,9 +17,7 @@ export default function ERPNextPage() {
             <p className={`${styles.heroDesc} fluid-body`}>Simplify operations and accelerate growth.</p>
             <button className={styles.heroButton}>Book your consultation Now</button>
           </div>
-          <div className={styles.heroSvg}>
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><polygon points="0,0 80,40 0,80" fill="#1e3a8a" /></svg>
-          </div>
+         
         </div>
       </section>
 

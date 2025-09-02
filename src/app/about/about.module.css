@@ -92,7 +92,8 @@
   line-height: 1.7;
 }
 .descText {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
+  color: #444;
 }
 .dashboardSection {
   width: 100%;

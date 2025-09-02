@@ -198,12 +198,13 @@ export default function Navbar() {
   aria-label="Toggle menu"
   aria-expanded={isOpen}
   onClick={() => setIsOpen(!isOpen)}
-  className="sm:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg bg-white/90 shadow-sm z-[70]"
+  className="sm:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg bg-white/90 shadow-sm z-[70] mr-4"  // 👈 added mr-3
 >
   <span className="block w-5 h-0.5 bg-[#032148]" />
   <span className="block w-5 h-0.5 bg-[#032148] my-[5px]" />
   <span className="block w-5 h-0.5 bg-[#032148]" />
 </button>
+
 
 {/* Mobile Sheet */}
 <AnimatePresence>

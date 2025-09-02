@@ -367,14 +367,32 @@
 }
 
 @media (max-width: 900px) {
-  .collageStage { height: 22rem; }
-  .unifiedCard { width: 26rem; height: 14rem; }
-  .splitCard { width: 10rem; height: 14rem; }
+  
+
   .avatarRow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   
   .hoverCard {
     width: 180px;
   }
+  .avatarImg {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+.avatarRow {
+  max-width: 64rem;
+  margin: 1.25rem auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  row-gap: 3rem;
+  /* compact spacing while avoiding overlap */
+}
+
   
   .hoverAvatar {
     width: 60px;
