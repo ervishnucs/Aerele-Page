@@ -366,8 +366,9 @@
   }
   
   .heroButton {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;   /* bigger touch area */
+  font-size: 0.9rem;
+    
   }
   
   .heroSvg {
@@ -475,9 +476,16 @@
 
 @media (max-width: 480px) {
   .heroSection {
-    margin: 0.75rem auto;
-    padding: 0 0.5rem;
-  }
+  position: relative;
+}
+.heroSvg {
+  position: absolute;
+  right: 1rem;   /* closer, avoids large push */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
   
   .heroCard {
     padding: 1rem;
@@ -497,11 +505,6 @@
     font-size: 0.85rem;
   }
   
-  .heroSvg {
-    right: 5rem;
-    width: 10px;
-    height: 10px;
-  }
   
   .section {
     margin: 1rem auto;

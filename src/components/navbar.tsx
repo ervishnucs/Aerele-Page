@@ -190,75 +190,78 @@ export default function Navbar() {
         </li>
       </ul>
 
-      {/* Mobile Hamburger (only below 640px) */}
-    <button
+      <div className="relative sm:hidden">
+ 
+
+ {/* Mobile Hamburger (only below 640px) */}
+<button
   aria-label="Toggle menu"
   aria-expanded={isOpen}
   onClick={() => setIsOpen(!isOpen)}
-  className="sm:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg bg-white/90 shadow-sm"
+  className="sm:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg bg-white/90 shadow-sm z-[70]"
 >
-  <span className="block w-5 h-0.5 bg-[#032148] " />
+  <span className="block w-5 h-0.5 bg-[#032148]" />
   <span className="block w-5 h-0.5 bg-[#032148] my-[5px]" />
-  <span className="block w-5 h-0.5 bg-[#032148] " />
+  <span className="block w-5 h-0.5 bg-[#032148]" />
 </button>
 
+{/* Mobile Sheet */}
+<AnimatePresence>
+  {isOpen && (
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.2 }}
+      className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur border-b sm:hidden z-[60]"
+    >
+      <ul className="flex flex-col p-4 gap-2">
+        {navItems.map((item) => {
+          const isActive = activeHash === item.href;
+          return (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleAnchorClick(item.href);
+                  closeMenu();
+                }}
+                className={`block w-full py-2 ${
+                  isActive ? 'text-black' : 'text-gray-700 hover:text-blue-600'
+                }`}
+              >
+                {item.label}
+              </a>
+            </li>
+          );
+        })}
+        <li className="pt-2">
+          <Link href="#contact" onClick={closeMenu}>
+            <button
+              data-contact-btn
+              className="w-full px-6 py-2 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all"
+              onClick={(e) => {
+                e.preventDefault();
+                document.body.classList.remove('footer-hidden');
+                document.body.classList.add('show-footer');
+                const contact = document.getElementById('contact');
+                if (contact) {
+                  contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  if (history.replaceState) history.replaceState(null, '', '#contact');
+                }
+              }}
+            >
+              Contact us
+            </button>
+          </Link>
+        </li>
+      </ul>
+    </motion.div>
+  )}
+</AnimatePresence>
 
-
-      {/* Mobile Sheet */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur border-t sm:hidden z-[60]"
-          >
-            <ul className="flex flex-col p-4 gap-2">
-              {navItems.map((item) => {
-                const isActive = activeHash === item.href;
-                return (
-                  <li key={item.href}>
-                    <a
-                      href={item.href}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleAnchorClick(item.href);
-                        closeMenu();
-                      }}
-                      className={`block w-full py-2 ${
-                        isActive ? 'text-black' : 'text-gray-700 hover:text-blue-600'
-                      }`}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                );
-              })}
-              <li className="pt-2">
-                <Link href="#contact" onClick={closeMenu}>
-                  <button
-                    data-contact-btn
-                    className="w-full px-6 py-2 rounded-full bg-[#032148] text-white shadow-md hover:bg-blue-800 transition-all"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.body.classList.remove('footer-hidden');
-                      document.body.classList.add('show-footer');
-                      const contact = document.getElementById('contact');
-                      if (contact) {
-                        contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        if (history.replaceState) history.replaceState(null, '', '#contact');
-                      }
-                    }}
-                  >
-                    Contact us
-                  </button>
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+</div>
+</nav>
   );
 }

@@ -551,7 +551,7 @@
   .subtitleText {
     font-size: clamp(1rem, 3vw, 1.5rem);
     max-width: 100%;
-    text-align: left;
+    text-align: center;
 
   }
   
@@ -651,7 +651,16 @@
   .subtitleSection {
     margin-bottom: 1.5rem;
   }
-  
+   .leftBorder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 0;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #004aad, #0099ff);
+  transition: height 1s ease;
+}
   .subtitleText {
     font-size: clamp(0.9rem, 4vw, 1.25rem);
   }
