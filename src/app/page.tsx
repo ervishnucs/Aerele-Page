@@ -10,7 +10,7 @@ export default function Page() {
       
 
 
-
+      <CollageAnimation />
       {/* Intro Section */}
       <section className="px-4 sm:px-6 md:px-[20rem] pt-6 sm:pt-8 pb-16 sm:pb-20">
         <h3 className="font-semibold text-lg sm:text-xl md:text-2xl text-center sm:text-left" style={{ color: "#032148" }}>

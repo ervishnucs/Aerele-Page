@@ -9,8 +9,8 @@ export default function AboutPage() {
 			<div className={styles.citySection}>
 				<Image src="/assets/about.png" alt="City sketch" className={styles.cityImg} width={1200} height={400} />
 				<h1 className={styles.heading}>
-					<span className={styles.slideLeft}>About</span>
-					<span className={styles.slideRight}> Us</span>
+					<span className={styles.slideLeft} data-replay-on-active>About</span>
+					<span className={styles.slideRight} data-replay-on-active> Us</span>
 				</h1>
 			</div>
 			{/* Company description */}

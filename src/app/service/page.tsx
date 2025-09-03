@@ -32,6 +32,7 @@ export default function ServicePage() {
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroTitle}>
+          
           <span className={styles.heroText} data-replay-on-active>Our</span>
           <span className={styles.heroTextRight} data-replay-on-active>Services</span>
         </div>

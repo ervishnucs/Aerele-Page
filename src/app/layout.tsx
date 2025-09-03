@@ -1,8 +1,6 @@
 import './globals.css';
 import Navbar from '@/components/navbar';
-import Footer from '@/components/Footer';
-import CollageWrapper from '@/components/CollageWrapper';// 👈 new client wrapper
-
+import CollageWrapper from '@/components/CollageWrapper';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -20,12 +18,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body >
         <Navbar />
-        <div className="pt-15">
-          <CollageWrapper /> {/* 👈 handles animation + conditional rendering */}
-        </div>
-        
+        <div className='pt-15'> 
+        {/* CollageWrapper handles animation + sections inside ScrollNavigator */}
+        <CollageWrapper />
+
+      </div>
       </body>
     </html>
   );

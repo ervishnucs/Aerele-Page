@@ -6,6 +6,7 @@
   padding: 4rem 1rem;    /* added padding for spacing */
   min-height: 80vh;      /* match About page style */
   background: #fff;
+  overflow-x: hidden;
 }
 .heroSection {
   width: 100%;
