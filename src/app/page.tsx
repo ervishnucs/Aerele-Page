@@ -57,7 +57,9 @@ export default function Page() {
         <div className="absolute left-1/2 -translate-x-1/2 top-[120px] sm:top-[160px] w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-blue-400 opacity-30 blur-[60px] sm:blur-[100px] rounded-full z-0"></div>
 
         {/* Service Grid */}
-        <div className="relative mt-16 sm:mt-24 max-w-6xl mx-auto z-10 space-y-12 sm:space-y-16">
+       <div className="relative mt-10 sm:mt-24 max-w-6xl mx-auto z-10 space-y-4 sm:space-y-12 md:space-y-16">
+
+
           {/* Item 1 - Left */}
           <motion.div
         initial={{ x: -100, opacity: 0 }}

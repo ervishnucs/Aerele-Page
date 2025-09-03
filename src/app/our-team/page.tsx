@@ -3,7 +3,10 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./team.module.css";
-import CollageAnimation from '@/components/CollageAnimation'
+import { useRef } from "react";
+import useInView from "@/hooks/useInView";
+
+
 
 type TeamMember = {
   id: string;
@@ -17,7 +20,7 @@ type TeamMember = {
 
 export default function OurTeamPage() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const FALLBACK_AVATAR = "/assets/erpnext-users.png";
+  const FALLBACK_AVATAR = "/assets/default.png";
   const team: TeamMember[] = useMemo(
     () => [
         {
@@ -49,7 +52,7 @@ export default function OurTeamPage() {
         id: "tm-4",
         name: "Ananya R",
         role: "ERPNext Consultant",
-        avatar: "/assets/ananya.png",
+        avatar: FALLBACK_AVATAR,
         linkedin: "https://www.linkedin.com/",
         github: "https://github.com/",
       },
@@ -83,11 +86,16 @@ export default function OurTeamPage() {
   );
   return (
     <div className={styles.pageRoot}>
-      <Header />
-          
+     <section className={styles.headerSection}>
+      <div className={styles.headerInner}>
+        <h1 className={styles.heading}>
+          <span className={styles.slideLeft} data-replay-on-active>Meet Our</span>
+          <span className={styles.slideRight} data-replay-on-active> Team</span>
+        </h1>
+      </div>
+    </section>     
       <section className={styles.teamSection}>
-        <div className={styles.teamIntro}>
-         
+                <div className={styles.teamIntro}>         
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -169,36 +177,20 @@ export default function OurTeamPage() {
 }
 
 function Header() {
+  
   return (
-    <section className={styles.headerSection}>
+     <section className={styles.headerSection}>
       <div className={styles.headerInner}>
-        <div className="relative flex items-center justify-center h-[120px] w-full">
-          <span
-            className="fluid-h1 font-extrabold text-gray-700 mr-4 transition-all duration-700 ease-in-out animate-slideInLeft"
-            style={{ opacity: 1 }}
-          >
-            Meet Our
-          </span>
-          <span
-            className="fluid-h1 font-extrabold text-gray-900 transition-all duration-700 ease-in-out animate-slideInRight"
-            style={{ opacity: 1 }}
-          >
-            Team
-          </span>
+       
+        <div
+          
+          className="relative flex items-center justify-center h-[120px] w-full"
+        >
+          <span className={`fluid-h1 font-extrabold text-gray-700 ${styles.slideLeft}`} data-replay-on-active>Meet Our </span>
+          <span className={`fluid-h1 font-extrabold text-gray-900 ${styles.slideRight}`} data-replay-on-active>  Team</span>
         </div>
-        <style>{`
-          @keyframes slideInLeft {
-            from { transform: translateX(-80px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-          }
-          @keyframes slideInRight {
-            from { transform: translateX(80px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-          }
-          .animate-slideInLeft { animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards; }
-          .animate-slideInRight { animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards; }
-        `}</style>
       </div>
     </section>
   );
 }
+

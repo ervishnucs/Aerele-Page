@@ -6,6 +6,7 @@
   padding: 4rem 1rem;
   min-height: 80vh;
   background: #fff;
+  margin-bottom: 2rem;
 }
 
 @keyframes slideInLeft {
@@ -93,13 +94,13 @@
 }
 .descText {
     margin-bottom: 1rem;
-  color: #444;
+  color:rgb(80, 80, 80)
 }
 .dashboardSection {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 .dashboardImg {
   width: 100%;
@@ -107,7 +108,13 @@
   border-radius: 2rem;
   box-shadow: 0 8px 32px rgba(59,130,246,0.12);
   border: 1px solid #2563eb22;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+.dashboardImg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(30,58,138,0.12);
+}
+
 .valuesSection {
   text-align: center;
   margin: 40px auto 0 auto; /* reduce bottom space */

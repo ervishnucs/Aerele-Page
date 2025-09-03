@@ -24,7 +24,7 @@ export default function AboutPage() {
 					Our expertise is trusted by sectors like manufacturing, retail, and supply chain, especially where
 					 robust software ecosystems and seamless integrations are crucial.
 				</p>
-				<p className="fluid-body">
+				<p className={`${styles.descText} fluid-body`}>
 					At Aerele, we combine deep technical knowledge with practical business insights to deliver scalable, 
 					future-ready enterprise applications.
 				</p>
