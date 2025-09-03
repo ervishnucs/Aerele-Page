@@ -13,15 +13,73 @@
   box-sizing: border-box;
  }
 }
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-/* Header */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .headerSection {
-  padding: 2rem 1rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  position: relative;
+  z-index: 2;
 }
+
 .headerInner {
-  max-width: 72rem;
-  margin: 0 auto;
+  text-align: center;
 }
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.slideLeft {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: #444649; /* gray-700 */
+  margin-right: 1rem;
+  transition: all 0.7s ease-in-out;
+  animation: slideInLeft 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  display: inline-block;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.slideRight {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: #111827; /* gray-900 */
+  transition: all 0.7s ease-in-out;
+  animation: slideInRight 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  display: inline-block;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
 .headerTitleRow {
   position: relative;
   display: flex;
@@ -40,20 +98,7 @@
 .wordRight {
   color: #0f172a; /* text-gray-900 */
 }
-@keyframes slideInLeft {
-  from { transform: translateX(-80px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-@keyframes slideInRight {
-  from { transform: translateX(80px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-.animateSlideInLeft {
-  animation: slideInLeft 2s cubic-bezier(0.4,0,0.2,1) forwards;
-}
-.animateSlideInRight {
-  animation: slideInRight 2s cubic-bezier(0.4,0,0.2,1) forwards;
-}
+
 .headerTitle {
   font-size: 2.25rem;
   line-height: 1.2;
@@ -229,6 +274,7 @@
   font-weight: 700;
   color: #0f172a;
 }
+
 /* Remove broken lines above. Add correct block below. */
 
 .modalBody {
@@ -438,19 +484,24 @@
   }
   
   .teamSection {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 0.5rem;
   }
   
   .teamIntro {
-    margin-bottom: 2rem;
+    margin-bottom: 0.25rem;
   }
   
   .subtitle {
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-size: clamp(1rem, 3vw, 1.1rem);
     line-height: 1.5;
     max-width: 100%;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
-  
+  .headerSection {
+  padding: 0.5rem 0.5rem 0 ;
+}
   .teamGrid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;

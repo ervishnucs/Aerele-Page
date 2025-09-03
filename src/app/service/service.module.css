@@ -1,7 +1,7 @@
 /* Service Page Styles */
 .servicePage {
   min-height: 100vh;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
 }
 
 /* Hero Section */
@@ -95,6 +95,7 @@
   justify-content: center;
   align-items: left;
   margin: 0 auto 1.5rem auto;
+  line-height: 1.2;
   height: 80px;
   width: 100%;
 }
@@ -132,6 +133,8 @@
   text-align: left;
   padding-left: 10px; /* remove left padding */
   padding-right: 10px;
+  padding-top: 10px;
+  color: #5d636e;
 }
 
 /* Features List */
@@ -364,7 +367,7 @@
   gap: 4px;
   max-width: 1000px;
   margin: 0 auto;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .cardsGridBottom {
@@ -631,7 +634,61 @@
     height: auto;
     max-width: 280px;
   }
+  .handshakeBackground {
+    width: 100%;
+    height: 730px;
+    max-width: 350px;
+  }
+  .partnershipTitle {
+  font-size: clamp(1rem, 2vw, 2rem);
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  
 }
+.partnershipHeader {
+  margin-bottom: 1rem; /* ↓ reduced from 2.5rem */
+  min-height: 140px;     /* ↓ reduced from 200px */
+}
+.ecosystemSection {
+  margin-bottom: 1rem; /* reduce space below entire section */
+}
+
+.ecosystemTitle {
+  margin-top:0.5rem ;
+  margin-bottom: 0.5rem;
+  font-size: 15px; /* reduce space below title */
+  font-weight: 550;
+  color: #4b4f58;
+}
+
+.ecosystemBrush {
+  margin: 0 auto 0.2rem auto; /* reduce space below brush image */
+  height: 30px;               /* reduce height of the brush */
+  max-width: 400px;           /* optional: reduce width too */
+}
+.trustSection {
+  max-width: 5xl;
+  margin: 0 auto 0.5rem auto;
+  padding-bottom: 0.5rem;
+}
+
+.trustLogos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+.cardsGrid,
+.cardsGridBottom {
+  grid-template-columns: 1fr; /* one column */
+  gap: 12px;                  /* optional: increase gap for mobile */
+  padding: 0 1rem;            /* optional: add some side padding */
+}
+}
+
 
 @media (max-width: 480px) {
   .heroSection {
@@ -715,6 +772,10 @@
     height: auto;
     
   }
+  .partnershipHeader {
+  margin-bottom: 1.2rem; /* ↓ reduced from 2.5rem */
+  min-height: 140px;     /* ↓ reduced from 200px */
+}
 }
 
 /* Animations */
