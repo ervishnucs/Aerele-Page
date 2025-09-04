@@ -40,7 +40,7 @@ export default function ServicePage() {
 
       <section className={styles.subtitleSection}>
         <p className={styles.subtitleText}>
-          Turn processes into progress with Aerele's tech expertise.
+          Turn processes into progress with Aerele&apos;s tech expertise.
         </p>
       </section>
 
@@ -158,8 +158,8 @@ export default function ServicePage() {
             <h2 className={styles.sectionTitle}> Prototype & MVP Development</h2>
           </div>
           <p className={styles.description}>
-             In today's fast-paced market, speed is everything. Whether you're a startup validating an idea or an enterprise 
-             testing a new product line,we help you build robust prototypes and MVPs that let you test, validate, and pivot quickly.
+             In today&apos;s fast-paced market, speed is everything. Whether you&apos;re a startup validating an idea or an enterprise
+             testing a new product line, we help you build robust prototypes and MVPs that let you test, validate, and pivot quickly.
           </p>
           <ul className={styles.featuresList}>
             {[
