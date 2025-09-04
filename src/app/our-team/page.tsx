@@ -3,8 +3,7 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./team.module.css";
-import { useRef } from "react";
-import useInView from "@/hooks/useInView";
+import Image from "next/image";
 
 
 
@@ -125,15 +124,14 @@ export default function OurTeamPage() {
             >
               <div className={styles.avatarButton}>
                 <span className={styles.avatarShadow} />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={m.avatar} alt={m.name} className={styles.avatarImg} />
+                <Image src={m.avatar} alt={m.name} className={styles.avatarImg}  width={128} height={128} priority />
                 <span className={styles.avatarName}>{m.name.split(" ")[0]}</span>
               </div>
               {hoveredId === m.id && (
                 <div className={styles.hoverCard}>
                   <div className={styles.hoverCardContent}>
-                    <img src={m.avatar} alt={m.name} className={styles.hoverAvatar} />
-                    <div style={{ flex: 1, padding: '24px 24px 24px 0', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+                    <Image src={m.avatar} alt={m.name} className={styles.hoverAvatar}   width={500}  height={300}/>
+                    <div style={{ flex: 1, padding: '24px 24px 24px 0', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'  ,width:'100%'}}>
                       <h4 className={styles.hoverName}>{m.name}</h4>
                       <p className={styles.hoverRole}>{m.role}</p>
                       <div className={styles.hoverActions}>
@@ -175,22 +173,3 @@ export default function OurTeamPage() {
     </div>
   );
 }
-
-function Header() {
-  
-  return (
-     <section className={styles.headerSection}>
-      <div className={styles.headerInner}>
-       
-        <div
-          
-          className="relative flex items-center justify-center h-[120px] w-full"
-        >
-          <span className={`fluid-h1 font-extrabold text-gray-700 ${styles.slideLeft}`} data-replay-on-active>Meet Our </span>
-          <span className={`fluid-h1 font-extrabold text-gray-900 ${styles.slideRight}`} data-replay-on-active>  Team</span>
-        </div>
-      </div>
-    </section>
-  );
-}
-

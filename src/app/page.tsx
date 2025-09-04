@@ -188,10 +188,14 @@ export default function Page() {
     {/* Gradient glow only on hover */}
     <div className="relative">
       <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-visible shadow-blue-400 shadow-md transition duration-300 group-hover:scale-105">
-        <img
+        <Image
           src={`/assets/${industry.img}`}
           alt={industry.name}
           className="w-full h-full rounded-full object-cover"
+          width={128}
+          height={128}
+          priority
+          
         />
       </div>
 

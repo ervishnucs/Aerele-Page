@@ -4,7 +4,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import './navbar.css';
@@ -19,13 +19,12 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
+ 
   const [isOpen, setIsOpen] = useState(false);
   const [activeHash, setActiveHash] = useState<string>('#home');
   const observerRef = useRef<IntersectionObserver | null>(null);
   const lastActiveRef = useRef<string>('#home');
 
-  const toggleMenu = () => setIsOpen((v) => !v);
   const closeMenu = () => setIsOpen(false);
 
   // Track visible section to highlight active nav item

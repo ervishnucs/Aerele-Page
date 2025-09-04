@@ -40,7 +40,7 @@ export default function ScrollNavigator({ children }: Props) {
       const h = window.innerHeight;
 
       const bottomThreshold = Math.max(0, footerTop - h);
-      const TOP_TOLERANCE = 4;
+     
       const BOTTOM_TOLERANCE = 4;
 
       const atBottomBeforeFooter = y >= bottomThreshold - BOTTOM_TOLERANCE;
