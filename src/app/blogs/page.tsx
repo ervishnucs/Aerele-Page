@@ -1,10 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { BLOG_POSTS } from "./data";
 import styles from "./blogs.module.css";
+import BlogDetail from "./BlogDetail";
 
-export default function BlogsPage() {
+function BlogsInner() {
+  const searchParams = useSearchParams();
+  const slug = searchParams.get("slug");
+
+  if (slug) {
+    return <BlogDetail slug={slug} />;
+  }
+
   return (
     <main className={`${styles.pageRoot} fluid-px`}>
       <section className={styles.hero}>
@@ -23,7 +33,7 @@ export default function BlogsPage() {
 
       <section className={styles.grid}>
         {BLOG_POSTS.map((post) => (
-          <Link key={post.slug} href={`/blogs/${post.slug}`} className={styles.card}>
+          <Link key={post.slug} href={`/blogs?slug=${post.slug}`} className={styles.card}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={post.image} alt="" className={styles.thumb} />
             <div className={styles.cardBody}>
@@ -35,6 +45,14 @@ export default function BlogsPage() {
         ))}
       </section>
     </main>
+  );
+}
+
+export default function BlogsPage() {
+  return (
+    <Suspense fallback={<main className={`${styles.pageRoot} fluid-px`}></main>}>
+      <BlogsInner />
+    </Suspense>
   );
 }
 

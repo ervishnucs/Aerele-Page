@@ -1,5 +1,7 @@
 .pageRoot {
   background: #ffffff;
+  position: relative;
+  z-index: 50;
 }
 .hero {
   padding: 2rem 0 0 0;
