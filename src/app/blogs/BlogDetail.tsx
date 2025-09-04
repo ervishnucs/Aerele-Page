@@ -1,16 +1,11 @@
+"use client";
+
 import Link from "next/link";
-import { BLOG_POSTS } from "../data";
-import styles from "../blogs.module.css";
+import { BLOG_POSTS } from "./data";
+import styles from "./blogs.module.css";
 
-
-type BlogDetailProps = {
-  params: {
-    slug: string;
-  };
-};
-
-export default function BlogDetail({ params }: BlogDetailProps) {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+export default function BlogDetail({ slug }: { slug: string }) {
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
 
   if (!post) {
     return (
@@ -68,3 +63,5 @@ export default function BlogDetail({ params }: BlogDetailProps) {
     </main>
   );
 }
+
+
